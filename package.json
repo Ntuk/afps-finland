@@ -1,8 +1,8 @@
 {
-  "name": "nuxt-promo-template",
+  "name": "afps-finland",
   "version": "1.0.0",
-  "description": "My super Nuxt.js project",
-  "author": "",
+  "description": "AFPS Finland Website",
+  "author": "Nico Tukiainen",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
