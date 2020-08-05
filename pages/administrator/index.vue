@@ -21,7 +21,7 @@
         <!-- Go to /administrator/heroes -->
         <!-- <div class="box" @click="$router.push('/administrator/heroes')">
           <div>
-            TODO:Lisää jotain
+            Etusivun teksti
           </div>
         </div> -->
       </div>

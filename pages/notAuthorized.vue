@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <ErrorView :title="'Ooooops, you are not authorized to visit this page, please talk to administrator in order to get access rights'"
+    <ErrorView :title="'Ooooops, sinulla ei ole oikeuksia nähdä tätä sivua. Pyytäisitkö adminilta pääsyoikeudet.'"
                :status="'401'"
                :navigateToPage="'/'"
                :navigateToText="'Navigate to Home Page'" />

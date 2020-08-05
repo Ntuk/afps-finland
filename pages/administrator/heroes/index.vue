@@ -1,7 +1,7 @@
 <template>
   <div class="heroes-page">
     <div class="container">
-      <h1 class="title">Project Heroes</h1>
+      <h1 class="title">Etusivun esittelytekstit</h1>
       <portal-target
         v-for="hero in heroes"
         :key="hero._id"
@@ -9,9 +9,8 @@
       <table class="heroes-table table is-responsive">
         <thead>
           <tr class="main-table-row">
-            <th>Image</th>
-            <th>Title</th>
-            <th>Date</th>
+            <th>Otsikko</th>
+            <th>Teksti</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -23,29 +22,24 @@
             :class="{'isActive': activeHero._id === hero._id}"
             class="table-row"
           >
-            <td>{{hero.image || 'Not Set'}}</td>
             <td>{{hero.title || 'Not Set'}}</td>
             <td>{{hero.subtitle || 'Not Set'}}</td>
-            <td>{{activeHero._id === hero._id ? 'Active' : 'Inactive'}}</td>
+            <td>{{activeHero._id === hero._id ? 'Aktiivinen' : 'Inaktiivinen'}}</td>
             <td class="modal-td" v-show="false">
             <portal :to="`modal-view-${hero._id}`">
               <Modal
                 :ref="`modal-${hero._id}`"
                 :showButton="false"
                 @submitted="activateHero($event, hero._id)"
-                actionTitle="Make Active"
-                openTitle="Favorite"
-                title="Make Project Hero">
+                actionTitle="Aktivoi"
+                title="Vaihda etusivun tervetuloteksti">
                 <div>
                   <div class="subtitle">
-                    Title: {{hero.title || 'Not Set'}}
+                    Otsikko: {{hero.title || 'Not Set'}}
                   </div>
                   <div class="subtitle">
-                    Date: {{hero.subtitle || 'Not Set'}}
-                  </div>
-                  <figure class="image is-3by1">
-                    <img :src="hero.image">
-                  </figure>
+                    Teksti: {{hero.subtitle || 'Not Set'}}
+                  </div>                  
                 </div>
               </Modal>
             </portal>
@@ -82,7 +76,7 @@ export default {
     activateHero({ closeModal },heroId) {
       this.$store.dispatch('administrator/activateHero', heroId)
         .then(_ => {
-          this.$toasted.success('Hero was succesfuly activated!', {duration: 2000})
+          this.$toasted.success('Etusivun teksti onnistuneesti lisätty!', {duration: 2000})
           closeModal()
         })
     }
@@ -93,7 +87,7 @@ export default {
   .heroes-page {
     max-width: 1000px;
     margin: 0 auto 5rem auto;
-    margin-top: 40px;
+    padding-top: 200px;
   }
   .title {
     font-size: 45px;
