@@ -1,6 +1,6 @@
 <template>
     <section
-      class="hero is-black is-medium">
+      class="hero is-black is-medium" id="hero">
       <div class="hero-body">
         <div
           class="hero-img"
@@ -11,7 +11,7 @@
               <div>
                 <span>Tähän tervetulotusteksti</span>
               </div>
-              <a href="#contents-of-index" v-smooth-scroll="{ duration: 1000 }"><i class="fa fa-angle-down fa-3x" aria-hidden="true"></i></a>
+              <a href="#uutiset" v-smooth-scroll="{ duration: 1000 }"><i class="fa fa-angle-down fa-3x" aria-hidden="true"></i></a>
             </h1>
         </div>
       </div>

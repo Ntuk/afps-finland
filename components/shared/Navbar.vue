@@ -19,7 +19,7 @@
 
     <div id="navbarBasicExample" class="navbar-menu" :class="{'is-active': isActive}">
       <div class="navbar-center">
-        <a class="navbar-item">
+        <a class="navbar-item" href="#hero" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fa fa-rocket fa-lg"/></span>
             <nav-link to="/">
@@ -27,7 +27,7 @@
             </nav-link>
           </div>
         </a>
-        <a class="navbar-item">
+        <a class="navbar-item" href="#uutiset" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
             <nav-link to="/">
@@ -35,7 +35,7 @@
             </nav-link>
           </div>
         </a>
-        <a class="navbar-item">
+        <a class="navbar-item" href="#afps-finland" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fa fa-crosshairs fa-lg"/></span>
             <nav-link to="/">
@@ -43,7 +43,7 @@
             </nav-link>
           </div>
         </a>
-        <a class="navbar-item">
+        <a class="navbar-item" href="#turnaukset" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fa fa-trophy fa-lg"/></span>
             <nav-link to="/">
@@ -87,82 +87,7 @@
         </template>
       </div>
     </div>
-  </nav>
-  <!-- <nav class="navbar is-active is-transparent" role="navigation" aria-label="main navigation">
-    <div class="container">
-      <div class="navbar-brand">
-        <nav-link class="navbar-item" to="/">
-          <h1 class="afps-title"><img src="https://www.nicotukiainen.com/legacy/images/afps-logo-1.png"></h1>
-        </nav-link>      
-        <a @click="isActive = !isActive"
-          :class="{'is-active': isActive}"
-          role="button"
-          class="navbar-burger burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div :class="{'is-active': isActive}"
-          id="navbarBasicExample"
-          class="navbar-menu">
-        <div class="navbar-start" @click="isActive = !isActive">
-          <nav-link to="/" class="navbar-item">
-            Aloitus
-          </nav-link>
-          <nav-link to="/about" class="navbar-item">
-            Uutiset
-          </nav-link>
-          <nav-link to="/projects" class="navbar-item">
-            AFPS Finland?
-          </nav-link>
-          <nav-link to="/blogs" class="navbar-item">
-            Turnaukset
-          </nav-link>
-          <nav-link to="/contact" class="navbar-item">
-            Yhteystiedot
-          </nav-link>
-        </div>
-      </div>
-
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <template v-if="isAuth">
-              <figure class="image avatar is-48x48 m-r-sm">
-                <img class="is-rounded" :src="user.avatar">
-              </figure>
-              <div class="m-r-sm m-b-sm">
-                Tervetuloa {{user.username}}!
-              </div>
-              <button
-                v-if="isAdmin" class="button is-link is-outlined"
-                @click="() => $router.push('/administrator')">
-                Administrator
-              </button>
-              <a class="button is-primary" @click="logout">
-                Kirjaudu ulos
-              </a>
-            </template>
-            <template v-else>
-              <nav-link to="/register" id="login-signup">
-                Rekisteröidy
-              </nav-link>
-              <i class="fa fa-user" aria-hidden="true"/>
-              <nav-link to="/login" id="login-signup">
-                Kirjaudu sisään
-              </nav-link>
-            </template>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </nav> -->
+  </nav> 
 </template>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
