@@ -9,7 +9,7 @@
         <div class="container">
             <h1 class="hero-header">
               <div>
-                <span>Tähän tervetulotusteksti</span>
+                <span>Tervetuliaisteksti</span>
               </div>
               <a href="#uutiset" v-smooth-scroll="{ duration: 1000 }"><i class="fa fa-angle-down fa-3x" aria-hidden="true"></i></a>
             </h1>

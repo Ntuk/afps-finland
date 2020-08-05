@@ -30,7 +30,7 @@
         <a class="navbar-item" href="#uutiset" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
-            <nav-link to="/">
+            <nav-link to="/#uutiset">
               Uutiset
             </nav-link>
           </div>
@@ -38,7 +38,7 @@
         <a class="navbar-item" href="#afps-finland" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fa fa-crosshairs fa-lg"/></span>
-            <nav-link to="/">
+            <nav-link to="/#afps-finland">
               AFPS Finland?
             </nav-link>
           </div>
@@ -46,7 +46,7 @@
         <a class="navbar-item" href="#turnaukset" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fa fa-trophy fa-lg"/></span>
-            <nav-link to="/">
+            <nav-link to="/#turnaukset">
               Turnaukset
             </nav-link>
           </div>
@@ -54,7 +54,7 @@
         <a class="navbar-item" href="#discord" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fab fa-discord fa-lg"/></span>
-            <nav-link to="/">
+            <nav-link to="/#discord">
               Discord
             </nav-link>
           </div>
@@ -81,8 +81,8 @@
           </a>
         </template>
         <template v-else>
-          <a class="navbar-item">
-          <div class="menu-item-container">
+          <a class="navbar-item" href="/register">
+            <div class="menu-item-container">
               <span class="is-icon"><i class="fa fa-user-plus fa-lg"/></span>
               <nav-link to="/register" id="login-signup">
                 Rekisteröidy
@@ -90,7 +90,7 @@
             </div>
           </a>          
           <a class="navbar-item" href="/login">
-           <div class="menu-item-container">
+            <div class="menu-item-container">
               <span class="is-icon"><i class="fa fa-sign-in-alt fa-lg"/></span>
               <nav-link to="/login" id="login-signup">
                 Kirjaudu sisään

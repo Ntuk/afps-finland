@@ -37,12 +37,6 @@
         <icon name="strikethrough" size="small" />
       </button>
       <button
-        class="menubar__button"
-        @click="showImagePrompt(commands.image)"
-      >
-        <icon name="image" size="large"/>
-      </button>
-      <button
         class="menububble__button"
         :class="{ 'is-active': isActive.underline() }"
         @click="commands.underline()"

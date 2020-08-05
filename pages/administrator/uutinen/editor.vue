@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header
-      title="Ramble away!"
+      title="Uusi uutinen!"
       exitLink="/administrator/uutiset"
     />
     <div class="uutinen-editor-container">
