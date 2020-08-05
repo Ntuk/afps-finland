@@ -2,11 +2,11 @@
   <div>
     <Header
       title="Ramble away!"
-      exitLink="/administrator/blogs"
+      exitLink="/administrator/uutiset"
     />
-    <div class="blog-editor-container">
+    <div class="uutinen-editor-container">
       <div class="container">
-        <editor @editorUpdated="saveBlog"/>
+        <editor @editorUpdated="saveUutinen"/>
       </div>
     </div>
   </div>
@@ -21,9 +21,9 @@ export default {
     Header, Editor
   },
   methods: {
-    saveBlog(blogData) {
-      this.$store.dispatch('administrator/blog/createBlog', blogData)
-        .then(blog => this.$router.push(`/administrator/blog/${blog._id}/edit`))
+    saveUutinen(uutinenData) {
+      this.$store.dispatch('administrator/uutinen/createUutinen', uutinenData)
+        .then(uutinen => this.$router.push(`/administrator/uutinen/${uutinen._id}/edit`))
     }
   }
 }

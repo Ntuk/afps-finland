@@ -7,7 +7,7 @@ require("../models/user");
 require("../models/product");
 require("../models/category");
 require("../models/product-hero");
-require("../models/blog");
+require("../models/uutinen");
 require("../models/contact");
 
 exports.initSessionStore = function() {

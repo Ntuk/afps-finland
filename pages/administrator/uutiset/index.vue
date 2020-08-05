@@ -4,13 +4,13 @@
       title="Manageroi uutisia"
       exitLink="/"
     />
-    <div class="administrator-blogs">
+    <div class="administrator-uutiset">
       <div class="container">
         <div class="section">
           <div class="header-block">
             <h2>Uutiset</h2>
             <div class="title-menu">
-              <button @click="$router.push('/administrator/blog/editor')" class="button">Kirjoita uutinen!</button>
+              <button @click="$router.push('/administrator/uutinen/editor')" class="button">Kirjoita uutinen!</button>
             </div>
           </div>
           <div class="tabs">
@@ -25,58 +25,58 @@
               </li>
             </ul>
           </div>
-          <div class="blogs-container">
-            <!-- Draft Blogs -->
+          <div class="uutiset-container">
+            <!-- Draft Uutiset -->
             <!-- check for active tab -->
             <template v-if="activeTab === 0">
               <div v-if="drafts && drafts.length > 0">
                 <!-- make iteration here for drafts -->
                 <div
-                  v-for="dBlog in drafts"
-                  :key="dBlog._id"
-                  class="blog-card"
+                  v-for="dUutinen in drafts"
+                  :key="dUutinen._id"
+                  class="uutinen-card"
                   >
-                  <h2>{{displayBlogTitle(dBlog)}}</h2>
-                  <div class="blog-card-footer">
+                  <h2>{{displayUutinenTitle(dUutinen)}}</h2>
+                  <div class="uutinen-card-footer">
                     <span>
-                      Last Edited {{dBlog.updatedAt | formatDate('LLLL')}}
+                      Last Edited {{dUutinen.updatedAt | formatDate('LLL')}}
                     </span>
                     <dropdown
-                      @optionChanged="handleOption($event, dBlog)"
+                      @optionChanged="handleOption($event, dUutinen)"
                       :items="draftsOptions" />
                   </div>
                 </div>
               </div>
-              <!-- In case of no drafts blogs  -->
-              <div v-else class="blog-error">
+              <!-- In case of no drafts uutiset  -->
+              <div v-else class="uutinen-error">
                 Ei luonnoksia :(
               </div>
             </template>
-            <!-- Published Blogs -->
+            <!-- Published Uutiset -->
             <!-- check for active tab -->
             <template v-if="activeTab === 1">
               <div v-if="published && published.length > 0">
                 <!-- make iteration here for published -->
                 <div
-                  v-for="pBlog in published"
-                  :key="pBlog._id"
-                  :class="{featured: pBlog.featured}"
-                  class="blog-card">
+                  v-for="pUutinen in published"
+                  :key="pUutinen._id"
+                  :class="{featured: pUutinen.featured}"
+                  class="uutinen-card">
                   <!-- title -->
-                  <h2>{{displayBlogTitle(pBlog)}}</h2>
-                  <div class="blog-card-footer">
+                  <h2>{{displayUutinenTitle(pUutinen)}}</h2>
+                  <div class="uutinen-card-footer">
                     <!-- updatedAt -->
                     <span>
-                      Last Edited {{pBlog.updatedAt | formatDate('LLLL')}}
+                      Last Edited {{pUutinen.updatedAt | formatDate('LLL')}}
                     </span>
                     <dropdown
-                      @optionChanged="handleOption($event, pBlog)"
-                      :items="publishedOptions(pBlog.featured)" />
+                      @optionChanged="handleOption($event, pUutinen)"
+                      :items="publishedOptions(pUutinen.featured)" />
                   </div>
                 </div>
               </div>
-              <!-- In case of no drafts blogs  -->
-              <div v-else class="blog-error">
+              <!-- In case of no drafts uutiset  -->
+              <div v-else class="uutinen-error">
                 Ei julkaistuja uutisia :(
               </div>
             </template>
@@ -104,47 +104,47 @@ export default {
   },
   computed: {
     ...mapState({
-      published: ({administrator}) => administrator.blog.items.published,
-      drafts: ({administrator}) => administrator.blog.items.drafts
+      published: ({administrator}) => administrator.uutinen.items.published,
+      drafts: ({administrator}) => administrator.uutinen.items.drafts
     }),
     draftsOptions() {
       return createDraftsOptions()
     }
   },
   async fetch({store}) {
-    await store.dispatch('administrator/blog/fetchUserBlogs')
+    await store.dispatch('administrator/uutinen/fetchUserUutiset')
   },
   methods: {
-    handleOption(command, blog) {
-      if (command === commands.EDIT_BLOG) {
-        this.$router.push(`/administrator/blog/${blog._id}/edit`)
+    handleOption(command, uutinen) {
+      if (command === commands.EDIT_UUTINEN) {
+        this.$router.push(`/administrator/uutinen/${uutinen._id}/edit`)
       }
-      if (command === commands.DELETE_BLOG) {
-        this.displayDeleteWarning(blog)
+      if (command === commands.DELETE_UUTINEN) {
+        this.displayDeleteWarning(uutinen)
       }
       if (command === commands.TOGGLE_FEATURE) {
-        this.updateBlog(blog)
+        this.updateUutinen(uutinen)
       }
     },
-    updateBlog(blog) {
-      const featured = !blog.featured
-      const featureStatus = featured ? 'Featured' : 'Un-Featured'
+    updateUutinen(uutinen) {
+      const featured = !uutinen.featured
+      const featureStatus = featured ? 'Tärkeä' : 'Ei-Tärkeä'
 
-      this.$store.dispatch('administrator/blog/updatePublishedBlog', {id: blog._id, data: {featured}})
-        .then(_ => this.$toasted.success(`Blog has been ${featureStatus}!`, {duration: 2000}))
+      this.$store.dispatch('administrator/uutinen/updatePublishedUutinen', {id: uutinen._id, data: {featured}})
+        .then(_ => this.$toasted.success(`Uutinen merkattu statuksella: ${featureStatus}!`, {duration: 2000}))
     },
     publishedOptions(isFeatured) {
       return createPublishedOptions(isFeatured)
     },
-    displayDeleteWarning(blog) {
-     const isConfirm = confirm('Are you sure you want to delete this blog?')
+    displayDeleteWarning(uutinen) {
+     const isConfirm = confirm('Are you sure you want to delete this uutinen?')
      if (isConfirm) {
-      this.$store.dispatch('administrator/blog/deleteBlog', blog)
-        .then(_ => this.$toasted.success('Blog was succesfuly deleted!', {duration: 2000}))
+      this.$store.dispatch('administrator/uutinen/deleteUutinen', uutinen)
+        .then(_ => this.$toasted.success('Uutinen onnistuneesti poistettu!', {duration: 2000}))
       }
     },
-    displayBlogTitle(blog) {
-      return blog.title || blog.subtitle || 'Blog without title & subtitle :('
+    displayUutinenTitle(uutinen) {
+      return uutinen.title || uutinen.subtitle || 'Uutinen jolla ei ole otsikkoa tai alaotsikkoa :('
     }
   }
 }
@@ -156,10 +156,10 @@ export default {
     color: #363636;
   }
 
-  .blog-error {
+  .uutinen-error {
     font-size: 35px;
   }
-  .blog-card {
+  .uutinen-card {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 20px 0;
     > h2 {

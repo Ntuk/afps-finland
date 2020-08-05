@@ -7,42 +7,42 @@ export const state = () => ({
     featured: []
   },
   pagination: {
-    count: 0, // Count of all of our published blogs
+    count: 0, // Count of all of our published uutiset
     pageCount: 0, // How many pages we want to display
-    pageSize: 6, // How many items we want to display per page
+    pageSize: 10, // How many items we want to display per page
     pageNum: 1 // Current page
   }
 })
 
 export const actions = {
-  // /api/v1/blogs?pageNum=10&pageSize=2
-  fetchBlogs({commit, state}, filter) {
-    const url = this.$applyParamsToUrl('/api/v1/blogs', filter)
+  // /api/v1/uutiset?pageNum=10&pageSize=2
+  fetchUutiset({commit, state}, filter) {
+    const url = this.$applyParamsToUrl('/api/v1/uutiset', filter)
     return this.$axios.$get(url)
       .then(data => {
-        const { blogs, count, pageCount } = data
-        commit('setBlogs', {resource: 'all', blogs})
+        const { uutiset, count, pageCount } = data
+        commit('setUutiset', {resource: 'all', uutiset})
         commit('setPagination', {count, pageCount})
         return state.items.all
       })
       .catch(error => Promise.reject(error))
   },
-  // /api/v1/blogs?filter[featured]=true
-  fetchFeaturedBlogs({commit, state}, filter) {
-    const url = this.$applyParamsToUrl('/api/v1/blogs', filter)
+  // /api/v1/uutiset?filter[featured]=true
+  fetchFeaturedUutiset({commit, state}, filter) {
+    const url = this.$applyParamsToUrl('/api/v1/uutiset', filter)
     return this.$axios.$get(url)
       .then(data => {
-        const { blogs } = data
-        commit('setBlogs', {resource: 'featured', blogs})
+        const { uutiset } = data
+        commit('setUutiset', {resource: 'featured', uutiset})
         return state.items.featured
       })
       .catch(error => Promise.reject(error))
   },
-  fetchBlogBySlug({commit, state}, slug) {
-    return this.$axios.$get(`/api/v1/blogs/s/${slug}`)
-      .then(blog => {
+  fetchUutinenBySlug({commit, state}, slug) {
+    return this.$axios.$get(`/api/v1/uutiset/s/${slug}`)
+      .then(uutinen => {
         // commit
-        commit('setBlog', blog)
+        commit('setUutinen', uutinen)
         return state.item
       })
       .catch(error => Promise.reject(error))
@@ -51,11 +51,11 @@ export const actions = {
 
 
 export const mutations = {
-  setBlogs(state, {resource, blogs}) {
-    state.items[resource] = blogs
+  setUutiset(state, {resource, uutiset}) {
+    state.items[resource] = uutiset
   },
-  setBlog(state, blog) {
-    state.item = blog
+  setUutinen(state, uutinen) {
+    state.item = uutinen
   },
   setPage(state, currentPage) {
     Vue.set(state.pagination, 'pageNum', currentPage)

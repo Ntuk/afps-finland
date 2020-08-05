@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const blogSchema = new Schema({
+const uutinenSchema = new Schema({
   slug: { type: String, unique: true, sparse: true },
   title: { type: String, maxlength: 96},
   subtitle: { type: String},
@@ -17,4 +17,4 @@ const blogSchema = new Schema({
   author: { type: Schema.Types.ObjectId, ref: 'User' }
 });
 
-module.exports = mongoose.model('Blog', blogSchema);
+module.exports = mongoose.model('Uutinen', uutinenSchema);

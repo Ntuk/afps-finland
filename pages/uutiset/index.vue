@@ -6,32 +6,32 @@
         <div class="columns is-mobile">
           <!-- posts -->
           <div class="column is-8">
-            <!-- blog -->           
+            <!-- uutinen -->           
             <div 
-              v-for="blog in publishedBlogs" 
-              :key="blog._id"
+              v-for="uutinen in publishedUutiset" 
+              :key="uutinen._id"
               class="section"
             >
               <div class="post">
-                <div @click="$router.push(`/blogs/${blog.slug}`)" class="post-header clickable">
-                  <h4 class="title is-4">{{blog.title}}</h4>
-                  <h5 class="subtitle is-5">{{blog.subtitle}}</h5>
+                <div @click="$router.push(`/uutiset/${uutinen.slug}`)" class="post-header clickable">
+                  <h4 class="title is-4">{{uutinen.title}}</h4>
+                  <h5 class="subtitle is-5">{{uutinen.subtitle}}</h5>
                 </div>
                 <div class="post-content">                   
                   <figure class="avatar">
-                    <img :src="blog.author.avatar" class="avatar"/>
-                  </figure> {{blog.author.name}}, {{blog.createdAt | formatDate}}
+                    <img :src="uutinen.author.avatar" class="avatar"/>
+                  </figure> {{uutinen.author.name}}, {{uutinen.createdAt | formatDate('LLL')}}
                 </div>
               </div>
             </div>
-            <!-- end of blog -->
+            <!-- end of uutinen -->
             <!-- pagination -->
             <div v-if="pagination.pageCount && pagination.pageCount > 1" class="section">
               <no-ssr placeholder="Loading...">
                 <paginate
                   v-model="currentPage"
                   :page-count="pagination.pageCount"
-                  :click-handler="fetchBlogs"
+                  :click-handler="fetchUutiset"
                   :prev-text="'Prev'"
                   :next-text="'Next'"
                   :container-class="'paginationContainer'">
@@ -46,18 +46,18 @@
             <div class="section featured-check">
               <div class="sidebar">
                 <div class="sidebar-header">
-                  <h4 class="title is-4">Featured ramblings</h4>
+                  <h4 class="title is-4">Tärkeät uutiset</h4>
                 </div>
                 <div class="sidebar-list">
-                  <!-- Featured Blogs -->
+                  <!-- Tärkeät Uutiset -->
                   <p
-                    v-for="fBlog in featuredBlogs"
-                    :key="fBlog._id">
-                    <nuxt-link :to="`/blogs/${fBlog.slug}`">
-                      {{fBlog.title}}
+                    v-for="fUutinen in featuredUutiset"
+                    :key="fUutinen._id">
+                    <nuxt-link :to="`/uutiset/${fUutinen.slug}`">
+                      {{fUutinen.title}}
                     </nuxt-link>
                   </p>
-                  <!-- Featured Blogs -->
+                  <!-- Tärkeät Uutiset -->
                 </div>
               </div>
             </div>
@@ -77,16 +77,16 @@ export default {
   },
   computed: {
     ...mapState({
-      publishedBlogs: state => state.blog.items.all,
-      featuredBlogs: state => state.blog.items.featured,    
-      pagination: state => state.blog.pagination
+      publishedUutiset: state => state.uutinen.items.all,
+      featuredUutiset: state => state.uutinen.items.featured,    
+      pagination: state => state.uutinen.pagination
     }),
     currentPage: {
       get() {
-        return this.$store.state.blog.pagination.pageNum
+        return this.$store.state.uutinen.pagination.pageNum
       },
       set(value) {
-        this.$store.commit('blog/setPage', value)
+        this.$store.commit('uutinen/setPage', value)
       }
     }
   },
@@ -97,26 +97,26 @@ export default {
     if (pageNum && pageSize) {
       filter.pageNum =  parseInt(pageNum, 10)
       filter.pageSize = parseInt(pageSize, 10)
-      store.commit('blog/setPage', filter.pageNum)
+      store.commit('uutinen/setPage', filter.pageNum)
     } else {
       // TODO: Maybe getters ?
-      filter.pageNum = store.state.blog.pagination.pageNum
-      filter.pageSize = store.state.blog.pagination.pageSize
+      filter.pageNum = store.state.uutinen.pagination.pageNum
+      filter.pageSize = store.state.uutinen.pagination.pageSize
     }
-    await store.dispatch('blog/fetchBlogs', filter)
-    await store.dispatch('blog/fetchFeaturedBlogs', {'filter[featured]': true})
+    await store.dispatch('uutinen/fetchUutiset', filter)
+    await store.dispatch('uutinen/fetchFeaturedUutiset', {'filter[featured]': true})
   },
   methods: {
     setQueryPaginationParams() {
       const { pageSize, pageNum } = this.pagination
       this.$router.push({query: {pageNum, pageSize}})
     },
-    fetchBlogs() {
+    fetchUutiset() {
       const filter = {}
       filter.pageSize = this.pagination.pageSize
       filter.pageNum = this.pagination.pageNum
       // Here store the query params!
-      this.$store.dispatch('blog/fetchBlogs', filter)
+      this.$store.dispatch('uutinen/fetchUutiset', filter)
         .then(_ => this.setQueryPaginationParams())
     }
   }

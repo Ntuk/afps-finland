@@ -12,8 +12,8 @@
             TODO:Lisää jotain
           </div>
         </div> -->
-        <!-- Go to /administrator/blogs -->
-        <div class="box" @click="$router.push('/administrator/blogs')">
+        <!-- Go to /administrator/uutiset -->
+        <div class="box" @click="$router.push('/administrator/uutiset')">
           <div>
             Uutiset
           </div>

@@ -1,30 +1,30 @@
 const express = require('express');
 const router = express.Router();
 
-const blogCtrl = require('../controllers/blog');
+const uutinenCtrl = require('../controllers/uutinen');
 const AuthCtrl = require('../controllers/auth');
 
-router.get('', blogCtrl.getBlogs);
+router.get('', uutinenCtrl.getUutiset);
 
 router.get('/me', AuthCtrl.onlyAuthUser,
                   AuthCtrl.onlyAdmin,
-                  blogCtrl.getUserBlogs);
+                  uutinenCtrl.getUserUutiset);
 
-router.get('/:id', blogCtrl.getBlogById);
+router.get('/:id', uutinenCtrl.getUutinenById);
 
-router.get('/s/:slug', blogCtrl.getBlogBySlug);
+router.get('/s/:slug', uutinenCtrl.getUutinenBySlug);
 
 router.post('', AuthCtrl.onlyAuthUser,
                 AuthCtrl.onlyAdmin,
-                blogCtrl.createBlog);
+                uutinenCtrl.createUutinen);
 
 router.patch('/:id', AuthCtrl.onlyAuthUser,
                      AuthCtrl.onlyAdmin,
-                     blogCtrl.updateBlog);
+                     uutinenCtrl.updateUutinen);
 
 router.delete('/:id', AuthCtrl.onlyAuthUser,
                       AuthCtrl.onlyAdmin,
-                      blogCtrl.deleteBlog);
+                      uutinenCtrl.deleteUutinen);
 
 module.exports = router;
 

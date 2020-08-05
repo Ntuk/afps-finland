@@ -1,13 +1,13 @@
 <template>
   <div>
     <Header
-      title="Write your blog"
-      exitLink="/administrator/blogs">
-      <template v-if="blog.status === 'active'" #actionMenu>
+      title="Write your uutinen"
+      exitLink="/administrator/uutiset">
+      <template v-if="uutinen.status === 'active'" #actionMenu>
         <div class="full-page-takeover-header-button">
           <Modal
-            @submitted="updateBlogStatus($event, 'julkaistu')"
-            @opened="checkBlogValidity"
+            @submitted="updateUutinenStatus($event, 'published')"
+            @opened="checkUutinenValidity"
             openTitle="Julkaise"
             openBtnClass="button is-success is-medium is-inverted is-outlined"
             title="Varmista">
@@ -18,7 +18,7 @@
                 <div class="subtitle">Uutisen osoite näyttää tältä julkaisun jälkeen:</div>
                 <article class="message is-success">
                   <div class="message-body">
-                    <strong>{{getCurrentUrl()}}/blogs/{{slug}}</strong>
+                    <strong>{{getCurrentUrl()}}/uutiset/{{slug}}</strong>
                   </div>
                 </article>
               </div>
@@ -44,11 +44,11 @@
         </div>
       </template>
     </Header>
-    <div class="blog-editor-container">
+    <div class="uutinen-editor-container">
       <div class="container">
         <editor
-          @editorMounted="initBlogContent"
-          @editorUpdated="updateBlog"
+          @editorMounted="initUutinenContent"
+          @editorUpdated="updateUutinen"
           :isSaving="isSaving"
           ref="editor"
         />
@@ -76,43 +76,43 @@ export default {
   },
   computed: {
     ...mapState({
-      blog: ({administrator}) => administrator.blog.item,
-      isSaving: ({administrator}) => administrator.blog.isSaving
+      uutinen: ({administrator}) => administrator.uutinen.item,
+      isSaving: ({administrator}) => administrator.uutinen.isSaving
     }),
     editor() {
       return this.$refs.editor
     }
   },
   async fetch({params, store}) {
-    await store.dispatch('administrator/blog/fetchBlogById', params.id)
+    await store.dispatch('administrator/uutinen/fetchUutinenById', params.id)
   },
   methods: {    
-    initBlogContent(initContent) {
-      if (this.blog && this.blog.content) {
-        initContent(this.blog.content)
+    initUutinenContent(initContent) {
+      if (this.uutinen && this.uutinen.content) {
+        initContent(this.uutinen.content)
       }
     },
-    updateBlog(blogData) {
+    updateUutinen(uutinenData) {
       if (!this.isSaving) {
-        this.$store.dispatch('administrator/blog/updateBlog', {data: blogData, id: this.blog._id})
+        this.$store.dispatch('administrator/uutinen/updateUutinen', {data: uutinenData, id: this.uutinen._id})
         .then(_ => this.$toasted.success('Uutinen päivitetty!', {duration: 2000}))
-        .catch(error => this.$toasted.error('Uutista ei pystytty tallentamaan', {duration: 2000}))
+        .catch(error => this.$toasted.error('Uutista ei pystytty tallentamaan!', {duration: 2000}))
       }
     },
-    updateBlogStatus({closeModal}, status) {
-      const blogContent = this.editor.getContent()
-      blogContent.status = status
+    updateUutinenStatus({closeModal}, status) {
+      const uutinenContent = this.editor.getContent()
+      uutinenContent.status = status
 
       const message = status === 'published' ? 'Uutinen on julkaistu!' : 'Uutinen on poistettu julkisesta näkymästä!'
 
-      this.$store.dispatch('administrator/blog/updateBlog', {data: blogContent, id: this.blog._id})
+      this.$store.dispatch('administrator/uutinen/updateUutinen', {data: uutinenContent, id: this.uutinen._id})
         .then(_ => {
           this.$toasted.success(message, {duration: 3000})
           closeModal()
         })
         .catch(error => this.$toasted.error('Uutista ei pystytty julkaisemaan!', {duration: 3000}))
     },
-    checkBlogValidity() {
+    checkUutinenValidity() {
       const title = this.editor.getNodeValueByName('title')
       this.publishError = ''
       this.slug = ''

@@ -3,18 +3,18 @@
     <div class="card-content">
       <div class="media">
         <div class="media-content">
-          <nuxt-link :to="`/blogs/${blog.slug}`">
-            <p class="title is-4">{{blog.title}}</p>
+          <nuxt-link :to="`/uutiset/${uutinen.slug}`">
+            <p class="title is-4">{{uutinen.title}}</p>
           </nuxt-link>
-          <p class="subtitle is-6"><i>by {{blog.author.name}}</i></p>
+          <p class="subtitle is-6"><i>by {{uutinen.author.name}}</i></p>
         </div>
       </div>
       <div class="content">
-        {{blog.subtitle | shortenText(85)}}
+        {{uutinen.subtitle | shortenText(85)}}
         <br>
       </div>
       <div class="content">
-        {{blog.createdAt | formatDate}}
+        {{uutinen.createdAt | formatDate('LLL')}}
       </div>
     </div>
   </div>
@@ -22,7 +22,7 @@
 <script>
 export default {
   props: {
-    blog: {
+    uutinen: {
       required: true,
       type: Object
     }

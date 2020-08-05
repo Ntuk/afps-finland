@@ -1,4 +1,4 @@
-const Blog = require('../models/blog');
+const Uutinen = require('../models/uutinen');
 const slugify = require('slugify');
 const request = require('request');
 const AsyncLock = require('async-lock');
@@ -18,30 +18,30 @@ function parseFilters(queries) {
   return parsedQueries
 }
 
-exports.getBlogs = (req, res) => {
+exports.getUutiset = (req, res) => {
   const pageSize = parseInt(req.query.pageSize) || 0;
   const pageNum = parseInt(req.query.pageNum) || 1;
   const skips = pageSize * (pageNum - 1);
   const filters = req.query.filter || {}
 
-  Blog.find({status: 'published', ...filters})
+  Uutinen.find({status: 'published', ...filters})
       .sort({'createdAt': -1})
       .populate('author -_id -password -products -email -role')
       .skip(skips)
       .limit(pageSize)
-      .exec(function(errors, publishedBlogs) {
+      .exec(function(errors, publishedUutiset) {
     if (errors) {
       return res.status(422).send(errors);
     }
 
-    Blog.countDocuments({status: 'published'})
+    Uutinen.countDocuments({status: 'published'})
       .then(count => {
-        return res.json({blogs: publishedBlogs, count, pageCount: Math.ceil(count / pageSize)});
+        return res.json({uutiset: publishedUutiset, count, pageCount: Math.ceil(count / pageSize)});
       });
   });
 }
 
-exports.getMediumBlogs = (req, res) => {
+exports.getMediumUutiset = (req, res) => {
   request.get(MEDIUM_URL, (err, apiRes, body) => {
     if (!err && apiRes.statusCode === 200) {
       let i = body.indexOf("{");
@@ -54,56 +54,56 @@ exports.getMediumBlogs = (req, res) => {
 }
 
 
-exports.getBlogBySlug = (req, res) => {
+exports.getUutinenBySlug = (req, res) => {
   const slug = req.params.slug;
 
-  Blog.findOne({slug})
+  Uutinen.findOne({slug})
       .populate('author -_id -password -products -email -role')
-      .exec(function(errors, foundBlog) {
+      .exec(function(errors, foundUutinen) {
     if (errors) {
       return res.status(422).send(errors);
     }
 
-    return res.json(foundBlog);
+    return res.json(foundUutinen);
   });
 }
 
-exports.getBlogById = (req, res) => {
-  const blogId = req.params.id;
+exports.getUutinenById = (req, res) => {
+  const uutinenId = req.params.id;
 
-  Blog.findById(blogId, (errors, foundBlog) => {
+  Uutinen.findById(uutinenId, (errors, foundUutinen) => {
     if (errors) {
       return res.status(422).send(errors);
     }
 
-    return res.json(foundBlog);
+    return res.json(foundUutinen);
   });
 }
 
-exports.getUserBlogs = (req, res) => {
+exports.getUserUutiset = (req, res) => {
   const user = req.user;
 
-  Blog.find({author: user.id}, function(errors, userBlogs) {
+  Uutinen.find({author: user.id}, function(errors, userUutiset) {
     if (errors) {
      return res.status(422).send(errors);
     }
 
-    return res.json(userBlogs);
+    return res.json(userUutiset);
   });
 }
 
-exports.updateBlog = (req, res) => {
-  const blogId = req.params.id;
-  const blogData = req.body;
+exports.updateUutinen = (req, res) => {
+  const uutinenId = req.params.id;
+  const uutinenData = req.body;
 
-  Blog.findById(blogId, function(errors, foundBlog) {
+  Uutinen.findById(uutinenId, function(errors, foundUutinen) {
     if (errors) {
       return res.status(422).send(errors);
     }
 
-    if (blogData.status && blogData.status === 'published' && !foundBlog.slug) {
+    if (uutinenData.status && uutinenData.status === 'published' && !foundUutinen.slug) {
 
-      foundBlog.slug = slugify(foundBlog.title, {
+      foundUutinen.slug = slugify(foundUutinen.title, {
                                   replacement: '-',    // replace spaces with replacement
                                   remove: null,        // regex to remove characters
                                   lower: true          // result in lower case
@@ -111,50 +111,50 @@ exports.updateBlog = (req, res) => {
 
       }
 
-      foundBlog.set(blogData);
-      foundBlog.updatedAt = new Date();
-      foundBlog.save(function(errors, foundBlog) {
+      foundUutinen.set(uutinenData);
+      foundUutinen.updatedAt = new Date();
+      foundUutinen.save(function(errors, foundUutinen) {
       if (errors) {
         return res.status(422).send(errors);
       }
 
-      return res.json(foundBlog);
+      return res.json(foundUutinen);
     });
   });
 }
 
 
-exports.createBlog = (req, res) => {
+exports.createUutinen = (req, res) => {
   const lockId = req.query.lockId;
 
   if (!lock.isBusy(lockId)) {
     lock.acquire(lockId, function(done) {
-    const blogData = req.body;
-    const blog = new Blog(blogData);
-    blog.author = req.user;
+    const uutinenData = req.body;
+    const uutinen = new Uutinen(uutinenData);
+    uutinen.author = req.user;
 
-    blog.save((errors, createdBlog) => {
+    uutinen.save((errors, createdUutinen) => {
       setTimeout(() => done(), 5000);
 
       if (errors) {
         return res.status(422).send(errors);
       }
 
-      return res.json(createdBlog);
+      return res.json(createdUutinen);
     });
     }, function(errors, ret) {
         errors && console.error(errors)
     });
   } else {
-    return res.status(422).send({message: 'Blog is getting saved!'});
+    return res.status(422).send({message: 'Uutinen is getting saved!'});
   }
 }
 
 
-exports.deleteBlog = (req, res) => {
-  const blogId = req.params.id;
+exports.deleteUutinen = (req, res) => {
+  const uutinenId = req.params.id;
 
-  Blog.deleteOne({_id: blogId}, function(errors) {
+  Uutinen.deleteOne({_id: uutinenId}, function(errors) {
     if (errors) {
       return res.status(422).send(errors);
     }
