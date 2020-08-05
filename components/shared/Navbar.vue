@@ -68,12 +68,10 @@
               Tervetuloa {{user.username}}!
             </div>
           </a>
-          <a
-            v-if="isAdmin" class="navbar-item"
-            @click="() => $router.push('/administrator')">
-              <div class="menu-item-container">
-                  Administrator
-              </div>
+          <a v-if="isAdmin" class="navbar-item" @click="() => $router.push('/administrator')">
+            <div class="menu-item-container">
+              Administrator
+            </div>
           </a>
           <a class="navbar-item" @click="logout">
             <div class="menu-item-container">
