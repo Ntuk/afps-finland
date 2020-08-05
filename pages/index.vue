@@ -29,7 +29,8 @@
                 <div class="post-content">                   
                   <figure class="avatar">
                     <img :src="uutinen.author.avatar" class="avatar"/>
-                  </figure> {{uutinen.author.username}}, {{uutinen.createdAt | formatDate}}
+                  </figure> 
+                  <span class="is-icon"><i class="fa fa-pen-alt fa-xs"/></span>{{uutinen.author.username}}, {{uutinen.createdAt | formatDate}}
                 </div>
               </div>
             </div>
@@ -81,10 +82,10 @@
         AFPS FINLAND?
       </div>
       <div class="container">
-        <figure class="avatar">
-          <img src="https://nicotukiainen.com/legacy/images/portrait3.jpg">
+        <figure class="avatar not-news">
+          <img src="https://www.nicotukiainen.com/legacy/images/afps-finland-icon.jpg">
         </figure>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        <p>AFPS Finland on.... "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         <hr/>
         <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
         <hr/>
@@ -99,10 +100,10 @@
         TURNAUKSET
       </div>
       <div class="container">
-        <figure class="avatar">
-          <img src="https://nicotukiainen.com/legacy/images/portrait3.jpg">
+        <figure class="avatar not-news">
+          <img src="https://media.gettyimages.com/vectors/golden-trophy-cup-hand-drawn-vector-id689974954">
         </figure>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        <p>Tähän jotain infoa menneistä ja tulevista turnauksista? Ehkä myös mahdollisuus lisätä ja muokata admin-osion kautta? ...."Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         <hr/>
         <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
         <hr/>
@@ -117,10 +118,10 @@
         DISCORD
       </div>
       <div class="container">
-        <figure class="avatar">
-          <img src="https://nicotukiainen.com/legacy/images/portrait3.jpg">
+        <figure class="avatar not-news">
+          <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/discord-512.png">
         </figure>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        <p>Tähän tietoa discordista ja linkki. Ehkä myös jonkun API:n kautta mahdollisuus nähdä, ketkä jäsenet ovat online? ......."Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         <hr/>
         <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
         <hr/>
@@ -208,6 +209,9 @@ export default {
     height: 100%;
     margin: 0;
   }
+  hr {
+    background-color: #65a1b9;
+  }
   .header {
     font-size: 50px;
     font-family: 'East Sea Dokdo', cursive;
@@ -230,14 +234,8 @@ export default {
   .avatar {
     float: left;
   }
-  .avatar img {
-    height: 128px;
-    width: 128px;
-    padding: 5px;
-    background: #fff;
-    border-radius: 50%;
-    -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
-    box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+  .not-news {
+    margin-right: 2rem;
   }
   .section {
     padding-bottom: 100px;
@@ -299,13 +297,15 @@ export default {
 
   //UUTISET
   .avatar img {
-  height: 32px;
-  width: 32px;
-  background: #fff;
+  height: 3rem;
+  width: 3rem;
   border-radius: 50%;
   -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
   box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
-  margin-right: 8px;
+}
+.is-icon {
+  padding-left: 8px;
+  padding-right: 8px;
 }
 .post-content {
   display: flex;
@@ -381,7 +381,7 @@ a.nav-item.is-tab:hover {
 }
 /* section */
 .section {
-    padding: 0 0 2rem 0;
+    padding: 4rem 0 2rem 0;
 }
 .section-header {
     padding-bottom: 3rem;
