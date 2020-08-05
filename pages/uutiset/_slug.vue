@@ -10,7 +10,7 @@
       </div>
       <editor-view :initialContent="uutinen.content" />
     </div>
-      <a class="navbar-item-slug" href="https://localhost:3000/#uutiset" v-smooth-scroll="{ duration: 1000 }">
+      <a class="navbar-item-slug" href="/#uutiset" v-smooth-scroll="{ duration: 1000 }">
         <div class="menu-item-container-slug">
           <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
           <nav-link to="/">
