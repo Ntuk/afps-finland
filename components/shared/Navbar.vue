@@ -51,20 +51,34 @@
             </nav-link>
           </div>
         </a>
-          <template v-if="isAuth">
-          <figure class="image avatar is-48x48 m-r-sm">
-            <img class="is-rounded" :src="user.avatar">
-          </figure>
-          <div class="m-r-sm m-b-sm">
-            Tervetuloa {{user.username}}!
+        <a class="navbar-item" href="#discord" v-smooth-scroll="{ duration: 1000 }">
+          <div class="menu-item-container">
+            <span class="is-icon"><i class="fab fa-discord fa-lg"/></span>
+            <nav-link to="/">
+              Discord
+            </nav-link>
           </div>
-          <button
-            v-if="isAdmin" class="button is-link is-outlined"
+        </a>
+        <template v-if="isAuth">
+          <a class="navbar-item">
+            <figure class="image avatar is-48x48 m-r-sm">
+              <img class="is-rounded" :src="user.avatar">
+            </figure>
+            <div class="menu-item-container">
+              Tervetuloa {{user.username}}!
+            </div>
+          </a>
+          <a
+            v-if="isAdmin" class="navbar-item"
             @click="() => $router.push('/administrator')">
-            Administrator
-          </button>
-          <a class="button is-primary" @click="logout">
-            Kirjaudu ulos
+              <div class="menu-item-container">
+                  Administrator
+              </div>
+          </a>
+          <a class="navbar-item" @click="logout">
+            <div class="menu-item-container">
+              Kirjaudu ulos
+            </div>
           </a>
         </template>
         <template v-else>
@@ -76,8 +90,8 @@
               </nav-link>
             </div>
           </a>          
-          <a class="navbar-item">
-          <div class="menu-item-container">
+          <a class="navbar-item" href="/login">
+           <div class="menu-item-container">
               <span class="is-icon"><i class="fa fa-sign-in-alt fa-lg"/></span>
               <nav-link to="/login" id="login-signup">
                 Kirjaudu sisään
