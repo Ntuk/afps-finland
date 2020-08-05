@@ -13,7 +13,7 @@
         <img class="is-rounded" :src="user.avatar">
       </figure>
       <div class="m-r-sm">
-        Welcome {{user.username}}!
+        Tervetuloa {{user.username}}!
       </div>
     </div>
     <slot name="actionMenu"></slot>
@@ -21,7 +21,7 @@
       <nuxt-link
         :to="exitLink"
         class="button is-danger is-medium is-inverted is-outlined">
-        Home
+        Adminalueen etusivulle
       </nuxt-link>
     </div>
   </div>

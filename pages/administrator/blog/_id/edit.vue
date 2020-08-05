@@ -6,16 +6,16 @@
       <template v-if="blog.status === 'active'" #actionMenu>
         <div class="full-page-takeover-header-button">
           <Modal
-            @submitted="updateBlogStatus($event, 'published')"
+            @submitted="updateBlogStatus($event, 'julkaistu')"
             @opened="checkBlogValidity"
-            openTitle="Publish"
+            openTitle="Julkaise"
             openBtnClass="button is-success is-medium is-inverted is-outlined"
-            title="Review Details">
+            title="Varmista">
             <div>
-              <div class="title">Once you publish your ramble, you cannot change url to a rambling.</div>
+              <div class="title">Kun uutinen on julkaistu, sen url-osoitetta ei voi enää vaihtaa.</div>
               <!-- Check for error -->
               <div v-if="!publishError">
-                <div class="subtitle">This is how url to rambling will look like after publish:</div>
+                <div class="subtitle">Uutisen osoite näyttää tältä julkaisun jälkeen:</div>
                 <article class="message is-success">
                   <div class="message-body">
                     <strong>{{getCurrentUrl()}}/blogs/{{slug}}</strong>
@@ -34,11 +34,11 @@
       <template v-else #actionMenu>
         <div class="full-page-takeover-header-button">
           <Modal
-            openTitle="Unpublish"
+            openTitle="Poista julkaistuista"
             openBtnClass="button is-success is-medium is-inverted is-outlined"
-            title="Unpublish Blog">
+            title="Epäjulkaise uutinen">
             <div>
-              <div class="title">Unpublish rambling so it's no longer displayed in ramblings page</div>
+              <div class="title">Poista uutinen julkisesta näkymästä.</div>
             </div>
           </Modal>
         </div>
@@ -62,7 +62,6 @@ import Header from '~/components/shared/Header'
 import Modal from '~/components/shared/Modal'
 import { mapState } from 'vuex'
 import slugify from 'slugify'
-// slug is something like unique ID but in readable format
 
 export default {
   layout: 'administrator',
@@ -96,31 +95,31 @@ export default {
     updateBlog(blogData) {
       if (!this.isSaving) {
         this.$store.dispatch('administrator/blog/updateBlog', {data: blogData, id: this.blog._id})
-        .then(_ => this.$toasted.success('Blog Updated!', {duration: 2000}))
-        .catch(error => this.$toasted.error('Blog cannot be saved!', {duration: 2000}))
+        .then(_ => this.$toasted.success('Uutinen päivitetty!', {duration: 2000}))
+        .catch(error => this.$toasted.error('Uutista ei pystytty tallentamaan', {duration: 2000}))
       }
     },
     updateBlogStatus({closeModal}, status) {
       const blogContent = this.editor.getContent()
       blogContent.status = status
 
-      const message = status === 'published' ? 'Blog has been published!' : 'Blog has been un-published!'
+      const message = status === 'published' ? 'Uutinen on julkaistu!' : 'Uutinen on poistettu julkisesta näkymästä!'
 
       this.$store.dispatch('administrator/blog/updateBlog', {data: blogContent, id: this.blog._id})
         .then(_ => {
           this.$toasted.success(message, {duration: 3000})
           closeModal()
         })
-        .catch(error => this.$toasted.error('Blog cannot be published!', {duration: 3000}))
+        .catch(error => this.$toasted.error('Uutista ei pystytty julkaisemaan!', {duration: 3000}))
     },
     checkBlogValidity() {
       const title = this.editor.getNodeValueByName('title')
       this.publishError = ''
       this.slug = ''
-      if (title && title.length > 24) {
+      if (title && title.length > 15) {
         this.slug = this.slugify(title)
       } else {
-        this.publishError = 'Cannot publish! Title needs to be longer than 24 characters!'
+        this.publishError = 'Julkaisu ei onnistu! Otsikon on oltava vähintään 15 merkkiä pitkä.'
       }
     },
     getCurrentUrl() {

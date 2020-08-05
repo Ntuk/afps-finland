@@ -59,6 +59,7 @@
             </nav-link>
           </div>
         </a>
+
         <template v-if="isAuth">
           <a class="navbar-item">
             <figure class="image avatar is-48x48 m-r-sm">
@@ -97,6 +98,7 @@
             </div>
           </a>
         </template>
+        
       </div>
     </div>
   </nav> 

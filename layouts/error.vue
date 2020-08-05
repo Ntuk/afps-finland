@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <ErrorView title="Ooooops, page you are trying to access doesn't exist :("
+    <ErrorView title="Ooooops, Sivua ei ole olemassa. 8("
                :status="'404'"
                :navigateToPage="'/'"
-               :navigateToText="'Navigate back Home'" />
+               :navigateToText="'Takaisin etusivulle'" />
   </div>
 </template>
 

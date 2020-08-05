@@ -6,7 +6,7 @@
           @click="emitUpdate"
           :disabled="isSaving"
           class="button is-success button-save">
-          Save
+          Tallenna
         </button>
       </template>
     </basic-menu>
@@ -72,12 +72,12 @@ export default {
           showOnlyCurrent: false,
           emptyNodeText: node => {
             if (node.type.name === 'title') {
-              return 'Inspirational Title'
+              return 'Inspiroiva otsikko'
             }
             if (node.type.name === 'subtitle') {
-              return 'Some catchy subtitle'
+              return 'Jonkinlainen väliotsikko'
             }
-            return 'Write your story...'
+            return 'Kirjoita uutinen...'
           }
         }),
         new Heading({ levels: [1, 2, 3]}),

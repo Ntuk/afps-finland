@@ -11,15 +11,15 @@ const createOption = (name, command) => ({name, command})
 
 // Options
 // Published Blogs
-const DELETE_BLOG = createOption('Delete Blog', commands.DELETE_BLOG)
-const EDIT_BLOG = createOption('Edit Blog', commands.EDIT_BLOG)
+const DELETE_BLOG = createOption('Poista uutinen', commands.DELETE_BLOG)
+const EDIT_BLOG = createOption('Muokkaa uutista', commands.EDIT_BLOG)
 const FEATURE_BLOG = createOption('Feature Blog', commands.TOGGLE_FEATURE)
 const UN_FEATURE_BLOG = createOption('Un-Feature Blog', commands.TOGGLE_FEATURE)
 
 // Options
 // Drafts Blogs
-const DELETE_DRAFT = createOption('Delete Draft', commands.DELETE_BLOG)
-const EDIT_DRAFT = createOption('Edit Draft', commands.EDIT_BLOG)
+const DELETE_DRAFT = createOption('Poista luonnos', commands.DELETE_BLOG)
+const EDIT_DRAFT = createOption('Muokkaa luonnosta', commands.EDIT_BLOG)
 
 
 export const createPublishedOptions = (isFeatured) => {

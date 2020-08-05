@@ -1,27 +1,27 @@
 <template>
   <div>
     <Header
-      title="Manage your Ramblings"
+      title="Manageroi uutisia"
       exitLink="/"
     />
     <div class="administrator-blogs">
       <div class="container">
         <div class="section">
           <div class="header-block">
-            <h2>Your Stories</h2>
+            <h2>Uutiset</h2>
             <div class="title-menu">
-              <button @click="$router.push('/administrator/blog/editor')" class="button">Ramble!</button>
+              <button @click="$router.push('/administrator/blog/editor')" class="button">Kirjoita uutinen!</button>
             </div>
           </div>
           <div class="tabs">
             <ul>
               <!-- set here active tab -->
               <li @click="activeTab = 0">
-                <a :class="{'is-active': activeTab === 0}">Drafts</a>
+                <a :class="{'is-active': activeTab === 0}">Luonnokset</a>
               </li>
               <!-- set here active tab -->
               <li @click="activeTab = 1">
-                <a :class="{'is-active': activeTab === 1}">Published</a>
+                <a :class="{'is-active': activeTab === 1}">Julkaistut</a>
               </li>
             </ul>
           </div>
@@ -49,7 +49,7 @@
               </div>
               <!-- In case of no drafts blogs  -->
               <div v-else class="blog-error">
-                No Drafts :(
+                Ei luonnoksia :(
               </div>
             </template>
             <!-- Published Blogs -->
@@ -77,7 +77,7 @@
               </div>
               <!-- In case of no drafts blogs  -->
               <div v-else class="blog-error">
-                No Published ramblings :(
+                Ei julkaistuja uutisia :(
               </div>
             </template>
           </div>

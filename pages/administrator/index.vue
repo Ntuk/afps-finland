@@ -1,7 +1,7 @@
 <template>
   <div class="administrator-page">
     <administrator-header 
-      title="Choose a page to admin"
+      title="Valitse adminoitava alue"
       exitLink="/"
     />
     <div class="centered">
@@ -9,24 +9,24 @@
         <!-- Go to /administrator/projects -->
         <div class="box" @click="$router.push('/administrator/projects')">
           <div>
-            Projects
+            TODO:Lisää jotain
           </div>
         </div>
         <!-- Go to /administrator/blogs -->
         <div class="box" @click="$router.push('/administrator/blogs')">
           <div>
-            Ramblings
+            Uutiset
           </div>
         </div>
         <!-- Go to /administrator/heroes -->
         <div class="box" @click="$router.push('/administrator/heroes')">
           <div>
-            Heroes
+            TODO:Lisää jotain
           </div>
         </div>
       </div>
     </div>
-    <div class="centered">
+    <!-- <div class="centered">
       <h1 class="title">Messages</h1>
     </div>
     <div class="centered" style="margin-top: 20px;">
@@ -50,7 +50,7 @@
           </tr>
         </tbody>
       </table>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>

@@ -18,6 +18,15 @@
             <slot></slot>
           </div>
         </section>
+        <footer class="modal-card-foot">
+          <button
+            :disabled="isDisabled"
+            @click="emitAction"
+            class="button is-success">
+            {{actionTitle}}
+          </button>
+          <button @click="isOpen=false" class="button">Peruuta</button>
+        </footer>
       </div>
     </div>
   </div>
@@ -35,7 +44,7 @@ export default {
     },
     actionTitle: {
       type: String,
-      default: 'Commit'
+      default: 'Julkaise'
     },
     openBtnClass: {
       type: String,
