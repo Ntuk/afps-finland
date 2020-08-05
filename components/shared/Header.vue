@@ -21,7 +21,7 @@
       <nuxt-link
         :to="exitLink"
         class="button is-danger is-medium is-inverted is-outlined">
-        Adminalueen etusivulle
+        Etusivulle
       </nuxt-link>
     </div>
   </div>

@@ -7,11 +7,11 @@
     <div class="centered">
       <div class="columns">
         <!-- Go to /administrator/projects -->
-        <div class="box" @click="$router.push('/administrator/projects')">
+        <!-- <div class="box" @click="$router.push('/administrator/projects')">
           <div>
             TODO:Lisää jotain
           </div>
-        </div>
+        </div> -->
         <!-- Go to /administrator/blogs -->
         <div class="box" @click="$router.push('/administrator/blogs')">
           <div>
@@ -19,38 +19,13 @@
           </div>
         </div>
         <!-- Go to /administrator/heroes -->
-        <div class="box" @click="$router.push('/administrator/heroes')">
+        <!-- <div class="box" @click="$router.push('/administrator/heroes')">
           <div>
             TODO:Lisää jotain
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
-    <!-- <div class="centered">
-      <h1 class="title">Messages</h1>
-    </div>
-    <div class="centered" style="margin-top: 20px;">
-      <table class="heroes-table table is-responsive">
-        <thead>
-          <tr class="main-table-row">
-            <th>Name</th>
-            <th>Email</th>
-            <th>Message</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="contact in contacts"
-            :key="contact._id"
-            class="table-row"
-          >
-            <td>{{contact.name || 'Not Set'}}</td>
-            <td>{{contact.email || 'Not Set'}}</td>
-            <td>{{contact.message || 'Not Set'}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div> -->
   </div>
 </template>
 <script>
