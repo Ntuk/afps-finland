@@ -161,27 +161,21 @@ export default {
     font-size: 24px;
     // font-family: 'East Sea Dokdo', cursive;
     font-family: "Roboto";
-    text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-		1px 1px 0 #000;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     margin-top: 10px;
 
     a {
       color: #87dbfc;
-      text-shadow:
-      -1px -1px 0 #000,
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-      1px 1px 0 #000;
+      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     }
 
     &:hover {
-      text-shadow:0px 0px 30px #f8e239;
+      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+      color: rgb(229, 244, 248);
 
       a {
-        text-shadow:0px 0px 30px #f8e239;
+        text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+        color: rgb(229, 244, 248);
       }
 
       .is-icon {

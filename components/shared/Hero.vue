@@ -55,21 +55,13 @@ Vue.use(vueSmoothScroll)
   }
   .hero-header {
     color: #f39c12;
-      text-shadow:
-      -1px -1px 0 #000,
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-      1px 1px 0 #000;
+      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 
     .fa-angle-down {
-      text-shadow:
-      -1px -1px 0 #000,
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-      1px 1px 0 #000;
+      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 
       &:hover {
-        text-shadow:0px 0px 30px #f8e239;
+        color: rgb(229, 244, 248);
       }
     }
   }

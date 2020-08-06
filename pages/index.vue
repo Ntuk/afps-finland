@@ -229,11 +229,7 @@ export default {
     // font-family: 'East Sea Dokdo', cursive;
     font-family: 'Roboto';
     color: #87dbfc;
-    text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-		1px 1px 0 #000;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     padding: 2rem;
     border: 0 !important;
     background-color: transparent !important;
@@ -244,11 +240,7 @@ export default {
     font-family: 'Roboto';
     color: #87dbfc;
     margin: 0;
-    text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-		1px 1px 0 #000;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     border: 0 !important;
     background-color: transparent !important;
   }

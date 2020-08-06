@@ -14,7 +14,7 @@
         <div class="menu-item-container-slug">
           <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
           <nav-link to="/">
-            <span>TAKAISIN OPPAISIIN</span>
+            <span>Takaisin</span>
           </nav-link>
         </div>
       </a>
@@ -65,32 +65,25 @@ export default {
     text-align: center;
     color: #87dbfc;
     font-size: 24px;
-    font-family: 'East Sea Dokdo', cursive;
-    text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-		1px 1px 0 #000;
+    // font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Roboto';
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     margin-top: 10px;
     width:200px;
     background-color: #f2f3f5 !important;
 
     a {
       color: #87dbfc;
-      text-shadow:
-      -1px -1px 0 #000,
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-      1px 1px 0 #000;
+      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
       background-color: #f2f3f5 !important;
     }
 
     &:hover {
-      text-shadow:0px 0px 30px #f8e239;
+      color: rgb(229, 244, 248);
       background-color: #f2f3f5 !important;
 
       a {
-        text-shadow:0px 0px 30px #f8e239;
+        color: rgb(229, 244, 248);
       }
 
       .is-icon {

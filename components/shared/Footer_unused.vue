@@ -57,7 +57,7 @@
     font-size: 25px;
 
     &:hover {
-      text-shadow: 0 0 8px #f1c40f;
+      color: rgb(126, 179, 194);
       transition:  0.8s;
     }
   }
