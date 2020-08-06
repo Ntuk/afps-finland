@@ -230,7 +230,7 @@ export default {
     font-family: 'Roboto';
     color: #87dbfc;
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
-    padding: 2rem;
+    padding-top: 6rem !important;
     border: 0 !important;
     background-color: transparent !important;
   }
@@ -285,7 +285,7 @@ export default {
   }
   #oppaat {
     background-color: rgb(247, 247, 247);
-    padding-bottom: 7rem;
+    padding-bottom: 8rem;
     padding-top: 2rem;
   }
   #afps-finland {
@@ -298,12 +298,12 @@ export default {
     -webkit-background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    padding-bottom: 7rem;
+    padding-bottom: 8rem;
     padding-top: 2rem;
   }
   #turnaukset {
     background-color: rgb(210, 210, 211);
-    padding-bottom: 7rem;
+    padding-bottom: 8rem;
     padding-top: 2rem;
   }
   #discord {

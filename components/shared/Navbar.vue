@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-transparent" :class="{change_color: scrollPosition > 1100}" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
         <img src="https://www.nicotukiainen.com/legacy/images/afps-logo.png">
@@ -22,41 +22,41 @@
         <a class="navbar-item" href="#hero" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fa fa-rocket fa-lg"/></span>
-            <nav-link to="/#hero">
+            <a>
               Aloitus
-            </nav-link>
+            </a>
           </div>
         </a>
         <a class="navbar-item" href="#oppaat" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
-            <nav-link to="/#oppaat">
+            <a>
               Oppaat
-            </nav-link>
+            </a>
           </div>
         </a>
         <a class="navbar-item" href="#afps-finland" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fa fa-crosshairs fa-lg"/></span>
-            <nav-link to="/#afps-finland">
+            <a>
               AFPS Finland?
-            </nav-link>
+            </a>
           </div>
         </a>
         <a class="navbar-item" href="#turnaukset" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fa fa-trophy fa-lg"/></span>
-            <nav-link to="/#turnaukset">
+            <a>
               Turnaukset
-            </nav-link>
+            </a>
           </div>
         </a>
         <a class="navbar-item" href="#discord" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fab fa-discord fa-lg"/></span>
-            <nav-link to="/#discord">
+            <a>
               Discord
-            </nav-link>
+            </a>
           </div>
         </a>
 
@@ -129,7 +129,8 @@ Vue.use(vueSmoothScroll)
 export default {
   data() {
     return {
-      isActive: false
+      isActive: false,
+      scrollPosition: null
     }
   },
   components: {
@@ -145,7 +146,13 @@ export default {
   methods: {
     logout() {
       this.$store.dispatch('auth/logout').then(() => this.$router.push('/'))
+    },
+    updateScroll() {
+       this.scrollPosition = window.scrollY
     }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.updateScroll);
   }
 }
 </script>
@@ -191,6 +198,16 @@ export default {
       position: fixed;
       width: 100%;
       background-color: transparent;
+    }
+    .change_color {
+      // background-color: rgb(177, 224, 238);
+      background: url('http://nicotukiainen.com/legacy/images/visor3.png');
+      width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-bottom: 1px solid black;
+      transition: 0.7s ease-in-out;
     }
     .navbar-center{
       display:flex;
