@@ -245,7 +245,9 @@ export default {
     background-color: transparent !important;
   }
   #widgetti {
-    height: 500px;
+    height: 800px;
+    border: 1px solid black;
+    border-radius: 6px;
   }
   .container {
     padding: 2rem;
