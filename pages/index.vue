@@ -56,7 +56,7 @@
             <div class="section featured-check">
               <div class="sidebar">
                 <div class="sidebar-header">
-                  <h4 class="title is-4">Tärkeät oppaat</h4>
+                  <h4 class="title is-4">Ajankohtaiset oppaat</h4>
                 </div>
                 <div class="sidebar-list">
                   <!-- Tärkeät Oppaat -->
@@ -260,9 +260,6 @@ export default {
   .not-news {
     margin-right: 2rem;
   }
-  .section {
-    padding-bottom: 100px;
-  }
   .is-flexible {
     display: inline-flex;
     flex-wrap: nowrap;
@@ -288,6 +285,8 @@ export default {
   }
   #oppaat {
     background-color: rgb(247, 247, 247);
+    padding-bottom: 7rem;
+    padding-top: 2rem;
   }
   #afps-finland {
     background : url(http://nicotukiainen.com/legacy/images/diabo2.jpg) no-repeat center center;
@@ -299,16 +298,22 @@ export default {
     -webkit-background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    padding-bottom: 7rem;
+    padding-top: 2rem;
   }
   #turnaukset {
     background-color: rgb(210, 210, 211);
+    padding-bottom: 7rem;
+    padding-top: 2rem;
   }
   #discord {
     background-color: rgb(165, 165, 206);
+    padding-bottom: 7rem;
+    padding-top: 2rem;
   }
   #footer {
     background-color: rgb(89, 89, 117);
-    padding: 30px 0;
+    padding: 3rem 0;
     font-size: 12px;
     text-align: center;
     color: white; 
@@ -404,10 +409,10 @@ a.nav-item.is-tab:hover {
 }
 /* section */
 .section {
-    padding: 4rem 0 2rem 0;
+    padding: 0 0 2rem 0;
 }
 .section-header {
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
 }
 .section-header .title {
     text-transform: uppercase;
