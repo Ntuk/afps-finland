@@ -117,18 +117,28 @@
       <div class="header container">
         DISCORD
       </div>
-      <div class="container">
-        <figure class="avatar not-news">
-          <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/discord-512.png">
-        </figure>
-        <p><b>Tähän tietoa discordista ja linkki. Ehkä myös jonkun API:n kautta mahdollisuus nähdä, ketkä jäsenet ovat online? </b>......."Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        <hr/>
-        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-        <hr/>
-        <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
-        <hr/>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-      </div>        
+      <div class="columns container">
+        <div class="column is-half">
+          <figure class="avatar not-news">
+            <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/discord-512.png">
+          </figure>
+            <p class="subtitle">Liity AFPS Finlandin Discord kanavalle!</p>
+            <p><b>Tähän ehkä hieman tietoa / historiaa kanavasta?</b> ...."Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <p>Liity tästä: <a href="https://discord.gg/jMehYtZ">https://discord.gg/jMehYtZ</a></p>
+        </div>
+        <div class="column is-half">
+          <!-- TODO: Vaihda oikea osoite tilalle. -->
+          <iframe 
+            src="https://discordapp.com/widget?id=740833248824787045&theme=dark" 
+            width="100%"
+            height="500" 
+            allowtransparency="true" 
+            frameborder="0" 
+            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+          ></iframe>
+          <!-- TODO: Vaihda oikea osoite tilalle. -->
+        </div>
+      </div> 
     </section>
 
     <section class="section" id="footer">
@@ -225,11 +235,25 @@ export default {
     border: 0 !important;
     background-color: transparent !important;
   }
+  .subtitle {
+    font-size: 30px;
+    font-family: 'East Sea Dokdo', cursive;
+    color: #87dbfc;
+    margin: 0;
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+    border: 0 !important;
+    background-color: transparent !important;
+  }
   .container {
     padding: 2rem;
     border: 2px solid black; 
     border-radius: 5px;
     background-color: rgba(205, 210, 214, 0.8);
+    margin: 0 auto;
   }
   .avatar {
     float: left;
