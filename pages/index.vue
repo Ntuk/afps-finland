@@ -135,6 +135,7 @@
             allowtransparency="true" 
             frameborder="0" 
             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+            id="widgetti"
           ></iframe>
           <!-- TODO: Vaihda oikea osoite tilalle. -->
         </div>
@@ -247,6 +248,9 @@ export default {
 		1px 1px 0 #000;
     border: 0 !important;
     background-color: transparent !important;
+  }
+  #widgetti {
+    height: 500px;
   }
   .container {
     padding: 2rem;
