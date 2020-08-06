@@ -286,7 +286,9 @@ export default {
     color: #e67e22;
   }
   #oppaat {
-    background-color: rgb(247, 247, 247);
+    background: radial-gradient(circle, rgba(247,247,240,1) 0%, rgba(232,249,252,1) 100%);
+
+    // background-color: rgb(247, 247, 247);
     padding-bottom: 8rem;
     padding-top: 2rem;
   }
@@ -304,17 +306,20 @@ export default {
     padding-top: 2rem;
   }
   #turnaukset {
-    background-color: rgb(210, 210, 211);
+    // background-color: rgb(210, 210, 211);
+    background: radial-gradient(circle, rgba(210,210,211,1) 0%, rgba(192,192,212,1) 100%);
     padding-bottom: 8rem;
     padding-top: 2rem;
   }
   #discord {
-    background-color: rgb(165, 165, 206);
+    // background-color: rgb(165, 165, 206);
+    background: radial-gradient(circle, rgba(165,165,206,1) 0%, rgba(151,151,193,1) 100%);
     padding-bottom: 7rem;
     padding-top: 2rem;
   }
   #footer {
-    background-color: rgb(89, 89, 117);
+    // background-color: rgb(89, 89, 117);
+    background: radial-gradient(circle, rgba(89,89,117,1) 0%, rgba(72,72,97,1) 100%);
     padding: 3rem 0;
     font-size: 12px;
     text-align: center;
