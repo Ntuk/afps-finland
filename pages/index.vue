@@ -226,7 +226,8 @@ export default {
   }
   .header {
     font-size: 50px;
-    font-family: 'East Sea Dokdo', cursive;
+    // font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Roboto';
     color: #87dbfc;
     text-shadow:
 		-1px -1px 0 #000,
@@ -239,7 +240,8 @@ export default {
   }
   .disco-subtitle {
     font-size: 30px;
-    font-family: 'East Sea Dokdo', cursive;
+    // font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Roboto';
     color: #87dbfc;
     margin: 0;
     text-shadow:

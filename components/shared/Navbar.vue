@@ -17,12 +17,12 @@
       </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu" :class="{'is-active': isActive}">
+    <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-center">
         <a class="navbar-item" href="#hero" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fa fa-rocket fa-lg"/></span>
-            <nav-link to="/">
+            <nav-link to="/#hero">
               Aloitus
             </nav-link>
           </div>
@@ -151,14 +151,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
   .menu-item-container {
     display: block;
     text-align: center;
     color: #87dbfc;
     font-size: 24px;
-    font-family: 'East Sea Dokdo', cursive;
+    // font-family: 'East Sea Dokdo', cursive;
+    font-family: "Roboto";
     text-shadow:
 		-1px -1px 0 #000,
 		1px -1px 0 #000,
