@@ -1,12 +1,12 @@
 <template>
   <div>
     <Header
-      title="Uusi uutinen!"
-      exitLink="/administrator/uutiset"
+      title="Uusi opas!"
+      exitLink="/administrator/oppaat"
     />
-    <div class="uutinen-editor-container">
+    <div class="opas-editor-container">
       <div class="container">
-        <editor @editorUpdated="saveUutinen"/>
+        <editor @editorUpdated="saveOpas"/>
       </div>
     </div>
   </div>
@@ -21,9 +21,9 @@ export default {
     Header, Editor
   },
   methods: {
-    saveUutinen(uutinenData) {
-      this.$store.dispatch('administrator/uutinen/createUutinen', uutinenData)
-        .then(uutinen => this.$router.push(`/administrator/uutinen/${uutinen._id}/edit`))
+    saveOpas(opasData) {
+      this.$store.dispatch('administrator/opas/createOpas', opasData)
+        .then(opas => this.$router.push(`/administrator/opas/${opas._id}/edit`))
     }
   }
 }

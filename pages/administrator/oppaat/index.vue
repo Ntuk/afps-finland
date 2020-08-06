@@ -1,16 +1,16 @@
 <template>
   <div>
     <Header
-      title="Manageroi uutisia"
+      title="Manageroi oppaita"
       exitLink="/"
     />
-    <div class="administrator-uutiset">
+    <div class="administrator-oppaat">
       <div class="container">
         <div class="section">
           <div class="header-block">
-            <h2>Uutiset</h2>
+            <h2>Oppaat</h2>
             <div class="title-menu">
-              <button @click="$router.push('/administrator/uutinen/editor')" class="button">Kirjoita uutinen!</button>
+              <button @click="$router.push('/administrator/opas/editor')" class="button">Kirjoita opas!</button>
             </div>
           </div>
           <div class="tabs">
@@ -25,59 +25,59 @@
               </li>
             </ul>
           </div>
-          <div class="uutiset-container">
-            <!-- Draft Uutiset -->
+          <div class="oppaat-container">
+            <!-- Draft Oppaat -->
             <!-- check for active tab -->
             <template v-if="activeTab === 0">
               <div v-if="drafts && drafts.length > 0">
                 <!-- make iteration here for drafts -->
                 <div
-                  v-for="dUutinen in drafts"
-                  :key="dUutinen._id"
-                  class="uutinen-card"
+                  v-for="dOpas in drafts"
+                  :key="dOpas._id"
+                  class="opas-card"
                   >
-                  <h2>{{displayUutinenTitle(dUutinen)}}</h2>
-                  <div class="uutinen-card-footer">
+                  <h2>{{displayOpasTitle(dOpas)}}</h2>
+                  <div class="opas-card-footer">
                     <span>
-                      Last Edited {{dUutinen.updatedAt | formatDate('LLL')}}
+                      Last Edited {{dOpas.updatedAt | formatDate('LLL')}}
                     </span>
                     <dropdown
-                      @optionChanged="handleOption($event, dUutinen)"
+                      @optionChanged="handleOption($event, dOpas)"
                       :items="draftsOptions" />
                   </div>
                 </div>
               </div>
-              <!-- In case of no drafts uutiset  -->
-              <div v-else class="uutinen-error">
+              <!-- In case of no drafts oppaat  -->
+              <div v-else class="opas-error">
                 Ei luonnoksia :(
               </div>
             </template>
-            <!-- Published Uutiset -->
+            <!-- Published Oppaat -->
             <!-- check for active tab -->
             <template v-if="activeTab === 1">
               <div v-if="published && published.length > 0">
                 <!-- make iteration here for published -->
                 <div
-                  v-for="pUutinen in published"
-                  :key="pUutinen._id"
-                  :class="{featured: pUutinen.featured}"
-                  class="uutinen-card">
+                  v-for="pOpas in published"
+                  :key="pOpas._id"
+                  :class="{featured: pOpas.featured}"
+                  class="opas-card">
                   <!-- title -->
-                  <h2>{{displayUutinenTitle(pUutinen)}}</h2>
-                  <div class="uutinen-card-footer">
+                  <h2>{{displayOpasTitle(pOpas)}}</h2>
+                  <div class="opas-card-footer">
                     <!-- updatedAt -->
                     <span>
-                      Last Edited {{pUutinen.updatedAt | formatDate('LLL')}}
+                      Last Edited {{pOpas.updatedAt | formatDate('LLL')}}
                     </span>
                     <dropdown
-                      @optionChanged="handleOption($event, pUutinen)"
-                      :items="publishedOptions(pUutinen.featured)" />
+                      @optionChanged="handleOption($event, pOpas)"
+                      :items="publishedOptions(pOpas.featured)" />
                   </div>
                 </div>
               </div>
-              <!-- In case of no drafts uutiset  -->
-              <div v-else class="uutinen-error">
-                Ei julkaistuja uutisia :(
+              <!-- In case of no drafts oppaat  -->
+              <div v-else class="opas-error">
+                Ei julkaistuja oppaita :(
               </div>
             </template>
           </div>
@@ -104,47 +104,47 @@ export default {
   },
   computed: {
     ...mapState({
-      published: ({administrator}) => administrator.uutinen.items.published,
-      drafts: ({administrator}) => administrator.uutinen.items.drafts
+      published: ({administrator}) => administrator.opas.items.published,
+      drafts: ({administrator}) => administrator.opas.items.drafts
     }),
     draftsOptions() {
       return createDraftsOptions()
     }
   },
   async fetch({store}) {
-    await store.dispatch('administrator/uutinen/fetchUserUutiset')
+    await store.dispatch('administrator/opas/fetchUserOppaat')
   },
   methods: {
-    handleOption(command, uutinen) {
-      if (command === commands.EDIT_UUTINEN) {
-        this.$router.push(`/administrator/uutinen/${uutinen._id}/edit`)
+    handleOption(command, opas) {
+      if (command === commands.EDIT_OPAS) {
+        this.$router.push(`/administrator/opas/${opas._id}/edit`)
       }
-      if (command === commands.DELETE_UUTINEN) {
-        this.displayDeleteWarning(uutinen)
+      if (command === commands.DELETE_OPAS) {
+        this.displayDeleteWarning(opas)
       }
       if (command === commands.TOGGLE_FEATURE) {
-        this.updateUutinen(uutinen)
+        this.updateOpas(opas)
       }
     },
-    updateUutinen(uutinen) {
-      const featured = !uutinen.featured
+    updateOpas(opas) {
+      const featured = !opas.featured
       const featureStatus = featured ? 'Tärkeä' : 'Ei-Tärkeä'
 
-      this.$store.dispatch('administrator/uutinen/updatePublishedUutinen', {id: uutinen._id, data: {featured}})
-        .then(_ => this.$toasted.success(`Uutinen merkattu statuksella: ${featureStatus}!`, {duration: 2000}))
+      this.$store.dispatch('administrator/opas/updatePublishedOpas', {id: opas._id, data: {featured}})
+        .then(_ => this.$toasted.success(`Opas merkattu statuksella: ${featureStatus}!`, {duration: 2000}))
     },
     publishedOptions(isFeatured) {
       return createPublishedOptions(isFeatured)
     },
-    displayDeleteWarning(uutinen) {
-     const isConfirm = confirm('Are you sure you want to delete this uutinen?')
+    displayDeleteWarning(opas) {
+     const isConfirm = confirm('Are you sure you want to delete this opas?')
      if (isConfirm) {
-      this.$store.dispatch('administrator/uutinen/deleteUutinen', uutinen)
-        .then(_ => this.$toasted.success('Uutinen onnistuneesti poistettu!', {duration: 2000}))
+      this.$store.dispatch('administrator/opas/deleteOpas', opas)
+        .then(_ => this.$toasted.success('Opas onnistuneesti poistettu!', {duration: 2000}))
       }
     },
-    displayUutinenTitle(uutinen) {
-      return uutinen.title || uutinen.subtitle || 'Uutinen jolla ei ole otsikkoa tai alaotsikkoa :('
+    displayOpasTitle(opas) {
+      return opas.title || opas.subtitle || 'Opas jolla ei ole otsikkoa tai alaotsikkoa :('
     }
   }
 }
@@ -156,10 +156,10 @@ export default {
     color: #363636;
   }
 
-  .uutinen-error {
+  .opas-error {
     font-size: 35px;
   }
-  .uutinen-card {
+  .opas-card {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 20px 0;
     > h2 {

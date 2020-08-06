@@ -27,11 +27,11 @@
             </nav-link>
           </div>
         </a>
-        <a class="navbar-item" href="#uutiset" v-smooth-scroll="{ duration: 1000 }">
+        <a class="navbar-item" href="#oppaat" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
-            <nav-link to="/#uutiset">
-              Uutiset
+            <nav-link to="/#oppaat">
+              Oppaat
             </nav-link>
           </div>
         </a>
@@ -123,11 +123,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 import { mapGetters } from 'vuex'
+import vueSmoothScroll from 'vue2-smooth-scroll'
+import Vue from 'vue'
+Vue.use(vueSmoothScroll)
 export default {
   data() {
     return {
       isActive: false
     }
+  },
+  components: {
+    vueSmoothScroll
   },
   computed: {
     ...mapGetters({

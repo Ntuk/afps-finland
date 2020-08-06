@@ -1,24 +1,24 @@
 <template>
   <div>
     <Header
-      title="Write your uutinen"
-      exitLink="/administrator/uutiset">
-      <template v-if="uutinen.status === 'active'" #actionMenu>
+      title="Write your opas"
+      exitLink="/administrator/oppaat">
+      <template v-if="opas.status === 'active'" #actionMenu>
         <div class="full-page-takeover-header-button">
           <Modal
-            @submitted="updateUutinenStatus($event, 'published')"
-            @opened="checkUutinenValidity"
+            @submitted="updateOpasStatus($event, 'published')"
+            @opened="checkOpasValidity"
             openTitle="Julkaise"
             openBtnClass="button is-success is-medium is-inverted is-outlined"
             title="Varmista">
             <div>
-              <div class="title">Kun uutinen on julkaistu, sen url-osoitetta ei voi enää vaihtaa.</div>
+              <div class="title">Kun opas on julkaistu, sen url-osoitetta ei voi enää vaihtaa.</div>
               <!-- Check for error -->
               <div v-if="!publishError">
-                <div class="subtitle">Uutisen osoite näyttää tältä julkaisun jälkeen:</div>
+                <div class="subtitle">Oppaan osoite näyttää tältä julkaisun jälkeen:</div>
                 <article class="message is-success">
                   <div class="message-body">
-                    <strong>{{getCurrentUrl()}}/uutiset/{{slug}}</strong>
+                    <strong>{{getCurrentUrl()}}/oppaat/{{slug}}</strong>
                   </div>
                 </article>
               </div>
@@ -36,19 +36,19 @@
           <Modal
             openTitle="Poista julkaistuista"
             openBtnClass="button is-success is-medium is-inverted is-outlined"
-            title="Epäjulkaise uutinen">
+            title="Epäjulkaise opas">
             <div>
-              <div class="title">Poista uutinen julkisesta näkymästä.</div>
+              <div class="title">Poista opas julkisesta näkymästä.</div>
             </div>
           </Modal>
         </div>
       </template>
     </Header>
-    <div class="uutinen-editor-container">
+    <div class="opas-editor-container">
       <div class="container">
         <editor
-          @editorMounted="initUutinenContent"
-          @editorUpdated="updateUutinen"
+          @editorMounted="initOpasContent"
+          @editorUpdated="updateOpas"
           :isSaving="isSaving"
           ref="editor"
         />
@@ -76,50 +76,50 @@ export default {
   },
   computed: {
     ...mapState({
-      uutinen: ({administrator}) => administrator.uutinen.item,
-      isSaving: ({administrator}) => administrator.uutinen.isSaving
+      opas: ({administrator}) => administrator.opas.item,
+      isSaving: ({administrator}) => administrator.opas.isSaving
     }),
     editor() {
       return this.$refs.editor
     }
   },
   async fetch({params, store}) {
-    await store.dispatch('administrator/uutinen/fetchUutinenById', params.id)
+    await store.dispatch('administrator/opas/fetchOpasById', params.id)
   },
   methods: {    
-    initUutinenContent(initContent) {
-      if (this.uutinen && this.uutinen.content) {
-        initContent(this.uutinen.content)
+    initOpasContent(initContent) {
+      if (this.opas && this.opas.content) {
+        initContent(this.opas.content)
       }
     },
-    updateUutinen(uutinenData) {
+    updateOpas(opasData) {
       if (!this.isSaving) {
-        this.$store.dispatch('administrator/uutinen/updateUutinen', {data: uutinenData, id: this.uutinen._id})
-        .then(_ => this.$toasted.success('Uutinen päivitetty!', {duration: 2000}))
-        .catch(error => this.$toasted.error('Uutista ei pystytty tallentamaan!', {duration: 2000}))
+        this.$store.dispatch('administrator/opas/updateOpas', {data: opasData, id: this.opas._id})
+        .then(_ => this.$toasted.success('Opas päivitetty!', {duration: 2000}))
+        .catch(error => this.$toasted.error('Opasta ei pystytty tallentamaan!', {duration: 2000}))
       }
     },
-    updateUutinenStatus({closeModal}, status) {
-      const uutinenContent = this.editor.getContent()
-      uutinenContent.status = status
+    updateOpasStatus({closeModal}, status) {
+      const opasContent = this.editor.getContent()
+      opasContent.status = status
 
-      const message = status === 'published' ? 'Uutinen on julkaistu!' : 'Uutinen on poistettu julkisesta näkymästä!'
+      const message = status === 'published' ? 'Opas on julkaistu!' : 'Opas on poistettu julkisesta näkymästä!'
 
-      this.$store.dispatch('administrator/uutinen/updateUutinen', {data: uutinenContent, id: this.uutinen._id})
+      this.$store.dispatch('administrator/opas/updateOpas', {data: opasContent, id: this.opas._id})
         .then(_ => {
           this.$toasted.success(message, {duration: 3000})
           closeModal()
         })
-        .catch(error => this.$toasted.error('Uutista ei pystytty julkaisemaan!', {duration: 3000}))
+        .catch(error => this.$toasted.error('Opasta ei pystytty julkaisemaan!', {duration: 3000}))
     },
-    checkUutinenValidity() {
+    checkOpasValidity() {
       const title = this.editor.getNodeValueByName('title')
       this.publishError = ''
       this.slug = ''
-      if (title && title.length > 15) {
+      if (title && title.length > 2) {
         this.slug = this.slugify(title)
       } else {
-        this.publishError = 'Julkaisu ei onnistu! Otsikon on oltava vähintään 15 merkkiä pitkä.'
+        this.publishError = 'Julkaisu ei onnistu! Otsikon on oltava vähintään 3 merkkiä pitkä.'
       }
     },
     getCurrentUrl() {

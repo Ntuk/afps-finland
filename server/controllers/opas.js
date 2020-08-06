@@ -1,4 +1,4 @@
-const Uutinen = require('../models/uutinen');
+const Opas = require('../models/opas');
 const slugify = require('slugify');
 const request = require('request');
 const AsyncLock = require('async-lock');
@@ -18,30 +18,30 @@ function parseFilters(queries) {
   return parsedQueries
 }
 
-exports.getUutiset = (req, res) => {
+exports.getOppaat = (req, res) => {
   const pageSize = parseInt(req.query.pageSize) || 0;
   const pageNum = parseInt(req.query.pageNum) || 1;
   const skips = pageSize * (pageNum - 1);
   const filters = req.query.filter || {}
 
-  Uutinen.find({status: 'published', ...filters})
+  Opas.find({status: 'published', ...filters})
       .sort({'createdAt': -1})
       .populate('author -_id -password -products -email -role')
       .skip(skips)
       .limit(pageSize)
-      .exec(function(errors, publishedUutiset) {
+      .exec(function(errors, publishedOppaat) {
     if (errors) {
       return res.status(422).send(errors);
     }
 
-    Uutinen.countDocuments({status: 'published'})
+    Opas.countDocuments({status: 'published'})
       .then(count => {
-        return res.json({uutiset: publishedUutiset, count, pageCount: Math.ceil(count / pageSize)});
+        return res.json({oppaat: publishedOppaat, count, pageCount: Math.ceil(count / pageSize)});
       });
   });
 }
 
-exports.getMediumUutiset = (req, res) => {
+exports.getMediumOppaat = (req, res) => {
   request.get(MEDIUM_URL, (err, apiRes, body) => {
     if (!err && apiRes.statusCode === 200) {
       let i = body.indexOf("{");
@@ -54,56 +54,56 @@ exports.getMediumUutiset = (req, res) => {
 }
 
 
-exports.getUutinenBySlug = (req, res) => {
+exports.getOpasBySlug = (req, res) => {
   const slug = req.params.slug;
 
-  Uutinen.findOne({slug})
+  Opas.findOne({slug})
       .populate('author -_id -password -products -email -role')
-      .exec(function(errors, foundUutinen) {
+      .exec(function(errors, foundOpas) {
     if (errors) {
       return res.status(422).send(errors);
     }
 
-    return res.json(foundUutinen);
+    return res.json(foundOpas);
   });
 }
 
-exports.getUutinenById = (req, res) => {
-  const uutinenId = req.params.id;
+exports.getOpasById = (req, res) => {
+  const opasId = req.params.id;
 
-  Uutinen.findById(uutinenId, (errors, foundUutinen) => {
+  Opas.findById(opasId, (errors, foundOpas) => {
     if (errors) {
       return res.status(422).send(errors);
     }
 
-    return res.json(foundUutinen);
+    return res.json(foundOpas);
   });
 }
 
-exports.getUserUutiset = (req, res) => {
+exports.getUserOppaat = (req, res) => {
   const user = req.user;
 
-  Uutinen.find({author: user.id}, function(errors, userUutiset) {
+  Opas.find({author: user.id}, function(errors, userOppaat) {
     if (errors) {
      return res.status(422).send(errors);
     }
 
-    return res.json(userUutiset);
+    return res.json(userOppaat);
   });
 }
 
-exports.updateUutinen = (req, res) => {
-  const uutinenId = req.params.id;
-  const uutinenData = req.body;
+exports.updateOpas = (req, res) => {
+  const opasId = req.params.id;
+  const opasData = req.body;
 
-  Uutinen.findById(uutinenId, function(errors, foundUutinen) {
+  Opas.findById(opasId, function(errors, foundOpas) {
     if (errors) {
       return res.status(422).send(errors);
     }
 
-    if (uutinenData.status && uutinenData.status === 'published' && !foundUutinen.slug) {
+    if (opasData.status && opasData.status === 'published' && !foundOpas.slug) {
 
-      foundUutinen.slug = slugify(foundUutinen.title, {
+      foundOpas.slug = slugify(foundOpas.title, {
                                   replacement: '-',    // replace spaces with replacement
                                   remove: null,        // regex to remove characters
                                   lower: true          // result in lower case
@@ -111,50 +111,50 @@ exports.updateUutinen = (req, res) => {
 
       }
 
-      foundUutinen.set(uutinenData);
-      foundUutinen.updatedAt = new Date();
-      foundUutinen.save(function(errors, foundUutinen) {
+      foundOpas.set(opasData);
+      foundOpas.updatedAt = new Date();
+      foundOpas.save(function(errors, foundOpas) {
       if (errors) {
         return res.status(422).send(errors);
       }
 
-      return res.json(foundUutinen);
+      return res.json(foundOpas);
     });
   });
 }
 
 
-exports.createUutinen = (req, res) => {
+exports.createOpas = (req, res) => {
   const lockId = req.query.lockId;
 
   if (!lock.isBusy(lockId)) {
     lock.acquire(lockId, function(done) {
-    const uutinenData = req.body;
-    const uutinen = new Uutinen(uutinenData);
-    uutinen.author = req.user;
+    const opasData = req.body;
+    const opas = new Opas(opasData);
+    opas.author = req.user;
 
-    uutinen.save((errors, createdUutinen) => {
+    opas.save((errors, createdOpas) => {
       setTimeout(() => done(), 5000);
 
       if (errors) {
         return res.status(422).send(errors);
       }
 
-      return res.json(createdUutinen);
+      return res.json(createdOpas);
     });
     }, function(errors, ret) {
         errors && console.error(errors)
     });
   } else {
-    return res.status(422).send({message: 'Uutinen is getting saved!'});
+    return res.status(422).send({message: 'Opas is getting saved!'});
   }
 }
 
 
-exports.deleteUutinen = (req, res) => {
-  const uutinenId = req.params.id;
+exports.deleteOpas = (req, res) => {
+  const opasId = req.params.id;
 
-  Uutinen.deleteOne({_id: uutinenId}, function(errors) {
+  Opas.deleteOne({_id: opasId}, function(errors) {
     if (errors) {
       return res.status(422).send(errors);
     }

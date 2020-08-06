@@ -1,30 +1,30 @@
 const express = require('express');
 const router = express.Router();
 
-const uutinenCtrl = require('../controllers/uutinen');
+const opasCtrl = require('../controllers/opas');
 const AuthCtrl = require('../controllers/auth');
 
-router.get('', uutinenCtrl.getUutiset);
+router.get('', opasCtrl.getOppaat);
 
 router.get('/me', AuthCtrl.onlyAuthUser,
                   AuthCtrl.onlyAdmin,
-                  uutinenCtrl.getUserUutiset);
+                  opasCtrl.getUserOppaat);
 
-router.get('/:id', uutinenCtrl.getUutinenById);
+router.get('/:id', opasCtrl.getOpasById);
 
-router.get('/s/:slug', uutinenCtrl.getUutinenBySlug);
+router.get('/s/:slug', opasCtrl.getOpasBySlug);
 
 router.post('', AuthCtrl.onlyAuthUser,
                 AuthCtrl.onlyAdmin,
-                uutinenCtrl.createUutinen);
+                opasCtrl.createOpas);
 
 router.patch('/:id', AuthCtrl.onlyAuthUser,
                      AuthCtrl.onlyAdmin,
-                     uutinenCtrl.updateUutinen);
+                     opasCtrl.updateOpas);
 
 router.delete('/:id', AuthCtrl.onlyAuthUser,
                       AuthCtrl.onlyAdmin,
-                      uutinenCtrl.deleteUutinen);
+                      opasCtrl.deleteOpas);
 
 module.exports = router;
 

@@ -15,7 +15,6 @@ import {
   Bold,
   Code,
   Italic,
-  Link,
   Strike,
   Underline,
   Blockquote,
@@ -28,11 +27,13 @@ import {
 import Title from '~/components/editor/components/Title'
 import Subtitle from '~/components/editor/components/Subtitle'
 import Doc from '~/components/editor/components/Doc'
+import Iframe from "~/components/editor/components/Iframe";
+import Modal from "~/components/editor/Modal";
 import javascript from 'highlight.js/lib/languages/javascript'
 import css from 'highlight.js/lib/languages/css'
 export default {
   components: {
-    EditorContent
+    EditorContent, Modal
   },
   props: {
     initialContent: {
@@ -45,6 +46,16 @@ export default {
       editor: null
     }
   },
+  methods: {
+    openModal(command) {
+      this.$refs.ytmodal.showModal(command);
+    },
+    addCommand(data) {
+      if (data.command !== null) {
+        data.command(data.data);
+      }
+    },
+  },
   // This is called only on client (in browser)
   mounted() {
     this.editor = new Editor({
@@ -55,10 +66,10 @@ export default {
         new Subtitle(),
         new Heading({ levels: [1, 2, 3]}),
         new Image(),
+        new Iframe(),
         new Bold(),
         new Code(),
         new Italic(),
-        new Link(),
         new Strike(),
         new Underline(),
         new Blockquote(),
@@ -82,7 +93,3 @@ export default {
   }
 }
 </script>
-
-
-
-

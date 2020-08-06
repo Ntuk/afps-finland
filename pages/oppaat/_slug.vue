@@ -1,20 +1,20 @@
 <template>
-  <div class="uutinen-editor-container">
+  <div class="opas-editor-container">
     <div class="container">
-      <div class="uutinen-section-user">
+      <div class="opas-section-user">
         <user-tile
-          :name="uutinen.author.username"
-          :avatar="uutinen.author.avatar"
-          :date="uutinen.createdAt | formatDate('LLL')"
+          :name="opas.author.username"
+          :avatar="opas.author.avatar"
+          :date="opas.createdAt | formatDate('LLL')"
          />
       </div>
-      <editor-view :initialContent="uutinen.content" />
+      <editor-view :initialContent="opas.content" />
     </div>
-      <a class="navbar-item-slug" href="/#uutiset" v-smooth-scroll="{ duration: 1000 }">
+      <a class="navbar-item-slug" href="/#oppaat" v-smooth-scroll="{ duration: 1000 }">
         <div class="menu-item-container-slug">
           <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
           <nav-link to="/">
-            <span>TAKAISIN UUTISIIN</span>
+            <span>TAKAISIN OPPAISIIN</span>
           </nav-link>
         </div>
       </a>
@@ -27,9 +27,9 @@ import EditorView from '~/components/editor/EditorView'
 export default {
   head() {
     return {
-      title: this.uutinen.title,
+      title: this.opas.title,
       meta: [
-        { hid: 'description', name: 'description', content: this.uutinen.subtitle }
+        { hid: 'description', name: 'description', content: this.opas.subtitle }
       ]
     }
   },
@@ -38,17 +38,24 @@ export default {
     EditorView
   },
   computed: {
-    uutinen() {
-      return this.$store.state.uutinen.item
+    opas() {
+      return this.$store.state.opas.item
     }
   },
   async fetch({store, params}) {
-    await store.dispatch('uutinen/fetchUutinenBySlug', params.slug)
+    await store.dispatch('opas/fetchOpasBySlug', params.slug)
   }
 }
+  window.addEventListener("load", playerSizer);
+  window.addEventListener("resize", playerSizer);
+  function playerSizer() {
+    var player = document.getElementById("player");
+    var width = player.offsetWidth;
+    player.style.height = (width * 0.5625) + "px";
+  }
 </script>
 <style scoped lang="scss">
-  .uutinen-content, .uutinen-section-user {
+  .opas-content, .opas-section-user {
     padding-top: 100px;
     max-width: 800px;
     margin: 10px auto;
@@ -94,13 +101,30 @@ export default {
       }
     }
   }
-    .navbar-link,.navbar-item-slug {
-      align-items: center;
-      display: flex;
-      flex-basis: auto;
-      flex-grow: 1;
-      flex-shrink: 0;
-      justify-content: center;
-    }
+  .navbar-link,.navbar-item-slug {
+    align-items: center;
+    display: flex;
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+  }
+  .video-container {
+    overflow: hidden;
+    position: relative;
+    width:100%;
+  }
+  .video-container::after {
+      padding-top: 56.25%;
+      display: block;
+      content: '';
+  }
+  .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
 </style>
 

@@ -11,7 +11,7 @@ const passport = require('passport');
 const usersRoutes = require('./user');
 const productRoutes = require('./product');
 const categoryRoutes = require('./category');
-const uutinenRoutes = require('./uutinen');
+const opasRoutes = require('./opas');
 const apiRoutes = require('./api');
 const contactRoutes = require('./contact');
 const productHeroRoutes = require('./product-hero');
@@ -53,7 +53,7 @@ app.use('/product-heroes', productHeroRoutes);
 app.use('/users', usersRoutes);
 app.use('/products', productRoutes);
 app.use('/categories', categoryRoutes);
-app.use('/uutiset', uutinenRoutes);
+app.use('/oppaat', opasRoutes);
 app.use('/contacts', contactRoutes);
 
 

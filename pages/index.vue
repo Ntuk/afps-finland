@@ -7,41 +7,41 @@
       :promoLink="projectHero.product && projectHero.product.productLink"
     />
 
-    <section class="section" id="uutiset">
+    <section class="section" id="oppaat">
       <div class="header container">        
-        UUTISET
+        OPPAAT
       </div>
       <div class="container">
         <div class="columns is-mobile">
           <!-- posts -->
           <div class="column is-8">
-            <!-- uutinen -->           
+            <!-- opas -->           
             <div 
-              v-for="uutinen in publishedUutiset" 
-              :key="uutinen._id"
+              v-for="opas in publishedOppaat" 
+              :key="opas._id"
               class="section"
             >
               <div class="post">
-                <div @click="$router.push(`/uutiset/${uutinen.slug}`)" class="post-header clickable">
-                  <h4 class="title is-4">{{uutinen.title}}</h4>
-                  <h5 class="subtitle is-5">{{uutinen.subtitle}}</h5>
+                <div @click="$router.push(`/oppaat/${opas.slug}`)" class="post-header clickable">
+                  <h4 class="title is-4">{{opas.title}}</h4>
+                  <h5 class="subtitle is-5">{{opas.subtitle}}</h5>
                 </div>
                 <div class="post-content">                   
                   <figure class="avatar">
-                    <img :src="uutinen.author.avatar" class="avatar"/>
+                    <img :src="opas.author.avatar" class="avatar"/>
                   </figure> 
-                  <span class="is-icon"><i class="fa fa-pen-alt fa-xs"/></span>{{uutinen.author.username}}, {{uutinen.createdAt | formatDate}}
+                  <span class="is-icon"><i class="fa fa-pen-alt fa-xs"/></span>{{opas.author.username}}, {{opas.createdAt | formatDate}}
                 </div>
               </div>
             </div>
-            <!-- end of uutinen -->
+            <!-- end of opas -->
             <!-- pagination -->
             <div v-if="pagination.pageCount && pagination.pageCount > 1" class="section">
               <no-ssr placeholder="Loading...">
                 <paginate
                   v-model="currentPage"
                   :page-count="pagination.pageCount"
-                  :click-handler="fetchUutiset"
+                  :click-handler="fetchOppaat"
                   :prev-text="'Edellinen'"
                   :next-text="'Seuraava'"
                   :container-class="'paginationContainer'">
@@ -56,18 +56,18 @@
             <div class="section featured-check">
               <div class="sidebar">
                 <div class="sidebar-header">
-                  <h4 class="title is-4">Tärkeät uutiset</h4>
+                  <h4 class="title is-4">Tärkeät oppaat</h4>
                 </div>
                 <div class="sidebar-list">
-                  <!-- Tärkeät Uutiset -->
+                  <!-- Tärkeät Oppaat -->
                   <p
-                    v-for="fUutinen in featuredUutiset"
-                    :key="fUutinen._id">
-                    <nuxt-link :to="`/uutiset/${fUutinen.slug}`">
-                      {{fUutinen.title}}
+                    v-for="fOpas in featuredOppaat"
+                    :key="fOpas._id">
+                    <nuxt-link :to="`/oppaat/${fOpas.slug}`">
+                      {{fOpas.title}}
                     </nuxt-link>
                   </p>
-                  <!-- Tärkeät Uutiset -->
+                  <!-- Tärkeät Oppaat -->
                 </div>
               </div>
             </div>
@@ -149,7 +149,7 @@
 <script>
 import ProjectCard from '~/components/ProjectCard'
 import ProjectCardTooltip from '~/components/ProjectCardTooltip'
-import UutinenCard from '~/components/UutinenCard'
+import OpasCard from '~/components/OpasCard'
 import Hero from '~/components/shared/Hero'
 import vueSmoothScroll from 'vue2-smooth-scroll'
 import Vue from 'vue'
@@ -160,23 +160,23 @@ export default {
     title: 'AFPS Finland'
   },
   components: {
-    ProjectCard, UutinenCard, Hero, ProjectCardTooltip, vueSmoothScroll
+    ProjectCard, OpasCard, Hero, ProjectCardTooltip, vueSmoothScroll
   },
   computed: {
     ...mapState({
-      publishedUutiset: state => state.uutinen.items.all,
-      featuredUutiset: state => state.uutinen.items.featured,    
-      pagination: state => state.uutinen.pagination,
+      publishedOppaat: state => state.opas.items.all,
+      featuredOppaat: state => state.opas.items.featured,    
+      pagination: state => state.opas.pagination,
       projects: state => state.project.items,
       projectHero: state => state.hero.item || {}
     })
   },
   currentPage: {
     get() {
-      return this.$store.state.uutinen.pagination.pageNum
+      return this.$store.state.opas.pagination.pageNum
     },
     set(value) {
-      this.$store.commit('uutinen/setPage', value)
+      this.$store.commit('opas/setPage', value)
     }
   },
   async fetch({store, query}) {
@@ -186,26 +186,26 @@ export default {
     if (pageNum && pageSize) {
       filter.pageNum =  parseInt(pageNum, 5)
       filter.pageSize = parseInt(pageSize, 5)
-      store.commit('uutinen/setPage', filter.pageNum)
+      store.commit('opas/setPage', filter.pageNum)
     } else {
-      filter.pageNum = store.state.uutinen.pagination.pageNum
-      filter.pageSize = store.state.uutinen.pagination.pageSize
+      filter.pageNum = store.state.opas.pagination.pageNum
+      filter.pageSize = store.state.opas.pagination.pageSize
     }
     await store.dispatch('project/fetchProjects')
-    await store.dispatch('uutinen/fetchUutiset', filter)
-    await store.dispatch('uutinen/fetchFeaturedUutiset', {'filter[featured]': true})
+    await store.dispatch('opas/fetchOppaat', filter)
+    await store.dispatch('opas/fetchFeaturedOppaat', {'filter[featured]': true})
   },
   methods: {
     setQueryPaginationParams() {
       const { pageSize, pageNum } = this.pagination
       this.$router.push({query: {pageNum, pageSize}})
     },
-    fetchUutiset() {
+    fetchOppaat() {
       const filter = {}
       filter.pageSize = this.pagination.pageSize
       filter.pageNum = this.pagination.pageNum
       // Here store the query params!
-      this.$store.dispatch('uutinen/fetchUutiset', filter)
+      this.$store.dispatch('opas/fetchOppaat', filter)
         .then(_ => this.setQueryPaginationParams())
     }
   }
@@ -292,7 +292,7 @@ export default {
   .link {
     color: #e67e22;
   }
-  #uutiset {
+  #oppaat {
     background-color: rgb(247, 247, 247);
   }
   #afps-finland {
@@ -324,7 +324,7 @@ export default {
     }
   }
 
-  //UUTISET
+  //OPPAAT
   .avatar img {
   height: 3rem;
   width: 3rem;

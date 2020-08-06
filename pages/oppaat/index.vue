@@ -6,32 +6,32 @@
         <div class="columns is-mobile">
           <!-- posts -->
           <div class="column is-8">
-            <!-- uutinen -->           
+            <!-- opas -->           
             <div 
-              v-for="uutinen in publishedUutiset" 
-              :key="uutinen._id"
+              v-for="opas in publishedOppaat" 
+              :key="opas._id"
               class="section"
             >
               <div class="post">
-                <div @click="$router.push(`/uutiset/${uutinen.slug}`)" class="post-header clickable">
-                  <h4 class="title is-4">{{uutinen.title}}</h4>
-                  <h5 class="subtitle is-5">{{uutinen.subtitle}}</h5>
+                <div @click="$router.push(`/oppaat/${opas.slug}`)" class="post-header clickable">
+                  <h4 class="title is-4">{{opas.title}}</h4>
+                  <h5 class="subtitle is-5">{{opas.subtitle}}</h5>
                 </div>
                 <div class="post-content">                   
                   <figure class="avatar">
-                    <img :src="uutinen.author.avatar" class="avatar"/>
-                  </figure> {{uutinen.author.name}}, {{uutinen.createdAt | formatDate('LLL')}}
+                    <img :src="opas.author.avatar" class="avatar"/>
+                  </figure> {{opas.author.name}}, {{opas.createdAt | formatDate('LLL')}}
                 </div>
               </div>
             </div>
-            <!-- end of uutinen -->
+            <!-- end of opas -->
             <!-- pagination -->
             <div v-if="pagination.pageCount && pagination.pageCount > 1" class="section">
               <no-ssr placeholder="Loading...">
                 <paginate
                   v-model="currentPage"
                   :page-count="pagination.pageCount"
-                  :click-handler="fetchUutiset"
+                  :click-handler="fetchOppaat"
                   :prev-text="'Prev'"
                   :next-text="'Next'"
                   :container-class="'paginationContainer'">
@@ -46,18 +46,18 @@
             <div class="section featured-check">
               <div class="sidebar">
                 <div class="sidebar-header">
-                  <h4 class="title is-4">Tärkeät uutiset</h4>
+                  <h4 class="title is-4">Tärkeät oppaat</h4>
                 </div>
                 <div class="sidebar-list">
-                  <!-- Tärkeät Uutiset -->
+                  <!-- Tärkeät Oppaat -->
                   <p
-                    v-for="fUutinen in featuredUutiset"
-                    :key="fUutinen._id">
-                    <nuxt-link :to="`/uutiset/${fUutinen.slug}`">
-                      {{fUutinen.title}}
+                    v-for="fOpas in featuredOppaat"
+                    :key="fOpas._id">
+                    <nuxt-link :to="`/oppaat/${fOpas.slug}`">
+                      {{fOpas.title}}
                     </nuxt-link>
                   </p>
-                  <!-- Tärkeät Uutiset -->
+                  <!-- Tärkeät Oppaat -->
                 </div>
               </div>
             </div>
@@ -77,16 +77,16 @@ export default {
   },
   computed: {
     ...mapState({
-      publishedUutiset: state => state.uutinen.items.all,
-      featuredUutiset: state => state.uutinen.items.featured,    
-      pagination: state => state.uutinen.pagination
+      publishedOppaat: state => state.opas.items.all,
+      featuredOppaat: state => state.opas.items.featured,    
+      pagination: state => state.opas.pagination
     }),
     currentPage: {
       get() {
-        return this.$store.state.uutinen.pagination.pageNum
+        return this.$store.state.opas.pagination.pageNum
       },
       set(value) {
-        this.$store.commit('uutinen/setPage', value)
+        this.$store.commit('opas/setPage', value)
       }
     }
   },
@@ -97,26 +97,26 @@ export default {
     if (pageNum && pageSize) {
       filter.pageNum =  parseInt(pageNum, 10)
       filter.pageSize = parseInt(pageSize, 10)
-      store.commit('uutinen/setPage', filter.pageNum)
+      store.commit('opas/setPage', filter.pageNum)
     } else {
       // TODO: Maybe getters ?
-      filter.pageNum = store.state.uutinen.pagination.pageNum
-      filter.pageSize = store.state.uutinen.pagination.pageSize
+      filter.pageNum = store.state.opas.pagination.pageNum
+      filter.pageSize = store.state.opas.pagination.pageSize
     }
-    await store.dispatch('uutinen/fetchUutiset', filter)
-    await store.dispatch('uutinen/fetchFeaturedUutiset', {'filter[featured]': true})
+    await store.dispatch('opas/fetchOppaat', filter)
+    await store.dispatch('opas/fetchFeaturedOppaat', {'filter[featured]': true})
   },
   methods: {
     setQueryPaginationParams() {
       const { pageSize, pageNum } = this.pagination
       this.$router.push({query: {pageNum, pageSize}})
     },
-    fetchUutiset() {
+    fetchOppaat() {
       const filter = {}
       filter.pageSize = this.pagination.pageSize
       filter.pageNum = this.pagination.pageNum
       // Here store the query params!
-      this.$store.dispatch('uutinen/fetchUutiset', filter)
+      this.$store.dispatch('opas/fetchOppaat', filter)
         .then(_ => this.setQueryPaginationParams())
     }
   }

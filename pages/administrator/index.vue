@@ -12,10 +12,10 @@
             TODO:Lisää jotain
           </div>
         </div> -->
-        <!-- Go to /administrator/uutiset -->
-        <div class="box" @click="$router.push('/administrator/uutiset')">
+        <!-- Go to /administrator/oppaat -->
+        <div class="box" @click="$router.push('/administrator/oppaat')">
           <div>
-            Uutiset
+            Oppaat
           </div>
         </div>
         <!-- Go to /administrator/heroes -->
