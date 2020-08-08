@@ -9,8 +9,7 @@
         <div class="container">
             <h1 class="hero-header">
               <div>
-                <span>Tervetuloa AFPS Finlandin sivuille!</span><br/>
-                <span>Pelit ovat vauhdikkaita ja niiden henkeen kuuluu lupa ampua.</span>
+                <span>Kohtaamispaikka suomalaisille AFPS-pelaajille</span>
               </div>
               <a href="#oppaat" v-smooth-scroll="{ duration: 1000 }"><i class="fa fa-angle-down fa-3x" aria-hidden="true"></i></a>
             </h1>
@@ -76,7 +75,7 @@ Vue.use(vueSmoothScroll)
     border: 1px solid black;
   }
   .hero-header {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
     i {

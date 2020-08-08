@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar is-transparent" :class="{change_color: scrollPosition > 1100}" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-transparent" :class="{change_color: scrollPosition > 980}" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
         <img src="https://www.nicotukiainen.com/legacy/images/afps-logo.png">
@@ -39,7 +39,7 @@
           <div class="menu-item-container">
             <span class="is-icon"><i class="fa fa-crosshairs fa-lg"/></span>
             <a>
-              AFPS Finland?
+              AFPS?
             </a>
           </div>
         </a>
@@ -165,7 +165,7 @@ export default {
     display: block;
     text-align: center;
     color: #87dbfc;
-    font-size: 24px;
+    font-size: 20px;
     // font-family: 'East Sea Dokdo', cursive;
     font-family: "Roboto";
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;

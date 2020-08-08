@@ -79,19 +79,50 @@
 
     <section class="section" id="afps-finland">
       <div class="header container">
-        AFPS FINLAND?
+        AFPS?
       </div>
-      <div class="container">
-        <figure class="avatar not-news">
-          <img src="https://www.nicotukiainen.com/legacy/images/afps-finland-icon.jpg">
-        </figure>
-        <p><b>AFPS Finland on.... </b>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      <div class="rows container">
+        <div class="row is-half">
+          <p class="disco-subtitle">Mikä Arena FPS?</p>
+          <p>Luultavasti tiedätkin jo FPS (First person shooter)-peleistä, mikäli olet sivuille eksynyt. Tästä huolimatta pieni katsaus FPS/AFPS -maailmaan lienee paikallaan. Jotta voisimme ymmärtää Arena shootereita, meidän on ensin aloitettava FPS-peleistä yleisesti. FPS-pelit ovat klassinen peligenre, jossa pelin kulku on kuvattu hahmon silmistä käsin eli ensimmäisestä persoonasta. Peleissä kontrolloidaan liikkumista näppäimistöllä ja ympäriinsä katsellaan hiirtä käyttäen. Genre alkoi id Softwaren vuonna 1992 julkaiseman <b>Wolfenstein 3D</b>:n siivittämänä. FPS genre on pysynyt suosittuna jo lähes 30 vuotta ja mukaan mahtuu muitakin klassikoita kuten <b>Doom</b>, <b>Half-Life</b> ja massiivisen suosittu <b>Call of Duty</b> -sarja.</p>
+          <hr/>
+          <p>Arena FPS pelit ovat FPS-pelien yksi vanhimpia 'alalajeja'. Kuten nimestä voi päätellä, Arena shooterit laittavat pelaajat toisiaan vastaan erilaisille 'areenoille' deathmatchiin ja tyypillisesti kartalta löytyy aseita, ammuksia, armoreita ja poweruppeja ripoteltuna ennalta määritetyistä paikoista. Arena FPS:t keskittyvät pääsääntöisesti moninpeliin ja yksinpelimoodit koostuvat pääasiassa boteista, joita vastaan pelaaja voi harjoitella kuin hän pelaisi oikeita ihmisiä vastaan.</p>
+          <p>Pelien asearsenaalit sisältävät perinteisesti ainakin jossain muodossa Rocket launcherin, Railgunin sekä Lightning gunin jotka ovatkin luultavasti pelien käytetyimpiä aseita. Edellä mainittujen lisäksi joukosta löytyy usein Shotgun, Grenade Launcher ja Plasma gun.</p>
+          <br/>
+          <p>Alta löytyy pätevä kuvaus AFPS-peleistä videomuodossa englanniksi:</p>
+          <div class="video-container">
+            <iframe 
+              src="https://www.youtube.com/embed/owpHC4Pg550" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen
+            ></iframe>
+          </div>
+          <br/>
+          <p>Loppuun vielä esimerkkejä suosituista AFPS-peleistä:</p>
+          <div class="game-list">
+            <ul>
+              <li><img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/quake-icon.png"><b>Quake</b>, <b>Quake 2</b>, <b>Quake 3: Arena</b>, <b>Quake 4</b>, <b>Quake Live</b>, <b>Quake Champions</b>
+              </li>
+              <li><img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/ut-icon.png"><b>Unreal Tournament (99)</b>, <b>Unreal Tournament 2004</b> ja <b>Unreal Tournament 3</b>
+              </li>
+              <li><img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/doom-icon.png"><b>Doom</b>, <b>Doom 2</b>
+              </li>
+            </ul>
+          </div>
+        </div>
         <hr/>
-        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-        <hr/>
-        <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
-        <hr/>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <div class="row is-half">  
+          <figure class="avatar not-news">
+            <img src="https://www.nicotukiainen.com/legacy/images/afps-finland-icon.jpg">
+          </figure>                
+          <p class="disco-subtitle">Mikä AFPS Finland?</p>
+          <p>AFPS-pelit ovat pahamaineisen tunnettuja siitä, että niissä on erittäin korkea taitokatto. Tämä tarkoittaa sitä, että usein uudet pelaajat jäävät helposti 20 vuotta Quakea pelanneiden jalkoihin eikä peli tunnu enää niin hauskalta.
+          Sen sijaan, että löisit heti hanskat tiskiin, kannattaa liittyä AFPS Finlandin Discord-kanavalle (<a href="https://discord.gg/jMehYtZ"><img class="game-icon" src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/discord-512.png"/><b>https://discord.gg/jMehYtZ</b></a>)
+          ja/tai katsastaa sivujen <a href="#oppaat">OPPAAT</a> -osio, jonne päivitellään uutta sisältöä säännöllisen epäsäännöllisesti. AFPS Finland järjestää myös pienimuotoisia Arena shooter-turnauksia sekä LANeja. 
+          Discordissa veteraanit kohtaavat uudemmat pelaajat ja omaan peliin voi löytyä myös tarvittavia vinkkejä. Kanavalle saa myös tulla idlaamaan tai höpöttelemään niitä näitä. 
+          Tervetuloa!</p> 
+        </div>
       </div>        
     </section> 
 
@@ -245,7 +276,7 @@ export default {
     background-color: transparent !important;
   }
   #widgetti {
-    height: 800px;
+    height: 500px;
     border: 1px solid black;
     border-radius: 6px;
   }
@@ -287,7 +318,6 @@ export default {
   }
   #oppaat {
     background: radial-gradient(circle, rgba(247,247,240,1) 0%, rgba(232,249,252,1) 100%);
-
     // background-color: rgb(247, 247, 247);
     padding-bottom: 8rem;
     padding-top: 2rem;
@@ -414,6 +444,38 @@ a.nav-item.is-tab:hover {
   border-radius: 5px;
   background-color: rgba(189, 195, 199, 0.3);
 }
+
+/* AFPS-Finland */
+.game-icon {
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+.video-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+    border: 1px solid black;
+    border-radius: 3px;
+  }
+  .video-container::after {
+      padding-top: 56.25%;
+      display: block;
+      content: '';
+  }
+  .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+
 /* section */
 .section {
     padding: 0 0 2rem 0;
