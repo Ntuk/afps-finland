@@ -136,13 +136,26 @@
           <img src="https://media.gettyimages.com/vectors/golden-trophy-cup-hand-drawn-vector-id689974954">
         </figure>
             <p class="disco-subtitle">Tulevat turnaukset</p>
-            <p>TBA</p>
+            <p>Julkaistaan myöhemmin</p>
         </div>
+        <hr>
         <div class="row is-half">
           <p class="disco-subtitle">Menneet turnaukset</p>
           <p><b>Diabotical Duel Finnish ComCup #2</b> / <i>14. maaliskuuta 2020</i></p>
-          <p>Tulokset:</p>
-          <iframe src="https://challonge.com/r8sws29w/module" 
+          <br/>
+          <p>Linkki Challongeen: <a href="https://challonge.com/r8sws29w">https://challonge.com/r8sws29w</a></p>
+          <iframe src="https://challonge.com/r8sws29w/module?scale_to_fit=1&show_standings=1" 
+            width="100%"
+            frameborder="0" 
+            scrolling="auto" 
+            allowtransparency="true"
+            id="challonge-widgetti"
+          ></iframe>
+          <hr/>
+          <p><b>Diabotical Duel Finnish ComCup #1</b> / <i>7. maaliskuuta 2020</i></p>
+          <br/>
+          <p>Linkki Challongeen: <a href="https://challonge.com/qx24ithe">https://challonge.com/qx24ithe</a></p>
+          <iframe src="https://challonge.com/qx24ithe/module?scale_to_fit=1&show_standings=1" 
             width="100%"
             frameborder="0" 
             scrolling="auto" 
