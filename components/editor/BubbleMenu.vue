@@ -1,13 +1,21 @@
 <template>
+
   <editor-menu-bubble
     :editor="editor"
     :keep-in-bounds="keepInBounds"
-    v-slot="{ commands, isActive, menu }">
+    @hide="hideLinkMenu" 
+    v-slot="{ commands, isActive, getMarkAttrs, menu }">
     <div
       class="menububble"
       :class="{ 'is-active': menu.isActive }"
       :style="`left: ${menu.left}px; bottom: ${menu.bottom}px;`"
     >
+    <form class="menububble__form" v-if="linkMenuIsActive" @submit.prevent="setLinkUrl(commands.link, linkUrl)">
+      <input class="menububble__input" type="text" v-model="linkUrl" placeholder="https://" ref="linkInput" @keydown.esc="hideLinkMenu"/>
+      <button class="menububble__button" @click="setLinkUrl(commands.link, null)" type="button">
+        <icon name="remove" />
+      </button>
+    </form>
       <button
         class="menububble__button"
         :class="{ 'is-active': isActive.bold() }"
@@ -15,6 +23,7 @@
       >
         <icon name="bold" size="small" />
       </button>
+
       <button
         class="menububble__button"
         :class="{ 'is-active': isActive.italic() }"
@@ -22,6 +31,16 @@
       >
         <icon name="italic" size="small" />
       </button>
+
+      <button
+        class="menububble__button"
+        @click="showLinkMenu(getMarkAttrs('link'))"
+        :class="{ 'is-active': isActive.link() }"
+      >
+        <span>{{ isActive.link() ? 'Update Link' : 'Add Link'}}</span>
+        <icon name="link" size="small"/>
+      </button>
+      
       <button
         class="menububble__button"
         :class="{ 'is-active': isActive.code() }"
@@ -29,6 +48,7 @@
       >
         <icon name="code" size="small" />
       </button>
+
       <button
         class="menububble__button"
         :class="{ 'is-active': isActive.strike() }"
@@ -36,6 +56,7 @@
       >
         <icon name="strikethrough" size="small" />
       </button>
+
       <button
         class="menububble__button"
         :class="{ 'is-active': isActive.underline() }"
@@ -43,6 +64,7 @@
       >
         <icon name="underline" size="small" />
       </button>
+      
       <button
         class="menububble__button"
         :class="{ 'is-active': isActive.heading({ level: 1}) }"
@@ -92,8 +114,27 @@ export default {
   },
   data() {
     return {
-      keepInBounds: true
+      keepInBounds: true,
+      linkUrl: null,
+      linkMenuIsActive: false,
     }
+  },
+  methods: {
+    showLinkMenu(attrs) {
+      this.linkUrl = attrs.href
+      this.linkMenuIsActive = true
+      this.$nextTick(() => {
+        this.$refs.linkInput.focus()
+      })
+    },
+    hideLinkMenu() {
+      this.linkUrl = null
+      this.linkMenuIsActive = false
+    },
+    setLinkUrl(command, url) {
+      command({ href: url })
+      this.hideLinkMenu()
+    },
   }
 }
 </script>

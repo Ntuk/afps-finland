@@ -15,6 +15,7 @@ import {
   Bold,
   Code,
   Italic,
+  Link,
   Strike,
   Underline,
   Blockquote,
@@ -46,16 +47,31 @@ export default {
       editor: null
     }
   },
-  methods: {
-    openModal(command) {
-      this.$refs.ytmodal.showModal(command);
-    },
-    addCommand(data) {
-      if (data.command !== null) {
-        data.command(data.data);
-      }
-    },
-  },
+  // methods: {
+  //   openModal(command) {
+  //     this.$refs.ytmodal.showModal(command);
+  //   },
+  //   addCommand(data) {
+  //     if (data.command !== null) {
+  //       data.command(data.data);
+  //     }
+  //   },
+  //   showLinkMenu(attrs) {
+  //     this.linkUrl = attrs.href
+  //     this.linkMenuIsActive = true
+  //     this.$nextTick(() => {
+  //       this.$refs.linkInput.focus()
+  //     })
+  //   },
+  //   hideLinkMenu() {
+  //     this.linkUrl = null
+  //     this.linkMenuIsActive = false
+  //   },
+  //   setLinkUrl(command, url) {
+  //     command({ href: url })
+  //     this.hideLinkMenu()
+  //   },
+  // },
   // This is called only on client (in browser)
   mounted() {
     this.editor = new Editor({
@@ -70,6 +86,7 @@ export default {
         new Bold(),
         new Code(),
         new Italic(),
+        new Link(),
         new Strike(),
         new Underline(),
         new Blockquote(),

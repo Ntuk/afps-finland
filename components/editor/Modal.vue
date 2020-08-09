@@ -45,7 +45,6 @@ export default {
           src: `https://www.youtube.com/embed/${this.youtubeID}` // <- changed
         }
       };
-
       this.$emit("onConfirm", data);
       this.show = false;
     }

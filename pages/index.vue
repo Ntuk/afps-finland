@@ -9,7 +9,7 @@
 
     <section class="section" id="oppaat">
       <div class="header container">        
-        OPPAAT
+        OPPAAT JA PELISUOSITUKSET
       </div>
       <div class="container">
         <div class="columns is-mobile">
@@ -59,7 +59,7 @@
                   <h4 class="title is-4">Ajankohtaiset oppaat</h4>
                 </div>
                 <div class="sidebar-list">
-                  <!-- Tärkeät Oppaat -->
+                  <!-- Ajankohtaiset Oppaat -->
                   <p
                     v-for="fOpas in featuredOppaat"
                     :key="fOpas._id">
@@ -67,7 +67,7 @@
                       {{fOpas.title}}
                     </nuxt-link>
                   </p>
-                  <!-- Tärkeät Oppaat -->
+                  <!-- Ajankohtaiset Oppaat -->
                 </div>
               </div>
             </div>
@@ -130,18 +130,27 @@
       <div class="header container">
         TURNAUKSET
       </div>
-      <div class="container">
-        <figure class="avatar not-news">
+      <div class="rows container">
+        <div class="row is-half">
+          <figure class="avatar not-news">
           <img src="https://media.gettyimages.com/vectors/golden-trophy-cup-hand-drawn-vector-id689974954">
         </figure>
-        <p><b>Tähän jotain infoa menneistä ja tulevista turnauksista? Ehkä myös mahdollisuus lisätä ja muokata admin-osion kautta? </b>...."Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        <hr/>
-        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-        <hr/>
-        <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
-        <hr/>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-      </div>        
+            <p class="disco-subtitle">Tulevat turnaukset</p>
+            <p>TBA</p>
+        </div>
+        <div class="row is-half">
+          <p class="disco-subtitle">Menneet turnaukset</p>
+          <p><b>Diabotical Duel Finnish ComCup #2</b> / <i>14. maaliskuuta 2020</i></p>
+          <p>Tulokset:</p>
+          <iframe src="https://challonge.com/r8sws29w/module" 
+            width="100%"
+            frameborder="0" 
+            scrolling="auto" 
+            allowtransparency="true"
+            id="challonge-widgetti"
+          ></iframe>
+        </div>
+      </div>    
     </section>
 
     <section class="section" id="discord">
@@ -154,7 +163,11 @@
             <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/discord-512.png">
           </figure>
             <p class="disco-subtitle">Liity AFPS Finlandin Discord kanavalle!</p>
-            <p><b>Tähän ehkä hieman tietoa / historiaa kanavasta?</b> ...."Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <p>AFPS Finlandin Discord-kanava perustettiin vuonna 2018 ja yhteisön kantavana ajatuksena on ollut alusta saakka tuoda suomalaisia arenaräiskintöjen ystäviä yhteen. Yhteisö järjestää erinäisiä turnajaisia, mittelöitä sekä LAN-tapahtumia sillä yhdessä pelaaminen on hauskempaa. Tervetuloa mukaan vaikka aikaisempaa AFPS-kokemusta ei vielä löytyisikään! </p>
+            <br/>
+            <p>Liity tästä: <a href="https://discord.gg/jMehYtZ">https://discord.gg/jMehYtZ</a></p>
+            <br/>
+            <img class="site-image" src="https://www.pcinvasion.com/wp-content/uploads/2016/08/Diabotical-1200x675.jpg">
         </div>
         <div class="column is-half">
           <iframe
@@ -166,7 +179,6 @@
             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
             id="widgetti"
           ></iframe>
-          <p>Liity tästä: <a href="https://discord.gg/jMehYtZ">https://discord.gg/jMehYtZ</a></p>
         </div>
       </div> 
     </section>
@@ -188,7 +200,7 @@ import { mapState } from 'vuex'
 Vue.use(vueSmoothScroll)
 export default {
   head: {
-    title: 'AFPS Finland'
+    title: 'AFPS Finland',
   },
   components: {
     ProjectCard, OpasCard, Hero, ProjectCardTooltip, vueSmoothScroll
@@ -275,8 +287,17 @@ export default {
     border: 0 !important;
     background-color: transparent !important;
   }
+  #challonge-widgetti {
+    height: -webkit-fill-available;
+    border: 1px solid black;
+    border-radius: 6px;
+  }
   #widgetti {
-    height: 500px;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 6px;
+  }
+  .site-image {
     border: 1px solid black;
     border-radius: 6px;
   }

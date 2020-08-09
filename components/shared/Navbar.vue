@@ -207,7 +207,7 @@ export default {
       background-repeat: no-repeat;
       background-size: cover;
       border-bottom: 1px solid black;
-      transition: 0.7s ease-in-out;
+      transition: 1s ease-in-out;
     }
     .navbar-center{
       display:flex;

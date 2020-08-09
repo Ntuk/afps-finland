@@ -29,6 +29,11 @@ module.exports = {
       { src: 'https://kit.fontawesome.com/d33a83f69c.js' }
     ]
   },
+  buildModules: [
+    ['@nuxtjs/google-analytics', {
+      id: 'G-TRZYRPP09Z'
+    }]
+  ],
   /*
   ** Customize the progress-bar color
   */
@@ -48,7 +53,6 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {src: '~/plugins/ga.js', mode: 'client'},
     {src: '~/plugins/filters'},
     {src: '~/plugins/vuelidate'},
     {src: '~/plugins/integrations'},

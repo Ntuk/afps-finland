@@ -3,7 +3,7 @@
     <Modal ref="ytmodal" @onConfirm="addCommand" />
     <editor-menu-bar
       :editor="editor"
-      v-slot="{ commands, isActive }">
+      v-slot="{ commands, isActive, getMarkAttrs }">
       
       <div class="menubar">
         <button
@@ -84,7 +84,7 @@ export default {
       if (data.command !== null) {
         data.command(data.data);
       }
-    },
+    }
   }
 }
 </script>

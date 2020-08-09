@@ -1,6 +1,6 @@
 <template>
   <div class="editor editor-squished">
-    <Modal ref="ytmodal" @onConfirm="addCommand" />
+    <Modal ref="ytmodal"/>
     <basic-menu :editor="editor">
       <template #saveButton>
         <button
@@ -29,6 +29,7 @@ import {
   Bold,
   Code,
   Italic,
+  Link,
   Strike,
   Underline,
   History,
@@ -76,10 +77,10 @@ export default {
           showOnlyCurrent: false,
           emptyNodeText: node => {
             if (node.type.name === 'title') {
-              return 'Inspiroiva otsikko'
+              return 'Otsikko'
             }
             if (node.type.name === 'subtitle') {
-              return 'Jonkinlainen väliotsikko'
+              return 'Väliotsikko'
             }
             return 'Kirjoita opas...'
           }
@@ -90,6 +91,7 @@ export default {
         new Bold(),
         new Code(),
         new Italic(),
+        new Link(),
         new Strike(),
         new Underline(),
         new History(),
@@ -132,6 +134,21 @@ export default {
       if (!node) return ''
 
       return node.textContent
+    },
+    showLinkMenu(attrs) {
+      this.linkUrl = attrs.href
+      this.linkMenuIsActive = true
+      this.$nextTick(() => {
+        this.$refs.linkInput.focus()
+      })
+    },
+    hideLinkMenu() {
+      this.linkUrl = null
+      this.linkMenuIsActive = false
+    },
+    setLinkUrl(command, url) {
+      command({ href: url })
+      this.hideLinkMenu()
     },
     setInitialContent(content) {
       this.editor.setContent(content)
