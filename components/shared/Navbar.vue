@@ -17,7 +17,7 @@
       </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div id="navbarBasicExample" class="navbar-menu" :class="{'is-active': isActive}">
       <div class="navbar-center">
         <a class="navbar-item" href="#hero" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
@@ -160,7 +160,34 @@ export default {
 <style lang="scss" scoped>
 // @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+  
+  .navbar {
+    position: fixed;
+    width: 100%;
+    background-color: transparent;
 
+    .burger {
+      color: #87dbfc;
+      font-weight: 800;
+    }
+  }
+  .navbar-menu {
+    background: url('http://nicotukiainen.com/legacy/images/visor3.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 1px solid black;
+    transition: 1s ease-in-out;
+  }
+  .change_color {
+    background: url('http://nicotukiainen.com/legacy/images/visor3.png');
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 1px solid black;
+    transition: 1s ease-in-out;
+  }
   .menu-item-container {
     display: block;
     text-align: center;
@@ -200,7 +227,6 @@ export default {
       background-color: transparent;
     }
     .change_color {
-      // background-color: rgb(177, 224, 238);
       background: url('http://nicotukiainen.com/legacy/images/visor3.png');
       width: 100%;
       background-position: center;
