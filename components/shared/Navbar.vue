@@ -171,7 +171,7 @@ export default {
       font-weight: 800;
     }
   }
-  .navbar-menu {
+  .navbar-menu .is-active {
     background: url('http://nicotukiainen.com/legacy/images/visor3.png');
     background-position: center;
     background-repeat: no-repeat;

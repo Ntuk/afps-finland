@@ -338,10 +338,22 @@ export default {
     color: #e67e22;
   }
   #oppaat {
-    background: radial-gradient(circle, rgba(247,247,240,1) 0%, rgba(232,249,252,1) 100%);
-    // background-color: rgb(247, 247, 247);
+    position: relative; 
     padding-bottom: 8rem;
     padding-top: 2rem;
+  }
+  #oppaat::before {
+    content: "";
+    background: url('https://www.pcgamesn.com/wp-content/uploads/2019/03/Quake-3-Arena-Live-header-1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.1;
   }
   #afps-finland {
     background : url(http://nicotukiainen.com/legacy/images/diabo2.jpg) no-repeat center center;
@@ -381,8 +393,8 @@ export default {
     }
   }
 
-  //OPPAAT
-  .avatar img {
+//OPPAAT
+.avatar img {
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
@@ -615,6 +627,9 @@ a.nav-item.is-tab:hover {
     border-color: #d74436;
 }
   @media screen and (max-width: 314px) {
+    .header {
+      font-size: 30px;
+    }
     .container {
       margin-left: 2rem;
       margin-right: 2rem;
@@ -630,6 +645,9 @@ a.nav-item.is-tab:hover {
     }
   }
   @media screen and (min-width: 314px) and (max-width: 1024px){
+    .header {
+      font-size: 34px;
+    }
     .container {
       margin-left: 2rem;
       margin-right: 2rem;
