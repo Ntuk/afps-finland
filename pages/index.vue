@@ -1,10 +1,12 @@
 <template>
   <div>
+    <navbar />
     <Hero
       :title="turnausHero.title"
       :subtitle="turnausHero.subtitle"
       :image="turnausHero.image"
       :promoLink="turnausHero.product && turnausHero.product.productLink"
+      id="hero"
     />
     <section class="section" id="oppaat">
       <div class="header container">        
@@ -203,7 +205,7 @@
             <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/discord-512.png">
           </figure>
             <p class="disco-subtitle">Liity AFPS Finlandin Discord kanavalle!</p>
-            <p>AFPS Finlandin Discord-kanava perustettiin vuonna 2018 ja yhteisön kantavana ajatuksena on ollut alusta saakka tuoda suomalaisia arenaräiskintöjen ystäviä yhteen. Yhteisö järjestää erinäisiä turnajaisia, mittelöitä sekä LAN-tapahtumia sillä yhdessä pelaaminen on hauskempaa. Tervetuloa mukaan vaikka aikaisempaa AFPS-kokemusta ei vielä löytyisikään! </p>
+            <p>Discord on videopeliyhteisöille suunniteltu VoIP-sovellus. Se toimii Windowsilla, OS X:llä, Androidilla, iOS:llä, Linuxilla ja selaimessa. Toukokuussa 2019 sovelluksella oli yli 250 miljoonaa rekisteröityä käyttäjää. AFPS Finlandin Discord-kanava perustettiin vuonna 2018 ja yhteisön kantavana ajatuksena on ollut alusta saakka tuoda suomalaisia arenaräiskintöjen ystäviä yhteen. Yhteisö järjestää erinäisiä turnajaisia, mittelöitä sekä LAN-tapahtumia sillä yhdessä pelaaminen on hauskempaa. Tervetuloa mukaan vaikka aikaisempaa AFPS-kokemusta ei vielä löytyisikään!</p>
             <br/>
             <p>Liity tästä: <a href="https://discord.gg/jMehYtZ">https://discord.gg/jMehYtZ</a></p>
             <br/>
@@ -230,6 +232,7 @@
 </template>
 
 <script>
+import Navbar from '~/components/shared/Navbar'
 import TurnausCard from '~/components/TurnausCard'
 import TurnausCardTooltip from '~/components/TurnausCardTooltip'
 import OpasCard from '~/components/OpasCard'
@@ -248,7 +251,7 @@ export default {
     };
   },
   components: {
-    TurnausCard, OpasCard, Hero, TurnausCardTooltip, vueSmoothScroll
+    Navbar, TurnausCard, OpasCard, Hero, TurnausCardTooltip, vueSmoothScroll
   },
   computed: {
     ...mapState({

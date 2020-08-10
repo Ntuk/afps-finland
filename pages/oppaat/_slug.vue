@@ -1,27 +1,31 @@
 <template>
-  <div class="opas-editor-container">
-    <div class="container">
-      <div class="opas-section-user">
-        <user-tile
-          :name="opas.author.username"
-          :avatar="opas.author.avatar"
-          :date="opas.createdAt | formatDate('LLL')"
-         />
-      </div>
-      <editor-view :initialContent="opas.content" />
-    </div>
-      <a class="navbar-item-slug" href="/" v-smooth-scroll="{ duration: 1000 }">
-        <div class="menu-item-container-slug">
-          <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
-          <nav-link to="/">
-            <span>Takaisin</span>
-          </nav-link>
+  <div>
+    <secondary-navbar />
+    <div class="opas-editor-container">
+      <div class="container">
+        <div class="opas-section-user">
+          <user-tile
+            :name="opas.author.username"
+            :avatar="opas.author.avatar"
+            :date="opas.createdAt | formatDate('LLL')"
+          />
         </div>
-      </a>
+        <editor-view :initialContent="opas.content" />
+      </div>
+        <a class="navbar-item-slug" href="/" v-smooth-scroll="{ duration: 1000 }">
+          <div class="menu-item-container-slug">
+            <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
+            <nav-link to="/#oppaat" @click="() => $router.push('/#oppaat')">
+              <span>Takaisin</span>
+            </nav-link>
+          </div>
+        </a>
+    </div>
   </div>
 </template>
 
 <script>
+import SecondaryNavbar from '~/components/shared/SecondaryNavbar'
 import UserTile from '~/components/shared/UserTile'
 import EditorView from '~/components/editor/EditorView'
 export default {
@@ -35,7 +39,8 @@ export default {
   },
   components: {
     UserTile,
-    EditorView
+    EditorView,
+    SecondaryNavbar
   },
   computed: {
     opas() {

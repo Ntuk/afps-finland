@@ -1,6 +1,5 @@
 <template>
   <div>
-    <navbar />
     <!-- <div
       class="hero-img"
       :style="{ background : `url(http://nicotukiainen.com/legacy/images/afps-first.jpg) no-repeat center center`}">
@@ -9,12 +8,6 @@
   </div>
 </template>
 <script>
-import Navbar from '~/components/shared/Navbar'
-export default {
-  components: {
-    Navbar
-  }
-}
 </script>
 
 <style>

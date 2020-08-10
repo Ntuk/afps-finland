@@ -1,74 +1,78 @@
 <template>
-  <div class="containeri">
-    <product-hero
-      :title="turnaus.title"
-      :subtitle="turnaus.subtitle"
-      :author="turnaus.author">
-      <product-hero-card
-        :navigateTo="turnaus.productLink"
-        :requirements="turnaus.requirements"
-        :image="turnaus.image" 
-      />
-    </product-hero>
-    <div class="container">
-      <div class="section">
-        <div class="what-you-get">
-          <div class="what-you-get-title">
-            Palkinnot
-          <ul class="what-you-get-items">
-            <li
-                v-for="wsl in turnaus.wsl"
-                :key="wsl.value"
-                class="what-you-get-item">
-              <span>{{wsl.value}}</span>
-            </li>
-          </ul>
+  <div>
+    <secondary-navbar />
+    <div class="containeri">
+      <product-hero
+        :title="turnaus.title"
+        :subtitle="turnaus.subtitle"
+        :author="turnaus.author">
+        <product-hero-card
+          :navigateTo="turnaus.productLink"
+          :requirements="turnaus.requirements"
+          :image="turnaus.image" 
+        />
+      </product-hero>
+      <div class="container">
+        <div class="section">
+          <div class="what-you-get">
+            <div class="what-you-get-title">
+              Palkinnot
+            <ul class="what-you-get-items">
+              <li
+                  v-for="wsl in turnaus.wsl"
+                  :key="wsl.value"
+                  class="what-you-get-item">
+                <span>{{wsl.value}}</span>
+              </li>
+            </ul>
+            </div>
+          <div class="what-you-get-trophy">
+            <img src="https://media.gettyimages.com/vectors/golden-trophy-cup-hand-drawn-vector-id689974954"/>
           </div>
-        <div class="what-you-get-trophy">
-          <img src="https://media.gettyimages.com/vectors/golden-trophy-cup-hand-drawn-vector-id689974954"/>
+          </div>
         </div>
+        <div class="section turnaus-description p-t-none">
+          <div class="turnaus-description-title">Info</div>
+          <div class="turnaus-description-details">
+            <div v-html="turnaus.description"></div>
+          </div>
+          <div v-if="turnaus.promoVideoLink != null">
+            <br/>
+            <p>Alla video turnauksesta:</p>
+          </div>
+          <div v-if="turnaus.promoVideoLink != null" class="video-container">
+            <iframe 
+              :src=turnaus.promoVideoLink
+              frameborder="0" 
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
-      </div>
-      <div class="section turnaus-description p-t-none">
-        <div class="turnaus-description-title">Info</div>
-        <div class="turnaus-description-details">
-          <div v-html="turnaus.description"></div>
-        </div>
-        <div v-if="turnaus.promoVideoLink != null">
-          <br/>
-          <p>Alla video turnauksesta:</p>
-        </div>
-        <div v-if="turnaus.promoVideoLink != null" class="video-container">
-          <iframe 
-            :src=turnaus.promoVideoLink
+        <div v-if="turnaus.productLink != null">
+          <p>Alla turnauksen bracketit ja tulokset Challongesta:</p>
+          <iframe :src="turnaus.productLink + '/module?scale_to_fit=1&show_standings=1'" 
+            width="100%"
             frameborder="0" 
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen
+            scrolling="auto" 
+            allowtransparency="true"
+            id="challonge-widgetti"
           ></iframe>
         </div>
       </div>
-      <div v-if="turnaus.productLink != null">
-        <p>Alla turnauksen bracketit ja tulokset Challongesta:</p>
-        <iframe :src="turnaus.productLink + '/module?scale_to_fit=1&show_standings=1'" 
-          width="100%"
-          frameborder="0" 
-          scrolling="auto" 
-          allowtransparency="true"
-          id="challonge-widgetti"
-        ></iframe>
-      </div>
-    </div>
-    <a class="navbar-item-slug" href="/" v-smooth-scroll="{ duration: 1000 }">
-      <div class="menu-item-container-slug">
-        <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
-        <nav-link to="/">
-          <span>Takaisin</span>
-        </nav-link>
-      </div>
-    </a>
+      <a class="navbar-item-slug" href="/" v-smooth-scroll="{ duration: 1000 }">
+        <div class="menu-item-container-slug">
+          <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
+            <nav-link to="/#turnaukset" @click="() => $router.push('/#turnaukset')">
+            <span>Takaisin</span>
+          </nav-link>
+        </div>
+      </a>
+    </div>    
   </div>
 </template>
 <script>
+import SecondaryNavbar from '~/components/shared/SecondaryNavbar'
 import ProductHero from '~/components/ProductHero'
 import ProductHeroCard from '~/components/ProductHeroCard'
 export default {
@@ -81,7 +85,7 @@ export default {
     }
   },
   components: {
-    ProductHero, ProductHeroCard
+    ProductHero, ProductHeroCard, SecondaryNavbar
   },
   computed: {
     turnaus() {
