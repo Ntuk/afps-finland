@@ -80,9 +80,9 @@ export default {
               return 'Otsikko'
             }
             if (node.type.name === 'subtitle') {
-              return 'Väliotsikko'
+              return 'Alaotsikko'
             }
-            return 'Kirjoita opas...'
+            return 'Kirjoita opas tänne _o/'
           }
         }),
         new Heading({ levels: [1, 2, 3]}),
