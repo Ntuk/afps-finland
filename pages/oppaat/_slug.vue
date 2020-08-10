@@ -10,7 +10,7 @@
       </div>
       <editor-view :initialContent="opas.content" />
     </div>
-      <a class="navbar-item-slug" href="/#oppaat" v-smooth-scroll="{ duration: 1000 }">
+      <a class="navbar-item-slug" href="/" v-smooth-scroll="{ duration: 1000 }">
         <div class="menu-item-container-slug">
           <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
           <nav-link to="/">
@@ -101,6 +101,7 @@ export default {
     flex-grow: 1;
     flex-shrink: 0;
     justify-content: center;
+    padding-bottom: 100px;
   }
   .video-container {
     overflow: hidden;

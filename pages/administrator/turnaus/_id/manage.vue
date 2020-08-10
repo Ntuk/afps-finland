@@ -13,7 +13,7 @@
           </button>
         </div>
         <div class="full-page-takeover-header-button">
-          <Modal
+          <!-- <Modal
             openTitle="Tee turnauksesta etusivun kansikuva"
             openBtnClass="button is-primary is-inverted is-medium is-outlined"
             title="Tee turnauksesta etusivun kansikuva"
@@ -52,7 +52,7 @@
                 </div>
               </form>
             </div>
-          </Modal>
+          </Modal> -->
         </div>
       </template>
     </Header>

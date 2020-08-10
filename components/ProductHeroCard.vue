@@ -6,7 +6,7 @@
       </figure>
     </div>
     <div v-if="navigateTo != ''" class="card-content">
-      <a target="_blank" :href="navigateTo"><i class="fab fa-github" fa-rotate-270></i> Turnaus in Github</a>
+      
     </div>
   </div>
 </template>
@@ -33,7 +33,7 @@ export default {
     padding: 0;
     display: flex;
     justify-content: center;
-    margin: 1rem 0;
+    // margin: 1rem 0;
 
     a {
       color: #f39c12;

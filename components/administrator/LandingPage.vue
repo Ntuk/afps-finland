@@ -85,14 +85,14 @@
           </div>
         </div>
         <div class="field">
-          <label class="label">Turnauksen videolinkki (ei pakollinen)</label>
+          <label class="label">Turnauksen Youtube-videon embed -linkki (ei pakollinen)</label>
           <div class="control">
             <input
               :value="turnaus.promoVideoLink"
               @input="($event) => emitTurnausValue($event, 'promoVideoLink')"
               class="input is-medium"
               type="text"
-              placeholder="https://youtu.be/zRsDeG2Jo5c">
+              placeholder="https://www.youtube.com/embed/BDy9bZBacWw">
           </div>
         </div>
       </form>

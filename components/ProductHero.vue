@@ -15,7 +15,7 @@
             </h2>
             <div class="sub-subtitle">
               <user-tile
-                :name="author.name"
+                :name="author.username"
                 :avatar="author.avatar" />
             </div>
           </div>

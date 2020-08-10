@@ -57,7 +57,7 @@ export default {
     }
   }
   .box {
-    // height: 300px;
+    height: 300px;
     width: 300px;
     display: flex;
     margin: 5px;

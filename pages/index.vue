@@ -190,17 +190,6 @@
                 </v-popover>
               </div>
             </div>
-          <!-- <hr/> 
-          <p><b>Diabotical Duel Finnish ComCup #1</b> / <i>7. maaliskuuta 2020</i></p>
-          <br/>
-          <p>Linkki Challongeen: <a href="https://challonge.com/qx24ithe">https://challonge.com/qx24ithe</a></p>
-          <iframe src="https://challonge.com/qx24ithe/module?scale_to_fit=1&show_standings=1" 
-            width="100%"
-            frameborder="0" 
-            scrolling="auto" 
-            allowtransparency="true"
-            id="challonge-widgetti"
-          ></iframe> -->
         </div>
       </div>    
     </section>
@@ -343,11 +332,6 @@ export default {
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     border: 0 !important;
     background-color: transparent !important;
-  }
-  #challonge-widgetti {
-    height: -webkit-fill-available;
-    border: 1px solid black;
-    border-radius: 6px;
   }
   #widgetti {
     height: 100%;

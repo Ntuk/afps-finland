@@ -11,7 +11,7 @@
       <div class="media">
         <div class="media-content">
           <p class="title is-4">{{turnaus.title | shortenText(45)}}</p>
-          <p class="subtitle is-6"><i>{{turnaus.author.username}}</i></p>
+          <!-- <p class="subtitle is-6"><i>{{turnaus.author.username}}</i></p> -->
         </div>
       </div>
       <div class="content">
@@ -35,9 +35,9 @@ export default {
 <style lang="scss" scoped>
   .card {
     padding: 0.75rem;
-    background-color: #87dbfc;
-    border: 1px solid rgb(112, 112, 112); 
-    box-shadow: 0;
+    background-color: #aee8ff;
+    border: 1px solid rgb(112, 112, 112);
+    border-radius: 3px;
   }
   .card-image {
     border: 1px solid #95a5a6;
