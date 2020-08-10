@@ -394,7 +394,7 @@ export default {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.1;
+    opacity: 0.2;
   }
   #afps-finland {
     background : url(http://nicotukiainen.com/legacy/images/diabo2.jpg) no-repeat center center;
@@ -410,16 +410,41 @@ export default {
     padding-top: 2rem;
   }
   #turnaukset {
-    // background-color: rgb(210, 210, 211);
-    background: radial-gradient(circle, rgba(210,210,211,1) 0%, rgba(192,192,212,1) 100%);
+    position: relative;
     padding-bottom: 8rem;
     padding-top: 2rem;
   }
+  #turnaukset::before {
+    content: "";
+    background: url('https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fdiabotical%2Fhome%2FEGS_Diabotical_TheGDStudio_G1A_04-1920x1080-b094db163c52cf44b7ff9325af2c55a8d2f0b0d7.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.2;
+  }
   #discord {
-    // background-color: rgb(165, 165, 206);
+    position: relative;
     background: radial-gradient(circle, rgba(165,165,206,1) 0%, rgba(151,151,193,1) 100%);
     padding-bottom: 7rem;
     padding-top: 2rem;
+  }
+  #discord::before {
+    content: "";
+    background: url('https://i.kinja-img.com/gawker-media/image/upload/t_original/bjrvfoxykn9cedcsmxnu.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.3;
   }
   #footer {
     // background-color: rgb(89, 89, 117);
