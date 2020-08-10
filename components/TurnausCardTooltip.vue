@@ -38,7 +38,8 @@ export default {
 </script>
 <style scoped lang="scss">
   .card-tooltip {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
+    margin-top: 1rem;
     max-width: 350px;
     .title {
       font-size: 18px;
@@ -51,5 +52,6 @@ export default {
     }    
   box-shadow: 0 8px 12px 0 rgba(24, 60, 52, 0.2), 0 0 1px 0 rgba(24, 60, 52, 0.2);
   border: 2px dashed #87dbfc;
+  border-radius: 3px;
   }
 </style>

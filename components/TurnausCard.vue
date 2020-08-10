@@ -35,12 +35,13 @@ export default {
 <style lang="scss" scoped>
   .card {
     padding: 0.75rem;
-    background-color: #aee8ff;
+    background: radial-gradient(circle, rgba(174,232,255,1) 0%, rgba(158,217,240,1) 100%);
     border: 1px solid rgb(112, 112, 112);
     border-radius: 3px;
   }
   .card-image {
-    border: 1px solid #95a5a6;
+    border: 1px solid #6b6b6b;
+    border-radius: 2px;
     filter: grayscale(0);
     transition: .3s ease-in-out;
     

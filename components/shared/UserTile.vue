@@ -6,7 +6,7 @@
       </figure>
     </div>
     <div class="user-tile-author center">
-      <h3 class="user-tile-author-name">by {{name}}</h3>
+      <h3 class="user-tile-author-name">lisännyt {{name}}</h3>
       <div v-if="date" class="date">{{date}}</div>
     </div>
   </div>
