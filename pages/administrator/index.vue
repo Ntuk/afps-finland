@@ -18,6 +18,12 @@
             Turnaukset
           </div>
         </div>
+        <!-- Go to /administrator/fileupload -->
+        <div class="box" @click="$router.push('/administrator/fileupload')">
+          <div>
+            Uploadaa kuvia
+          </div>
+        </div>
         <!-- Go to /administrator/heroes -->
         <!-- <div class="box" @click="$router.push('/administrator/heroes')">
           <div>
@@ -40,9 +46,11 @@ export default {
       return this.$store.state.contact.items
     }
   },
-  async fetch({store}) {
-    await store.dispatch('contact/fetchContacts')
-      .then(console.log('great success! ', store.state.contact))
+  methods: {
+    async fetch({store}) {
+      await store.dispatch('contact/fetchContacts')
+        .then(console.log('great success! ', store.state.contact))
+    }
   }
 }
 </script>
@@ -62,6 +70,7 @@ export default {
     display: flex;
     margin: 5px;
     justify-content: center;
+
     &:hover {
       cursor: pointer;
       background-color: #58529f;

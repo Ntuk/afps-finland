@@ -26,13 +26,18 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { src: 'https://kit.fontawesome.com/d33a83f69c.js' }
+      { src: 'https://kit.fontawesome.com/d33a83f69c.js' },
+      { src: 'https://widget.cloudinary.com/v2.0/global/all.js' },
+      { src: 'https://unpkg.com/axios/dist/axios.min.js' },
     ]
   },
   buildModules: [
-    ['@nuxtjs/google-analytics', {
-      id: 'G-TRZYRPP09Z'
-    }]
+    [
+      '@nuxtjs/google-analytics', {
+        id: 'G-TRZYRPP09Z'
+      },
+      '@nuxtjs/vuetify',
+  ]
   ],
   /*
   ** Customize the progress-bar color
