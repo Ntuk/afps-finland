@@ -1,21 +1,21 @@
 <template>
   <div class="card">
-    <nuxt-link :to="`/projects/${project.slug}`">
+    <nuxt-link :to="`/turnaukset/${turnaus.slug}`">
       <div class="card-image">
         <figure class="image is-4by2">
-          <img :src="project.image" alt="Placeholder image">
+          <img :src="turnaus.image" alt="Placeholder image">
         </figure>
       </div>
     </nuxt-link>
     <div class="card-content">
       <div class="media">
         <div class="media-content">
-          <p class="title is-4">{{project.title | shortenText(45)}}</p>
-          <p class="subtitle is-6"><i>{{project.author.name}}</i></p>
+          <p class="title is-4">{{turnaus.title | shortenText(45)}}</p>
+          <p class="subtitle is-6"><i>{{turnaus.author.username}}</i></p>
         </div>
       </div>
       <div class="content">
-        {{project.subtitle | shortenText(45)}}
+        {{turnaus.subtitle | shortenText(45)}}
       </div>
     </div>
   </div>
@@ -24,7 +24,7 @@
 <script>
 export default {
   props: {
-    project: {
+    turnaus: {
       type: Object,
       required: true
     }
@@ -35,6 +35,9 @@ export default {
 <style lang="scss" scoped>
   .card {
     padding: 0.75rem;
+    background-color: #87dbfc;
+    border: 1px solid rgb(112, 112, 112); 
+    box-shadow: 0;
   }
   .card-image {
     border: 1px solid #95a5a6;

@@ -2,24 +2,24 @@
   <div>
     <section class="section">
       <div class="container">
-        <h1 class="title">All Projects</h1>
+        <h1 class="title">All Turnaukset</h1>
         <div class="columns is-multiline">
           <div
-            v-for="project in projects"
-            :key="project._id"
+            v-for="turnaus in turnaukset"
+            :key="turnaus._id"
             class="column is-one-quarter">
-            <!-- pass a project as a prop to project-card -->
+            <!-- pass a turnaus as a prop to turnaus-card -->
             <v-popover
               offset="16"
               trigger="hover"
               placement="right-start">
-              <project-card :project="project"/>
+              <turnaus-card :turnaus="turnaus"/>
               <template slot="popover">
-                <project-card-tooltip
-                  :title="project.title"
-                  :subtitle="project.category.name"
-                  :description="project.subtitle"
-                  :wsl="project.wsl"
+                <turnaus-card-tooltip
+                  :title="turnaus.title"
+                  :subtitle="turnaus.category.name"
+                  :description="turnaus.subtitle"
+                  :wsl="turnaus.wsl"
                 />
               </template>
             </v-popover>
@@ -31,23 +31,23 @@
 </template>
 
 <script>
-import ProjectCard from '~/components/ProjectCard'
-import ProjectCardTooltip from '~/components/ProjectCardTooltip'
+import TurnausCard from '~/components/TurnausCard'
+import TurnausCardTooltip from '~/components/TurnausCardTooltip'
 import { mapState } from 'vuex'
 export default {
   head: {
     title: 'AFPS Finland'
   },
   components: {
-    ProjectCard, ProjectCardTooltip
+    TurnausCard, TurnausCardTooltip
   },
   computed: {
     ...mapState({
-      projects: state => state.project.items
+      turnaukset: state => state.turnaus.items
     })
   },
   async fetch({store}) {
-    await store.dispatch('project/fetchProjects')
+    await store.dispatch('turnaus/fetchTurnaukset')
   }
 }
 </script>

@@ -1,19 +1,19 @@
 <template>
-  <div class="project-create-wrapper">
-    <div class="project-create-headerText">
-      What category best fits the knowledge you'll share?
+  <div class="turnaus-create-wrapper">
+    <div class="turnaus-create-headerText">
+      Mihin peliin turnaus liittyy?
     </div>
-    <h2 class="project-create-subtitle">If you're not sure about the right category, you can change it later.</h2>
-    <form class="project-create-form">
-      <div class="project-create-form-group">
-        <div class="project-create-form-field">
+    <h2 class="turnaus-create-subtitle">(Tämänkin voi vaihtaa myöhemmin)</h2>
+    <form class="turnaus-create-form">
+      <div class="turnaus-create-form-group">
+        <div class="turnaus-create-form-field">
           <div class="select is-large">
             <select 
               v-model="form.category"
               @blur="$v.form.category.$touch()"
               @change="emitFormData"
             >
-              <option value="default">Select Category</option>
+              <option value="default">Valitse peli</option>
               <option 
                 v-for="category in categories"
                 :key="category._id"
@@ -23,7 +23,7 @@
               </option>              
             </select>
             <div v-if="$v.form.category.$dirty && !isValid" class="form-error">
-              <span class="help is-danger">Category is required</span>
+              <span class="help is-danger">Peli on valittava</span>
             </div>
           </div>
         </div>

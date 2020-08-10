@@ -6,16 +6,16 @@
     />
     <div class="centered">
       <div class="columns">
-        <!-- Go to /administrator/projects -->
-        <!-- <div class="box" @click="$router.push('/administrator/projects')">
-          <div>
-            TODO:Lisää jotain
-          </div>
-        </div> -->
         <!-- Go to /administrator/oppaat -->
         <div class="box" @click="$router.push('/administrator/oppaat')">
           <div>
             Oppaat
+          </div>
+        </div>
+        <!-- Go to /administrator/turnaukset -->
+        <div class="box" @click="$router.push('/administrator/turnaukset')">
+          <div>
+            Turnaukset
           </div>
         </div>
         <!-- Go to /administrator/heroes -->
@@ -57,7 +57,7 @@ export default {
     }
   }
   .box {
-    height: 300px;
+    // height: 300px;
     width: 300px;
     display: flex;
     margin: 5px;

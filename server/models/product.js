@@ -8,17 +8,19 @@ const productSchema = new Schema({
   image: String,
   description: String,
   rating: Number,
-  // what students learn
   wsl: [{type: Schema.Types.Mixed, value: String}],
   requirements: [{type: Schema.Types.Mixed, value: String}],
   promoVideoLink: String,
   productLink: String,
-  price: Number,
-  discountedPrice: Number,
   status: {
     type: String,
     enum: ['active', 'inactive', 'deleted', 'published'],
     default: 'active'
+  },
+  dateStatus: {
+    type: String,
+    enum: ['future', 'history'],
+    default: 'future'
   },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },

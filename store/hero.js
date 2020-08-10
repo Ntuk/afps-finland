@@ -4,8 +4,8 @@ export const state = () => ({
 
 
 export const actions = {
-  createHero({commit, state}, projectHeroData) {
-    return this.$axios.$post('/api/v1/product-heroes', projectHeroData)
+  createHero({commit, state}, turnausHeroData) {
+    return this.$axios.$post('/api/v1/product-heroes', turnausHeroData)
       .then(hero => {
         commit('setHero', hero)
         return state.item

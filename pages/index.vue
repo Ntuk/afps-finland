@@ -1,10 +1,10 @@
 <template>
   <div>
     <Hero
-      :title="projectHero.title"
-      :subtitle="projectHero.subtitle"
-      :image="projectHero.image"
-      :promoLink="projectHero.product && projectHero.product.productLink"
+      :title="turnausHero.title"
+      :subtitle="turnausHero.subtitle"
+      :image="turnausHero.image"
+      :promoLink="turnausHero.product && turnausHero.product.productLink"
     />
 
     <section class="section" id="oppaat">
@@ -136,22 +136,61 @@
           <img src="https://media.gettyimages.com/vectors/golden-trophy-cup-hand-drawn-vector-id689974954">
         </figure>
             <p class="disco-subtitle">Tulevat turnaukset</p>
-            <p>Julkaistaan myöhemmin</p>
+            <div class="is-flexible">
+          </div>
+            <div class="columns is-multiline">
+              <div            
+                v-for="turnaus in turnaukset"
+                v-if="turnaus.dateStatus === 'future'"
+                :key="turnaus._id"
+                class="column is-one-quarter"
+              >
+                <v-popover
+                  offset="0"
+                  trigger="hover"
+                  placement="right-start">
+                  <turnaus-card :turnaus="turnaus"/>
+                  <template slot="popover">
+                    <turnaus-card-tooltip
+                      :title="turnaus.title"
+                      :subtitle="turnaus.category.name"
+                      :description="turnaus.subtitle"
+                      :wsl="turnaus.wsl"
+                    />
+                  </template>
+                </v-popover>
+              </div>
+            </div>
         </div>
         <hr>
         <div class="row is-half">
           <p class="disco-subtitle">Menneet turnaukset</p>
-          <p><b>Diabotical Duel Finnish ComCup #2</b> / <i>14. maaliskuuta 2020</i></p>
-          <br/>
-          <p>Linkki Challongeen: <a href="https://challonge.com/r8sws29w">https://challonge.com/r8sws29w</a></p>
-          <iframe src="https://challonge.com/r8sws29w/module?scale_to_fit=1&show_standings=1" 
-            width="100%"
-            frameborder="0" 
-            scrolling="auto" 
-            allowtransparency="true"
-            id="challonge-widgetti"
-          ></iframe>
-          <hr/>
+          <div class="is-flexible">
+          </div>
+            <div class="columns is-multiline">
+              <div            
+                v-for="turnaus in turnaukset"
+                v-if="turnaus.dateStatus === 'history'"
+                :key="turnaus._id" 
+                class="column is-one-quarter"
+              >
+                <v-popover
+                  offset="0"
+                  trigger="hover"
+                  placement="right-start">
+                  <turnaus-card :turnaus="turnaus"/>
+                  <template slot="popover">
+                    <turnaus-card-tooltip
+                      :title="turnaus.title"
+                      :subtitle="turnaus.category.name"
+                      :description="turnaus.subtitle"
+                      :wsl="turnaus.wsl"
+                    />
+                  </template>
+                </v-popover>
+              </div>
+            </div>
+          <!-- <hr/> 
           <p><b>Diabotical Duel Finnish ComCup #1</b> / <i>7. maaliskuuta 2020</i></p>
           <br/>
           <p>Linkki Challongeen: <a href="https://challonge.com/qx24ithe">https://challonge.com/qx24ithe</a></p>
@@ -161,7 +200,7 @@
             scrolling="auto" 
             allowtransparency="true"
             id="challonge-widgetti"
-          ></iframe>
+          ></iframe> -->
         </div>
       </div>    
     </section>
@@ -203,8 +242,8 @@
 </template>
 
 <script>
-import ProjectCard from '~/components/ProjectCard'
-import ProjectCardTooltip from '~/components/ProjectCardTooltip'
+import TurnausCard from '~/components/TurnausCard'
+import TurnausCardTooltip from '~/components/TurnausCardTooltip'
 import OpasCard from '~/components/OpasCard'
 import Hero from '~/components/shared/Hero'
 import vueSmoothScroll from 'vue2-smooth-scroll'
@@ -215,16 +254,21 @@ export default {
   head: {
     title: 'AFPS Finland',
   },
+  data() {
+    return {
+      dateStatus: null,
+    };
+  },
   components: {
-    ProjectCard, OpasCard, Hero, ProjectCardTooltip, vueSmoothScroll
+    TurnausCard, OpasCard, Hero, TurnausCardTooltip, vueSmoothScroll
   },
   computed: {
     ...mapState({
       publishedOppaat: state => state.opas.items.all,
       featuredOppaat: state => state.opas.items.featured,    
       pagination: state => state.opas.pagination,
-      projects: state => state.project.items,
-      projectHero: state => state.hero.item || {}
+      turnaukset: state => state.turnaus.items,
+      turnausHero: state => state.hero.item || {}
     })
   },
   currentPage: {
@@ -247,7 +291,7 @@ export default {
       filter.pageNum = store.state.opas.pagination.pageNum
       filter.pageSize = store.state.opas.pagination.pageSize
     }
-    await store.dispatch('project/fetchProjects')
+    await store.dispatch('turnaus/fetchTurnaukset')
     await store.dispatch('opas/fetchOppaat', filter)
     await store.dispatch('opas/fetchFeaturedOppaat', {'filter[featured]': true})
   },
@@ -263,7 +307,7 @@ export default {
       // Here store the query params!
       this.$store.dispatch('opas/fetchOppaat', filter)
         .then(_ => this.setQueryPaginationParams())
-    }
+    },
   }
 }
 </script>

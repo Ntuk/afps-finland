@@ -1,56 +1,53 @@
 <template>
   <div class="manage-page">
     <Header
-      title="Some very nice project name"
-      exitLink="/administrator/projects">
+      title="Turnauksen nimi"
+      exitLink="/administrator/turnaukset">
       <template #actionMenu>
         <div class="full-page-takeover-header-button">
           <button
-            @click="updateProject"
-            :disabled="!canUpdateProject"
+            @click="updateTurnaus"
+            :disabled="!canUpdateTurnaus"
             class="button is-primary is-inverted is-medium is-outlined">
-            Save
+            Tallenna
           </button>
         </div>
         <div class="full-page-takeover-header-button">
           <Modal
-            openTitle="Favorite"
+            openTitle="Tee turnauksesta etusivun kansikuva"
             openBtnClass="button is-primary is-inverted is-medium is-outlined"
-            title="Make Project Hero"
-            @opened="applyProjectValues"
-            @submitted="createProjectHero">
+            title="Tee turnauksesta etusivun kansikuva"
+            @opened="applyTurnausValues"
+            @submitted="createTurnausHero">
             <div>
               <form>
                 <div class="field">
-                  <label class="label">Hero title</label>
-                  <span class="label-info">Suggested 64 Characters</span>
+                  <label class="label">Otsikko</label>
                   <div class="control">
                     <input
-                      v-model="projectHero.title"
+                      v-model="turnausHero.title"
                       class="input is-medium"
                       type="text"
-                      placeholder="Amazing project discount">
+                      placeholder="...">
                   </div>
                 </div>
                 <div class="field">
-                  <label class="label">Hero subtitle</label>
-                  <span class="label-info">Suggested 128 Characters</span>
+                  <label class="label">Alaotsikko</label>
                   <input
-                    v-model="projectHero.subtitle"
+                    v-model="turnausHero.subtitle"
                     class="input is-medium"
                     type="text"
-                    placeholder="Get all of the project for 9.99$">
+                    placeholder="...">
                 </div>
                 <div class="field">
-                  <label class="label">Hero image</label>
-                  <span class="label-info">Image in format 3 by 1 (720 x 240)</span>
+                  <label class="label">Linkki turnauksen kuvaan (näkyy isolla etusivulla)</label>
                   <input
-                    v-model="projectHero.image"
+                    v-model="turnausHero.image"
                     class="input is-medium"
                     type="text"
                     placeholder="Some image in format 3 by 1 (720 x 240)">
                   <figure class="image is-3by1">
-                    <img :src="projectHero.image">
+                    <img :src="turnausHero.image">
                   </figure>
                 </div>
               </form>
@@ -59,40 +56,40 @@
         </div>
       </template>
     </Header>
-    <div class="project-manage">
+    <div class="turnaus-manage">
       <div class="container">
         <div class="columns">
           <div class="column is-3 p-lg">
             <!-- <aside class="menu is-hidden-mobile"> -->
             <aside class="menu">
               <p class="menu-label">
-                Project Editing
+                Turnauksen muokkaaminen
               </p>
               <ul class="menu-list">
                 <li>
-                  <!-- display ProjectInfo -->
+                  <!-- display TurnausInfo -->
                   <a @click.prevent="navigateTo(1)"
                      :class="activeComponentClass(1)">
-                     Project Info
+                     Turnauksen palkinnot
                   </a>
                 </li>
                 <li>
                   <!-- display LandingPage -->
                   <a @click.prevent="navigateTo(2)"
                      :class="activeComponentClass(2)">
-                    Project Landing Page
+                    Turnauksen päätiedot
                   </a>
                 </li>
               </ul>
               <p class="menu-label">
-                Project Managment
+                Turnauksen julkaisu
               </p>
               <ul class="menu-list">
                 <li>
                   <!-- display Status -->
                   <a @click.prevent="navigateTo(3)"
                      :class="activeComponentClass(3)">
-                    Status
+                    Muuta statusta
                   </a>
                 </li>
               </ul>
@@ -101,9 +98,9 @@
           <div class="column">
             <keep-alive>
               <component
-                @projectValueUpdated="handleProjectUpdate"
+                @turnausValueUpdated="handleTurnausUpdate"
                 :is="activeComponent"
-                :project="project"
+                :turnaus="turnaus"
               />
             </keep-alive>
           </div>
@@ -116,7 +113,7 @@
 <script>
 import Modal from '~/components/shared/Modal'
 import Header from '~/components/shared/Header'
-import ProjectInfo from '~/components/administrator/ProjectInfo'
+import TurnausInfo from '~/components/administrator/TurnausInfo'
 import LandingPage from '~/components/administrator/LandingPage'
 import Status from '~/components/administrator/Status'
 import MultiComponentMixin from '~/mixins/MultiComponentMixin'
@@ -125,7 +122,7 @@ export default {
   layout: 'administrator',
   components: { 
     Header, 
-    ProjectInfo, 
+    TurnausInfo, 
     LandingPage, 
     Status,
     Modal
@@ -133,44 +130,44 @@ export default {
   mixins: [MultiComponentMixin],
   data() {
     return {
-      steps: ['ProjectInfo', 'LandingPage', 'Status'],
-      projectHero: {}
+      steps: ['TurnausInfo', 'LandingPage', 'Status'],
+      turnausHero: {}
     }
   },
   async fetch({store, params}) {
-    await store.dispatch('administrator/project/fetchProjectById', params.id)
+    await store.dispatch('administrator/turnaus/fetchTurnausById', params.id)
     await store.dispatch('category/fetchCategories')
   },
   computed: {
     ...mapState({
-      project: ({administrator}) => administrator.project.item,
-      canUpdateProject: ({administrator}) => administrator.project.canUpdateProject
+      turnaus: ({administrator}) => administrator.turnaus.item,
+      canUpdateTurnaus: ({administrator}) => administrator.turnaus.canUpdateTurnaus
     })
   },
   methods: {
-    updateProject() {
-      this.$store.dispatch('administrator/project/updateProject')
-        .then(_ => this.$toasted.success('Project has been succesfully updated!', {duration: 3000}))
-        .catch(error => this.$toasted.error('Project cannot be updated!'), {duration: 3000})
+    updateTurnaus() {
+      this.$store.dispatch('administrator/turnaus/updateTurnaus')
+        .then(_ => this.$toasted.success('Turnaus onnistuneesti päivitetty!', {duration: 3000}))
+        .catch(error => this.$toasted.error('Turnausta ei pystytty päivittämään!'), {duration: 3000})
     },
-    createProjectHero({closeModal}) {
-      const heroData = {...this.projectHero}
-      heroData.product = {...this.project}
+    createTurnausHero({closeModal}) {
+      const heroData = {...this.turnausHero}
+      heroData.product = {...this.turnaus}
       this.$store.dispatch('hero/createHero', heroData)
         .then(() => {
           closeModal()
-          this.$toasted.success('Project Hero was created!', {duration: 3000})
+          this.$toasted.success('Turnaus Hero was created!', {duration: 3000})
         })
     },
-    handleProjectUpdate({value, field}) {
-      this.$store.dispatch('administrator/project/updateProjectValue', {field, value})
+    handleTurnausUpdate({value, field}) {
+      this.$store.dispatch('administrator/turnaus/updateTurnausValue', {field, value})
     },
-    applyProjectValues() {
-      // !this.projectHero.title && this.$set(this.projectHero, 'title', this.project.title)
-      // !this.projectHero.subtitle && this.$set(this.projectHero, 'subtitle', this.project.subtitle)
-      this.$set(this.projectHero, 'title', this.project.title)
-      this.$set(this.projectHero, 'subtitle', this.project.subtitle)
-      this.$set(this.projectHero, 'image', this.project.image)
+    applyTurnausValues() {
+      // !this.turnausHero.title && this.$set(this.turnausHero, 'title', this.turnaus.title)
+      // !this.turnausHero.subtitle && this.$set(this.turnausHero, 'subtitle', this.turnaus.subtitle)
+      this.$set(this.turnausHero, 'title', this.turnaus.title)
+      this.$set(this.turnausHero, 'subtitle', this.turnaus.subtitle)
+      this.$set(this.turnausHero, 'image', this.turnaus.image)
     }
   }
 }
@@ -183,7 +180,7 @@ export default {
       color: gray;
       font-style: italic;
     }
-    .project-manage {
+    .turnaus-manage {
       padding-top: 40px;
       .menu {
         padding-top: 30px;

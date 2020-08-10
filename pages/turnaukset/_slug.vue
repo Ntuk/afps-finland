@@ -1,13 +1,13 @@
 <template>
   <div>
     <product-hero
-      :title="project.title"
-      :subtitle="project.subtitle"
-      :author="project.author">
+      :title="turnaus.title"
+      :subtitle="turnaus.subtitle"
+      :author="turnaus.author">
       <product-hero-card
-        :navigateTo="project.productLink"
-        :requirements="project.requirements"
-        :image="project.image" 
+        :navigateTo="turnaus.productLink"
+        :requirements="turnaus.requirements"
+        :image="turnaus.image" 
       />
     </product-hero>
     <div class="container">
@@ -20,7 +20,7 @@
               </div>
               <ul class="what-you-get-items">
                 <li
-                   v-for="wsl in project.wsl"
+                   v-for="wsl in turnaus.wsl"
                    :key="wsl.value"
                    class="what-you-get-item">
                   <span>{{wsl.value}}</span>
@@ -28,10 +28,10 @@
               </ul>
             </div>
           </div>
-          <div class="section project-description p-t-none">
-            <div class="project-description-title">Project Info</div>
-            <div class="project-description-details">
-              <div v-html="project.description"></div>
+          <div class="section turnaus-description p-t-none">
+            <div class="turnaus-description-title">Turnaus Info</div>
+            <div class="turnaus-description-details">
+              <div v-html="turnaus.description"></div>
             </div>
           </div>
         </div>
@@ -45,9 +45,9 @@ import ProductHeroCard from '~/components/ProductHeroCard'
 export default {
   head() {
     return {
-      title: this.project.title,
+      title: this.turnaus.title,
       meta: [
-        { hid: 'description', name: 'description', content: this.project.subtitle }
+        { hid: 'description', name: 'description', content: this.turnaus.subtitle }
       ]
     }
   },
@@ -55,12 +55,12 @@ export default {
     ProductHero, ProductHeroCard
   },
   computed: {
-    project() {
-      return this.$store.state.project.item
+    turnaus() {
+      return this.$store.state.turnaus.item
     }
   },
   async fetch({store, params}) {
-    await store.dispatch('project/fetchProjectBySlug', params.slug)
+    await store.dispatch('turnaus/fetchTurnausBySlug', params.slug)
   }
 }
 </script>
@@ -89,7 +89,7 @@ export default {
       width: 45%;
     }
   }
-  .project-description {
+  .turnaus-description {
     &-title {
       font-size: 26px;
       font-weight: bold;

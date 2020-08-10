@@ -6,7 +6,7 @@
       </figure>
     </div>
     <div v-if="navigateTo != ''" class="card-content">
-      <a target="_blank" :href="navigateTo"><i class="fab fa-github" fa-rotate-270></i> Project in Github</a>
+      <a target="_blank" :href="navigateTo"><i class="fab fa-github" fa-rotate-270></i> Turnaus in Github</a>
     </div>
   </div>
 </template>
@@ -56,7 +56,7 @@ export default {
     .subtitle {
       color: gray;
     }
-    .project-features {
+    .turnaus-features {
       font-size: 17px;
     }
   }

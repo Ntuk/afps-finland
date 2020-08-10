@@ -1,7 +1,7 @@
 <template>
   <div class="card manage-card">
     <header class="card-header card-section">
-      <p class="card-header-title">Project Information</p>
+      <p class="card-header-title">Turnauksen palkinnot</p>
     </header>
     <div class="card-content card-section">
       <form>
@@ -9,8 +9,8 @@
           @addClicked="addLine('wsl')"
           @removeClicked="removeLine($event, 'wsl')"
           @valueUpdated="updateLine($event, 'wsl')"
-          :lines="project.wsl"
-          label="Technologies used:"
+          :lines="turnaus.wsl"
+          label="Palkinnot:"
         />
       </form>
     </div>
@@ -23,20 +23,20 @@ export default {
     MultiLineTextInput
   },
   props: {
-    project: {
+    turnaus: {
       type: Object,
       required: true
     }
   },
   methods: {
     addLine(field) {
-      this.$store.commit('administrator/project/addLine', field)
+      this.$store.commit('administrator/turnaus/addLine', field)
     },
     removeLine(index, field) {
-      this.$store.commit('administrator/project/removeLine', {field, index})
+      this.$store.commit('administrator/turnaus/removeLine', {field, index})
      },
     updateLine({value, index}, field) {
-      this.$store.dispatch('administrator/project/updateLine', {field, value, index})
+      this.$store.dispatch('administrator/turnaus/updateLine', {field, value, index})
     }
   }
 }

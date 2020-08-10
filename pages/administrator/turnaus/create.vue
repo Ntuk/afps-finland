@@ -3,13 +3,13 @@
     <div class="full-page-takeover-page">
       <Header
         :title="`Step ${activeStep} of ${stepsLength}`"
-        exitLink="/administrator/projects" />
+        exitLink="/administrator/turnaukset" />
       <div class="full-page-takeover-header-bottom-progress">
         <div :style="{width: progress}"
              class="full-page-takeover-header-bottom-progress-highlight">
         </div>
       </div>
-      <div class="project-create full-page-takeover-container">
+      <div class="turnaus-create full-page-takeover-container">
         <div class="container">
           <keep-alive>
             <component 
@@ -37,12 +37,12 @@
                   @click.prevent="_nextStep"
                   :disabled="!canProceed"
                   class="button is-large float-right">
-                  Continue
+                  Jatka
                 </button>
                 <button
                   v-else
                   :disabled="!canProceed"
-                  @click="createProject"
+                  @click="createTurnaus"
                   class="button is-success is-large float-right">
                   Confirm
                 </button>
@@ -57,20 +57,20 @@
 
 <script>
 import Header from '~/components/shared/Header'
-import ProjectCreateStep1 from '~/components/administrator/ProjectCreateStep1'
-import ProjectCreateStep2 from '~/components/administrator/ProjectCreateStep2'
+import TurnausCreateStep1 from '~/components/administrator/TurnausCreateStep1'
+import TurnausCreateStep2 from '~/components/administrator/TurnausCreateStep2'
 import MultiComponentMixin from '~/mixins/MultiComponentMixin'
 export default {
   layout: 'administrator',
   components: {
     Header, 
-    ProjectCreateStep1, 
-    ProjectCreateStep2
+    TurnausCreateStep1, 
+    TurnausCreateStep2
   },
   mixins: [MultiComponentMixin],
   data() {
     return {
-      steps: ['ProjectCreateStep1', 'ProjectCreateStep2'],
+      steps: ['TurnausCreateStep1', 'TurnausCreateStep2'],
       canProceed: false,
       form: {
         title: '',
@@ -95,8 +95,8 @@ export default {
       this.form = {...this.form, ...data}
       this.canProceed = isValid
     },
-    createProject() {
-      this.$store.dispatch('administrator/project/createProject', this.form)
+    createTurnaus() {
+      this.$store.dispatch('administrator/turnaus/createTurnaus', this.form)
       .then(console.log(this.form));
     }
   }
@@ -111,7 +111,7 @@ export default {
     width: 1px;
     height: 1px;
   }
-  .project-create {
+  .turnaus-create {
     &-wrapper {
       margin-top: 60px;
       text-align: center;

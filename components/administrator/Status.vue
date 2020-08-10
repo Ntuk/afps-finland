@@ -8,15 +8,32 @@
         <label class="label">Status</label>
         <div class="select is-medium">
           <select
-            :value="project.status"
-            @change="($event) => emitProjectValue($event, 'status')"
+            :value="turnaus.status"
+            @change="($event) => emitTurnausValue($event, 'status')"
           >
-            <option value="default">Change Status</option>
+            <option value="default">Vaihda status</option>
             <option value="active">
-              Active
+              Luonnos
             </option>
             <option value="published">
-              Published
+              Julkaistu
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Onko turnaus tulevaisuudessa vai jo mennyt?</label>
+        <div class="select is-medium">
+          <select
+            :value="turnaus.dateStatus"
+            @change="($event) => emitTurnausValue($event, 'dateStatus')"
+          >
+            <option value="default">Vaihda status</option>
+            <option value="future">
+              Tulevaisuudessa
+            </option>
+            <option value="history">
+              Mennyt jo
             </option>
           </select>
         </div>
@@ -27,14 +44,14 @@
 <script>
 export default {
   props: {
-    project: {
+    turnaus: {
       type: Object,
       required: true
     }
   },
   methods: {
-    emitProjectValue(e, field) {
-      this.$emit('projectValueUpdated', {value: e.target.value, field})
+    emitTurnausValue(e, field) {
+      this.$emit('turnausValueUpdated', {value: e.target.value, field})
     }
   }
 }

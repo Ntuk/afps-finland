@@ -1,6 +1,6 @@
 <template>
-  <div class="editor project-editor">
-    <project-menu :editor="editor"/>
+  <div class="editor turnaus-editor">
+    <turnaus-menu :editor="editor"/>
     <editor-content
       class="editor__content"
       :editor="editor"
@@ -10,7 +10,7 @@
 
 <script>
 import { Editor, EditorContent } from 'tiptap'
-import ProjectMenu from '~/components/editor/ProjectMenu'
+import TurnausMenu from '~/components/editor/TurnausMenu'
 import {
   Bold,
   Italic,
@@ -22,7 +22,7 @@ import {
 } from 'tiptap-extensions'
 export default {
   components: {
-    EditorContent, ProjectMenu
+    EditorContent, TurnausMenu
   },
   props: {
     initialContent: {
@@ -66,7 +66,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .project-editor {
+  .turnaus-editor {
     * {
       &:focus {
         outline: none;

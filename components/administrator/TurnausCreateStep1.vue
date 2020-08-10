@@ -1,21 +1,21 @@
 <template>
-  <div class="project-create-wrapper">
-    <div class="project-create-headerText">
-      Please choose title for your Project.
+  <div class="turnaus-create-wrapper">
+    <div class="turnaus-create-headerText">
+      Turnauksen otsikko / nimi
     </div>
-    <h2 class="project-create-subtitle">
-      No worries, you can change title later.
+    <h2 class="turnaus-create-subtitle">
+      (Tämän voi vaihtaa vielä myöhemminkin)
     </h2>
-    <form @input="emitFormData" class="project-create-form">
-      <div class="project-create-form-group">
-        <div class="field project-create-form-field control has-icons-right">
+    <form @input="emitFormData" class="turnaus-create-form">
+      <div class="turnaus-create-form-group">
+        <div class="field turnaus-create-form-field control has-icons-right">
             <TextInputWithCount 
               v-model="form.title"
               :v="$v.form.title"
               :maxLength="50" 
             />
           <div v-if="$v.form.title.$error" class="form-error">
-            <span v-if="!$v.form.title.required" class="help is-danger">Title is required</span>
+            <span v-if="!$v.form.title.required" class="help is-danger">Otsikko on pakollinen</span>
           </div>
         </div>
       </div>

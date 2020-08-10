@@ -15,7 +15,7 @@
           <input
             @input.prevent="emitUpdate($event, index)"
             :value="line.value"
-            placeholder="HTML, CSS, TypeScript, C#..."
+            placeholder="1. Mainetta ja kunniaa"
             class="input is-medium multi-input"
             type="text">
         </div>
@@ -25,7 +25,7 @@
             @click.prevent="emitRemove(index)"
             type="button"
             class="button is-danger multi-button">
-            Delete
+            Poista rivi
           </button>
         </div>
       </div>
@@ -35,7 +35,7 @@
       @click="emitAdd"
       type="button"
       class="m-b-sm button is-medium is-link is-outlined">
-      Add an answer
+      Lisää seuraava rivi
     </button>
   </div>
 </template>

@@ -21,7 +21,7 @@
       <nuxt-link
         :to="exitLink"
         class="button is-danger is-medium is-inverted is-outlined">
-        Etusivulle
+        Takaisin
       </nuxt-link>
     </div>
   </div>
