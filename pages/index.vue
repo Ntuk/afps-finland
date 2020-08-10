@@ -199,17 +199,20 @@
       <div class="header container">
         DISCORD
       </div>
-      <div class="columns container">
+      <div class="columns container disco-osio">
         <div class="column is-half">
           <figure class="avatar not-news">
             <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/discord-512.png">
           </figure>
             <p class="disco-subtitle">Liity AFPS Finlandin Discord kanavalle!</p>
-            <p>Discord on videopeliyhteisöille suunniteltu VoIP-sovellus. Se toimii Windowsilla, OS X:llä, Androidilla, iOS:llä, Linuxilla ja selaimessa. Toukokuussa 2019 sovelluksella oli yli 250 miljoonaa rekisteröityä käyttäjää. AFPS Finlandin Discord-kanava perustettiin vuonna 2018 ja yhteisön kantavana ajatuksena on ollut alusta saakka tuoda suomalaisia arenaräiskintöjen ystäviä yhteen. Yhteisö järjestää erinäisiä turnajaisia, mittelöitä sekä LAN-tapahtumia sillä yhdessä pelaaminen on hauskempaa. Tervetuloa mukaan vaikka aikaisempaa AFPS-kokemusta ei vielä löytyisikään!</p>
+            <hr/>
+            <p>Discord on videopeliyhteisöille suunniteltu VoIP-sovellus. Se toimii Windowsilla, OS X:llä, Androidilla, iOS:llä, Linuxilla ja selaimessa. 
+              Toukokuussa 2019 sovelluksella oli yli 250 miljoonaa rekisteröityä käyttäjää. 
+              AFPS Finlandin Discord-kanava perustettiin vuonna 2018 ja yhteisön tarkoituksena on ollut alusta saakka tuoda suomalaisia arenaräiskintöjen ystäviä yhteen. 
+              Yhteisö järjestää erinäisiä turnajaisia, mittelöitä sekä LAN-tapahtumia sillä yhdessä pelaaminen on hauskempaa. 
+              Tervetuloa mukaan vaikka aikaisempaa AFPS-kokemusta ei vielä löytyisikään!</p>
             <br/>
             <p>Liity tästä: <a href="https://discord.gg/jMehYtZ">https://discord.gg/jMehYtZ</a></p>
-            <br/>
-            <img class="site-image" src="https://www.pcinvasion.com/wp-content/uploads/2016/08/Diabotical-1200x675.jpg">
         </div>
         <div class="column is-half">
           <iframe
@@ -226,7 +229,21 @@
     </section>
 
     <section class="section" id="footer">
-      <span class="is-icon"><i class="fa fa-copyright"/></span> <a target="_blank" href="https://www.nicotukiainen.com">Nico "sc4ndroid" Tukiainen 2020</a>
+      <div class="columns">
+        <div class="column is-one-quarter iconic">
+          <a href="#hero" v-smooth-scroll="{ duration: 1600 }">
+            <i class="fa fa-arrow-up fa-lg"/>
+          </a>
+        </div>
+        <div class="column is-half">
+          <span class="is-icon"><i class="fa fa-copyright"/></span> <a style="padding-top:4px;" target="_blank" href="https://www.nicotukiainen.com">Nico "sc4ndroid" Tukiainen 2020</a>
+        </div>
+        <div class="column is-one-quarter iconic">
+          <a href="#hero" v-smooth-scroll="{ duration: 1600 }">
+            <i class="fa fa-arrow-up fa-lg"/>
+          </a>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -303,171 +320,193 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-  html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+hr {
+  background-color: #65a1b9;
+}
+.iconic {
+  a {
+    i {
+      color: #eeeeee;
+      font-size: 32px;
+      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+    }
   }
-  hr {
-    background-color: #65a1b9;
-  }
-  .back-to-top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    height: 250px;
-    border: 3px dashed pink;
-    position: sticky;
-  }
-  .navbar {
-    background-color: transparent;
-  }
-  .header {
-    font-size: 50px;
-    // font-family: 'East Sea Dokdo', cursive;
-    font-family: 'Roboto';
-    color: #87dbfc;
-    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
-    padding-top: 6rem !important;
-    border: 0 !important;
-    background-color: transparent !important;
-  }
-  .disco-subtitle {
-    font-size: 30px;
-    // font-family: 'East Sea Dokdo', cursive;
-    font-family: 'Roboto';
-    color: #87dbfc;
-    margin: 0;
-    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
-    border: 0 !important;
-    background-color: transparent !important;
-  }
-  #widgetti {
-    height: 100%;
-    border: 1px solid black;
-    border-radius: 6px;
-  }
-  .site-image {
-    border: 1px solid black;
-    border-radius: 6px;
-  }
-  .container {
-    padding: 2rem;
-    border: 2px solid black; 
-    border-radius: 5px;
-    background-color: rgba(205, 210, 214, 0.8);
-    margin: 0 auto;
-  }
-  .avatar {
-    float: left;
-  }
-  .not-news {
-    margin-right: 2rem;
-  }
-  .is-flexible {
-    display: inline-flex;
-    flex-wrap: nowrap;
-    width: 100%;
-
-    button {
-      color: #e67e22;
-      background-color: #ecf0f1;
-      border: 1px solid #dbdbdb;
-      margin-left: 16px;
-
-      &:hover {
-        background-color: #f4f5f5;
-        border: 1px solid #e67e22;
+  &:hover {
+    a {
+      i {
+        color: #eeeeee;
+        font-size: 32px;
+        text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
       }
     }
   }
-  .links {
-    padding-top: 15px;
-  }
-  .link {
-    color: #e67e22;
-  }
-  #oppaat {
-    position: relative; 
-    padding-bottom: 8rem;
-    padding-top: 2rem;
-  }
-  #oppaat::before {
-    content: "";
-    background: url('https://www.pcgamesn.com/wp-content/uploads/2019/03/Quake-3-Arena-Live-header-1.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.2;
-  }
-  #afps-finland {
-    background : url(http://nicotukiainen.com/legacy/images/diabo2.jpg) no-repeat center center;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-size: cover !important;
-    -webkit-background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    padding-bottom: 8rem;
-    padding-top: 2rem;
-  }
-  #turnaukset {
-    position: relative;
-    padding-bottom: 8rem;
-    padding-top: 2rem;
-  }
-  #turnaukset::before {
-    content: "";
-    background: url('https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fdiabotical%2Fhome%2FEGS_Diabotical_TheGDStudio_G1A_04-1920x1080-b094db163c52cf44b7ff9325af2c55a8d2f0b0d7.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.2;
-  }
-  #discord {
-    position: relative;
-    background: radial-gradient(circle, rgba(165,165,206,1) 0%, rgba(151,151,193,1) 100%);
-    padding-bottom: 7rem;
-    padding-top: 2rem;
-  }
-  #discord::before {
-    content: "";
-    background: url('https://i.kinja-img.com/gawker-media/image/upload/t_original/bjrvfoxykn9cedcsmxnu.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.3;
-  }
-  #footer {
-    // background-color: rgb(89, 89, 117);
-    background: radial-gradient(circle, rgba(89,89,117,1) 0%, rgba(72,72,97,1) 100%);
-    padding: 3rem 0;
-    font-size: 12px;
-    text-align: center;
-    color: white; 
+}
+.back-to-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 250px;
+  border: 3px dashed pink;
+  position: sticky;
+}
+.navbar {
+  background-color: transparent;
+}
+.header {
+  font-size: 50px;
+  // font-family: 'East Sea Dokdo', cursive;
+  font-family: 'Roboto';
+  color: #87dbfc;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  padding-top: 6rem !important;
+  border: 0 !important;
+  background-color: transparent !important;
+}
+.disco-subtitle {
+  font-size: 30px;
+  // font-family: 'East Sea Dokdo', cursive;
+  font-family: 'Roboto';
+  color: #87dbfc;
+  margin: 0;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  border: 0 !important;
+  background-color: transparent !important;
+}
+#widgetti {
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+.site-image {
+  border: 1px solid black;
+  border-radius: 6px;
+}
+.container {
+  padding: 2rem;
+  border: 2px solid black; 
+  border-radius: 5px;
+  background-color: rgba(205, 210, 214, 0.8);
+  margin: 0 auto;
+}
+.avatar {
+  float: left;
+}
+.not-news {
+  margin-right: 2rem;
+}
+.is-flexible {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  width: 100%;
 
-    a {
-      color: white; 
+  button {
+    color: #e67e22;
+    background-color: #ecf0f1;
+    border: 1px solid #dbdbdb;
+    margin-left: 16px;
+
+    &:hover {
+      background-color: #f4f5f5;
+      border: 1px solid #e67e22;
     }
   }
+}
+.links {
+  padding-top: 15px;
+}
+.link {
+  color: #e67e22;
+}
+#oppaat {
+  position: relative; 
+  padding-bottom: 8rem;
+  padding-top: 2rem;
+}
+#oppaat::before {
+  content: "";
+  background: url('https://www.pcgamesn.com/wp-content/uploads/2019/03/Quake-3-Arena-Live-header-1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.2;
+}
+#afps-finland {
+  background : url(http://nicotukiainen.com/legacy/images/diabo2.jpg) no-repeat center center;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover !important;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-bottom: 8rem;
+  padding-top: 2rem;
+}
+#turnaukset {
+  position: relative;
+  padding-bottom: 8rem;
+  padding-top: 2rem;
+}
+#turnaukset::before {
+  content: "";
+  background: url('https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fdiabotical%2Fhome%2FEGS_Diabotical_TheGDStudio_G1A_04-1920x1080-b094db163c52cf44b7ff9325af2c55a8d2f0b0d7.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: -50px;
+  left: 0px;
+  opacity: 0.2;
+}
+#discord {
+  position: relative;
+  background: radial-gradient(circle, rgba(165,165,206,1) 0%, rgba(151,151,193,1) 100%);
+  padding-bottom: 7rem;
+  padding-top: 2rem;
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+}
+#discord::before {
+  content: "";
+  background: url('https://i.kinja-img.com/gawker-media/image/upload/t_original/bjrvfoxykn9cedcsmxnu.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.4;
+}
+#footer {
+  background: radial-gradient(circle, rgba(89,89,117,1) 0%, rgba(72,72,97,1) 100%);
+  padding: 3rem 0;
+  font-size: 12px;
+  text-align: center;
+  color: white;
+
+  a {
+    color: white; 
+  }
+}
+//DISCORD
+.disco-osio {
+  min-height: 600px;
+}
 
 //OPPAAT
 .avatar img {
