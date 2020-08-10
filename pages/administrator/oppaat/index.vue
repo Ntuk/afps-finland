@@ -39,7 +39,7 @@
                   <h2>{{displayOpasTitle(dOpas)}}</h2>
                   <div class="opas-card-footer">
                     <span>
-                      Last Edited {{dOpas.updatedAt | formatDate('LLL')}}
+                      Viimeksi muokattu {{dOpas.updatedAt | formatDate('LLL')}}
                     </span>
                     <dropdown
                       @optionChanged="handleOption($event, dOpas)"
@@ -49,7 +49,7 @@
               </div>
               <!-- In case of no drafts oppaat  -->
               <div v-else class="opas-error">
-                Ei luonnoksia :(
+                Ei luonnoksia
               </div>
             </template>
             <!-- Published Oppaat -->
@@ -67,7 +67,7 @@
                   <div class="opas-card-footer">
                     <!-- updatedAt -->
                     <span>
-                      Last Edited {{pOpas.updatedAt | formatDate('LLL')}}
+                      Viimeksi muokattu {{pOpas.updatedAt | formatDate('LLL')}}
                     </span>
                     <dropdown
                       @optionChanged="handleOption($event, pOpas)"
@@ -77,7 +77,7 @@
               </div>
               <!-- In case of no drafts oppaat  -->
               <div v-else class="opas-error">
-                Ei julkaistuja oppaita :(
+                Ei julkaistuja oppaita
               </div>
             </template>
           </div>
@@ -128,7 +128,7 @@ export default {
     },
     updateOpas(opas) {
       const featured = !opas.featured
-      const featureStatus = featured ? 'Tärkeä' : 'Ei-Tärkeä'
+      const featureStatus = featured ? 'Ajankohtainen' : 'Ei-ajankohtainen'
 
       this.$store.dispatch('administrator/opas/updatePublishedOpas', {id: opas._id, data: {featured}})
         .then(_ => this.$toasted.success(`Opas merkattu statuksella: ${featureStatus}!`, {duration: 2000}))
@@ -137,14 +137,14 @@ export default {
       return createPublishedOptions(isFeatured)
     },
     displayDeleteWarning(opas) {
-     const isConfirm = confirm('Are you sure you want to delete this opas?')
+     const isConfirm = confirm('Haluatko varmasti poistaa tämän oppaan?')
      if (isConfirm) {
       this.$store.dispatch('administrator/opas/deleteOpas', opas)
         .then(_ => this.$toasted.success('Opas onnistuneesti poistettu!', {duration: 2000}))
       }
     },
     displayOpasTitle(opas) {
-      return opas.title || opas.subtitle || 'Opas jolla ei ole otsikkoa tai alaotsikkoa :('
+      return opas.title || opas.subtitle || 'Opas jolla ei ole otsikkoa tai alaotsikkoa'
     }
   }
 }

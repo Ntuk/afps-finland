@@ -4,7 +4,7 @@
       <h1 class="title">{{title}}</h1>
       <nuxt-link :to="navigateToPage" class="button is-primary">{{navigateToText}}</nuxt-link>
     </div>
-    <h2 class="subtitle">{{status}}<span> :(</span></h2>
+    <h2 class="subtitle">{{status}}<span></span></h2>
   </div>
 </template>
 
@@ -40,6 +40,6 @@ export default {
     text-align: center;
   }
   .notFoundContainer {
-    margin-top: 80px;
+    padding-top: 180px;
   }
 </style>

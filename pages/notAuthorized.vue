@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <ErrorView :title="'Ooooops, sinulla ei ole oikeuksia nähdä tätä sivua. Pyytäisitkö adminilta pääsyoikeudet.'"
+    <ErrorView :title="'Valitettavasti sinulla ei ole oikeuksia nähdä tätä sivua. Pyytäisitkö adminilta pääsyoikeudet.'"
                :status="'401'"
                :navigateToPage="'/'"
-               :navigateToText="'Navigate to Home Page'" />
+               :navigateToText="'Tästä takaisin etusivulle'" />
   </div>
 </template>
 
