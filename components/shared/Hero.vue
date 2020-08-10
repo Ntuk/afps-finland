@@ -1,18 +1,14 @@
 <template>
-    <section
-      class="hero is-black is-medium" id="hero">
+    <section class="hero is-black is-medium hero">
       <div class="hero-body">
         <div
           class="hero-img"
           :style="{ background : `url(http://nicotukiainen.com/legacy/images/afps-first.jpg) no-repeat center center`}">
         </div>
         <div class="container">
-            <h1 class="hero-header">
-              <div>
-                <span>Kohtaamispaikka suomalaisille AFPS-pelaajille</span>
-              </div>
-              <a href="#oppaat" v-smooth-scroll="{ duration: 1000 }"><i class="fa fa-angle-down fa-3x" aria-hidden="true"></i></a>
-            </h1>
+          <h1 class="hero-header">
+            <a href="#oppaat" v-smooth-scroll="{ duration: 1000 }"><i class="fa fa-angle-down fa-10x" aria-hidden="true"></i></a>
+          </h1>
         </div>
       </div>
     </section>  
@@ -55,10 +51,11 @@ Vue.use(vueSmoothScroll)
   }
   .hero-header {
     color: #87dbfc;
-      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+      text-shadow: 0 0 300px #000;
 
     .fa-angle-down {
-      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+      // text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+      text-shadow: 8px 0 0 #000, 0 -8px 0 #000, 0 8px 0 #000, -8px 0 0 #000;
 
       &:hover {
         color: rgb(229, 244, 248);
@@ -66,27 +63,22 @@ Vue.use(vueSmoothScroll)
     }
   }
   .container {
-    justify-content: center;
-    top: 20%;
-    padding: 2rem;
-    max-width: 800px;
-    background: rgba(131, 228, 245, 0.1);
-    border-radius: 5px;
-    border: 1px solid black;
+    top: 25%;
   }
   .hero-header {
     font-size: 30px;
     font-weight: bold;
     text-align: center;
     i {
-      color: #f39c12;
+      color: #87dbfc;
+
       &:hover {
         cursor: pointer;
       }
     }
   }
   .hero-img {
-    opacity: 0.7;
+    opacity: 1;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -102,7 +94,6 @@ Vue.use(vueSmoothScroll)
     background-color: black;
   }
   .title {
-    // font-weight: bold;
     font-size: 30px;
   }
   .subtitle {

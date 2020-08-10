@@ -6,7 +6,6 @@
       :image="turnausHero.image"
       :promoLink="turnausHero.product && turnausHero.product.productLink"
     />
-
     <section class="section" id="oppaat">
       <div class="header container">        
         OPPAAT JA PELISUOSITUKSET
@@ -300,7 +299,6 @@ export default {
   }
 }
 </script>
-
 <style scoped lang="scss">
   html, body {
     width: 100%;
@@ -309,6 +307,15 @@ export default {
   }
   hr {
     background-color: #65a1b9;
+  }
+  .back-to-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 250px;
+    border: 3px dashed pink;
+    position: sticky;
   }
   .navbar {
     background-color: transparent;
