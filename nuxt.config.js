@@ -82,10 +82,11 @@ module.exports = {
   ],
   proxy: {
     '/api': {
-      target: 'http://afps.fi',
+      target: 'http://example.com',
       pathRewrite: {
-        '^/api' : '/'
-        }
+      '^/api' : '/' 
+      },
+      changeOrigin: true
       }
   },
   /*
