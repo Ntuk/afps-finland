@@ -34,7 +34,7 @@ module.exports = {
   buildModules: [
     [
       '@nuxtjs/google-analytics', {
-        id: 'G-TRZYRPP09Z'
+        id: 'UA-155293168-1'
       },
       '@nuxtjs/vuetify',
   ]

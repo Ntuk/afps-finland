@@ -496,6 +496,7 @@ hr {
   background: radial-gradient(circle, rgba(89,89,117,1) 0%, rgba(72,72,97,1) 100%);
   padding: 3rem 0;
   font-size: 12px;
+  line-height: 1.3;
   text-align: center;
   color: white;
 
