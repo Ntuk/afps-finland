@@ -70,6 +70,10 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    // Simple usage
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-155293168-1' || ''
+    }],
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     'portal-vue/nuxt',
