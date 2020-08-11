@@ -40,7 +40,7 @@ if (process.env.NODE_ENV === 'production') {
   app.set('trust proxy', 1);
   sess.cookie.secure = true;
   sess.cookie.httpOnly = true;
-  sess.cookie.sameSite = true;
+  sess.cookie.sameSite = None;
   sess.cookie.domain = process.env.DOMAIN // .yourdomain.com
 }
 
