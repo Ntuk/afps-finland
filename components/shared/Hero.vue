@@ -1,9 +1,17 @@
 <template>
     <section class="hero is-black is-medium hero">
       <div class="hero-body">
-        <div
-          class="hero-img"
-          :style="{ background : `url(http://nicotukiainen.com/legacy/images/afps-first.jpg) no-repeat center center`}">
+        <div class="hero-img">
+        <video-background 
+          src="http://nicotukiainen.com/legacy/images/dibbe.mp4"
+          poster="http://nicotukiainen.com/legacy/images/afps-first.jpg"
+          :sources="[
+              {src: 'http://nicotukiainen.com/legacy/images/dibbe.mp4', res: 900, autoplay: true}, 
+              {src: 'http://nicotukiainen.com/legacy/images/dibbe.mp4', res: 638, autoplay: true, poster: 'http://nicotukiainen.com/legacy/images/afps-first.jpg'}
+          ]"
+          style="max-height: 100vh; height: 100vh;"
+          overlay="linear-gradient(45deg,#2a4ae430,#fb949e6b)" 
+        ></video-background>
         </div>
         <div class="container">
           <h1 class="hero-header">
@@ -63,7 +71,7 @@ Vue.use(vueSmoothScroll)
     }
   }
   .container {
-    top: 25%;
+    top: 50%;
   }
   .hero-header {
     font-size: 30px;
