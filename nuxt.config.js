@@ -80,21 +80,22 @@ module.exports = {
     'portal-vue/nuxt',
     '@nuxtjs/style-resources'
   ],
-  proxy: {
-    '/api': {
-      target: 'https://afps-finland.herokuapp.com/api/v1/',
-      pathRewrite: {
-      '^/api' : '/' 
-      },
-      changeOrigin: true
-      }
-  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: process.env.BASE_URL || 'http://localhost:3000'  
+    baseURL: process.env.BASE_URL || 'http://localhost:3000',
+    proxy: true
+  },
+  proxy: {
+    '/products/': {
+      target: 'https://afps-finland.herokuapp.com/api/v1/',
+      // pathRewrite: {
+      // '^/api' : '/' 
+      // },
+      changeOrigin: true
+      }
   },
   serverMiddleware: [
     '~/server/routes/index'
