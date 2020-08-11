@@ -82,7 +82,7 @@ module.exports = {
   ],
   proxy: {
     '/api': {
-      target: 'http://example.com',
+      target: 'https://afps-finland.herokuapp.com/api/v1/',
       pathRewrite: {
       '^/api' : '/' 
       },
