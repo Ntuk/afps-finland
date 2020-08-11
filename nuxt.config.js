@@ -90,7 +90,7 @@ module.exports = {
     proxy: true
   },
   proxy: {
-    '/': {
+    '/products/': {
       target: 'https://afps-finland.herokuapp.com/api/v1/',
       // pathRewrite: {
       // '^/api' : '/' 
