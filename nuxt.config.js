@@ -76,9 +76,18 @@ module.exports = {
     }],
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     'portal-vue/nuxt',
     '@nuxtjs/style-resources'
   ],
+  proxy: {
+    '/api': {
+      target: 'http://afps.fi',
+      pathRewrite: {
+        '^/api' : '/'
+        }
+      }
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
