@@ -165,12 +165,14 @@ export default {
     position: fixed;
     width: 100%;
     background-color: transparent;
+    min-height: 7rem;
 
     .burger {
       color: #87dbfc;
       background: rgba(102, 112, 114, 0.3);
       border-radius: 50% 0 0 50%;
       font-weight: 800;
+      height: 7rem;
 
       span {
         width: 20px;
@@ -188,7 +190,6 @@ export default {
   .change_color {
     background: url('http://nicotukiainen.com/legacy/images/visor3.png');
     width: 100%;
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom: 1px solid black;

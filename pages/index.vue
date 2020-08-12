@@ -238,9 +238,6 @@
     <section class="section" id="footer">
       <div class="columns">
         <div class="column is-one-quarter iconic">
-          <a href="#hero" v-smooth-scroll="{ duration: 1600 }">
-            <i class="fa fa-arrow-up fa-lg"/>
-          </a>
         </div>
         <div class="column is-half">
           <span class="is-icon"><i class="fa fa-copyright"/></span> <a style="padding-top:4px;" target="_blank" href="https://www.nicotukiainen.com">Nico "sc4ndroid" Tukiainen 2020</a>
