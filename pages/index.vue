@@ -716,7 +716,6 @@ a.nav-item.is-tab:hover {
 .post {
   border-left: 4px solid #4b8297;
   // background: rgba(206, 206, 186, 0.1);
-  width: 70%;
 }
 .post-header, .sidebar-header-single {
     padding-left: 1rem;
