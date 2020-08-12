@@ -123,13 +123,16 @@
                 </div>
                 <div class="sidebar-list">
                   <!-- Ajankohtaiset Oppaat -->
-                  <p
+                  <h4 class="title"
                     v-for="fOpas in featuredOppaat"
                     :key="fOpas._id">
                     <nuxt-link :to="`/oppaat/${fOpas.slug}`">
                       {{fOpas.title}}
                     </nuxt-link>
-                  </p>
+                  </h4>
+                  <h5 class="subtitle is-5"
+                  v-for="fOpas in featuredOppaat"
+                  :key="fOpas._id">{{fOpas.subtitle}}</h5>
                   <!-- Ajankohtaiset Oppaat -->
                 </div>
               </div>
