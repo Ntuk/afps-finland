@@ -236,11 +236,14 @@
     </section>
 
     <section class="section" id="footer">
-      <div class="columns">
-        <div class="column is-one-quarter iconic">
+      <div class="columns centeroitu">
+        <div class="column is-one-quarter">
+          <span class="is-icon"><i class="fa fa-copyright"/></span> <a target="_blank" href="https://www.nicotukiainen.com">Nico "sc4ndroid" Tukiainen 2020</a>
         </div>
-        <div class="column is-half">
-          <span class="is-icon"><i class="fa fa-copyright"/></span> <a style="padding-top:4px;" target="_blank" href="https://www.nicotukiainen.com">Nico "sc4ndroid" Tukiainen 2020</a>
+        <div class="column is-half">            
+          <a href="#hero" v-smooth-scroll="{ duration: 1600 }">
+            <img src="https://www.nicotukiainen.com/legacy/images/afps-logo.png">
+          </a>
         </div>
         <div class="column is-one-quarter iconic">
           <a href="#hero" v-smooth-scroll="{ duration: 1600 }">
@@ -337,7 +340,7 @@ hr {
     i {
       color: #eeeeee;
       font-size: 32px;
-      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+      text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
     }
   }
   &:hover {
@@ -345,7 +348,7 @@ hr {
       i {
         color: #eeeeee;
         font-size: 32px;
-        text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+        text-shadow: 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black;
       }
     }
   }
@@ -386,6 +389,11 @@ hr {
   height: 100%;
   border: 1px solid black;
   border-radius: 6px;
+}
+@media screen and (max-width: 768px) {
+  #widgetti {
+    min-height: 500px;
+  }
 }
 .site-image {
   border: 1px solid black;
@@ -505,7 +513,7 @@ hr {
   right: 0px;
   bottom: 0px;
   left: 0px;
-  opacity: 0.4;
+  opacity: 0.6;
 }
 #footer {
   background: radial-gradient(circle, rgba(89,89,117,1) 0%, rgba(72,72,97,1) 100%);
@@ -517,6 +525,10 @@ hr {
 
   a {
     color: white; 
+  }
+
+  .centeroitu {
+    align-items: center;
   }
 }
 //DISCORD
