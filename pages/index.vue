@@ -8,6 +8,62 @@
       :promoLink="turnausHero.product && turnausHero.product.productLink"
       id="hero"
     />
+
+    <section class="section" id="afps-finland">
+      <div class="header container">
+        AFPS?
+      </div>
+      <div class="rows container">
+        <div class="row is-half">
+          <p class="disco-subtitle">FPS?</p>
+          <p>Luultavasti tiedätkin jo FPS (First person shooter)-peleistä, mikäli olet sivuille eksynyt. Tästä huolimatta pieni katsaus FPS/AFPS -maailmaan lienee paikallaan. Jotta voisimme ymmärtää Arena shootereita, meidän on ensin aloitettava FPS-peleistä yleisesti. FPS-pelit ovat klassinen peligenre, jossa pelin kulku on kuvattu hahmon silmistä käsin eli ensimmäisestä persoonasta. Peleissä kontrolloidaan liikkumista näppäimistöllä ja ympäriinsä katsellaan hiirtä käyttäen. Genre alkoi id Softwaren vuonna 1992 julkaiseman <b>Wolfenstein 3D</b>:n siivittämänä. FPS genre on pysynyt suosittuna jo lähes 30 vuotta ja mukaan mahtuu muitakin klassikoita kuten <b>Doom</b>, <b>Half-Life</b> ja massiivisen suosittu <b>Call of Duty</b> -sarja.</p>
+          <hr/>
+          <div class="columns">
+            <div class="column is-half">
+              <p class="disco-subtitle">Arena FPS?</p>
+              <p>Arena FPS pelit ovat FPS-pelien yksi vanhimpia 'alalajeja'. Kuten nimestä voi päätellä, Arena shooterit laittavat pelaajat toisiaan vastaan erilaisille 'areenoille' deathmatchiin ja tyypillisesti kartalta löytyy aseita, ammuksia, armoreita ja poweruppeja ripoteltuna ennalta määritetyistä paikoista. Arena FPS:t keskittyvät pääsääntöisesti moninpeliin ja yksinpelimoodit koostuvat pääasiassa boteista, joita vastaan pelaaja voi harjoitella kuin hän pelaisi oikeita ihmisiä vastaan.</p>
+              <p>Pelien asearsenaalit sisältävät perinteisesti ainakin jossain muodossa Rocket launcherin, Railgunin sekä Lightning gunin jotka ovatkin luultavasti pelien käytetyimpiä aseita. Edellä mainittujen lisäksi joukosta löytyy usein Shotgun, Grenade Launcher ja Plasma gun.</p>
+              <br/>
+              <p>Loppuun vielä esimerkkejä suosituista AFPS-peleistä:</p>
+              <div class="game-list">
+                <ul>
+                  <li><img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/quake-icon.png"><b>Quake</b>, <b>Quake 2</b>, <b>Quake 3: Arena</b>, <b>Quake 4</b>, <b>Quake Live</b>, <b>Quake Champions</b>
+                  </li>
+                  <li><img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/ut-icon.png"><b>Unreal Tournament (99)</b>, <b>Unreal Tournament 2004</b> ja <b>Unreal Tournament 3</b>
+                  </li>
+                  <li><img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/doom-icon.png"><b>Doom</b>, <b>Doom 2</b>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="column is-half">
+              <p>Alta löytyy pätevä kuvaus AFPS-peleistä videomuodossa englanniksi:</p>
+              <div class="video-container">
+                <iframe 
+                  src="https://www.youtube.com/embed/owpHC4Pg550" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr/>
+        <div class="row is-half">  
+          <figure class="avatar not-news">
+            <img src="https://www.nicotukiainen.com/legacy/images/afps-finland-icon.jpg">
+          </figure>                
+          <p class="disco-subtitle">AFPS Finland?</p>
+          <p>AFPS-pelit ovat pahamaineisen tunnettuja siitä, että niissä on erittäin korkea taitokatto. Tämä tarkoittaa sitä, että usein uudet pelaajat jäävät helposti 20 vuotta Quakea pelanneiden jalkoihin eikä peli tunnu enää niin hauskalta.
+          Mikäli näin kuitenkin käy, sen sijaan että löisit heti hanskat tiskiin, kannattaa liittyä AFPS Finlandin Discord-kanavalle (<a href="https://discord.gg/jMehYtZ"><img class="game-icon" src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/discord-512.png"/><b>https://discord.gg/jMehYtZ</b></a>)
+          ja/tai katsastaa sivujen <a href="#oppaat" v-smooth-scroll="{ duration: 1000 }"><b>OPPAAT</b></a> -osio, jonne päivitellään uutta sisältöä säännöllisen epäsäännöllisesti. AFPS Finland järjestää myös pienimuotoisia Arena shooter-turnauksia sekä LANeja. 
+          Discordissa veteraanit kohtaavat uudemmat pelaajat ja omaan peliin voi löytyä myös tarvittavia vinkkejä. Kanavalle saa myös tulla idlaamaan tai höpöttelemään niitä näitä. 
+          Tervetuloa!</p> 
+        </div>
+      </div>        
+    </section> 
+
     <section class="section" id="oppaat">
       <div class="header container">        
         OPPAAT JA PELISUOSITUKSET
@@ -77,55 +133,6 @@
         </div>
       </div>        
     </section>
-
-    <section class="section" id="afps-finland">
-      <div class="header container">
-        AFPS?
-      </div>
-      <div class="rows container">
-        <div class="row is-half">
-          <p class="disco-subtitle">Mikä Arena FPS?</p>
-          <p>Luultavasti tiedätkin jo FPS (First person shooter)-peleistä, mikäli olet sivuille eksynyt. Tästä huolimatta pieni katsaus FPS/AFPS -maailmaan lienee paikallaan. Jotta voisimme ymmärtää Arena shootereita, meidän on ensin aloitettava FPS-peleistä yleisesti. FPS-pelit ovat klassinen peligenre, jossa pelin kulku on kuvattu hahmon silmistä käsin eli ensimmäisestä persoonasta. Peleissä kontrolloidaan liikkumista näppäimistöllä ja ympäriinsä katsellaan hiirtä käyttäen. Genre alkoi id Softwaren vuonna 1992 julkaiseman <b>Wolfenstein 3D</b>:n siivittämänä. FPS genre on pysynyt suosittuna jo lähes 30 vuotta ja mukaan mahtuu muitakin klassikoita kuten <b>Doom</b>, <b>Half-Life</b> ja massiivisen suosittu <b>Call of Duty</b> -sarja.</p>
-          <hr/>
-          <p>Arena FPS pelit ovat FPS-pelien yksi vanhimpia 'alalajeja'. Kuten nimestä voi päätellä, Arena shooterit laittavat pelaajat toisiaan vastaan erilaisille 'areenoille' deathmatchiin ja tyypillisesti kartalta löytyy aseita, ammuksia, armoreita ja poweruppeja ripoteltuna ennalta määritetyistä paikoista. Arena FPS:t keskittyvät pääsääntöisesti moninpeliin ja yksinpelimoodit koostuvat pääasiassa boteista, joita vastaan pelaaja voi harjoitella kuin hän pelaisi oikeita ihmisiä vastaan.</p>
-          <p>Pelien asearsenaalit sisältävät perinteisesti ainakin jossain muodossa Rocket launcherin, Railgunin sekä Lightning gunin jotka ovatkin luultavasti pelien käytetyimpiä aseita. Edellä mainittujen lisäksi joukosta löytyy usein Shotgun, Grenade Launcher ja Plasma gun.</p>
-          <br/>
-          <p>Alta löytyy pätevä kuvaus AFPS-peleistä videomuodossa englanniksi:</p>
-          <div class="video-container">
-            <iframe 
-              src="https://www.youtube.com/embed/owpHC4Pg550" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen
-            ></iframe>
-          </div>
-          <br/>
-          <p>Loppuun vielä esimerkkejä suosituista AFPS-peleistä:</p>
-          <div class="game-list">
-            <ul>
-              <li><img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/quake-icon.png"><b>Quake</b>, <b>Quake 2</b>, <b>Quake 3: Arena</b>, <b>Quake 4</b>, <b>Quake Live</b>, <b>Quake Champions</b>
-              </li>
-              <li><img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/ut-icon.png"><b>Unreal Tournament (99)</b>, <b>Unreal Tournament 2004</b> ja <b>Unreal Tournament 3</b>
-              </li>
-              <li><img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/doom-icon.png"><b>Doom</b>, <b>Doom 2</b>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <hr/>
-        <div class="row is-half">  
-          <figure class="avatar not-news">
-            <img src="https://www.nicotukiainen.com/legacy/images/afps-finland-icon.jpg">
-          </figure>                
-          <p class="disco-subtitle">Mikä AFPS Finland?</p>
-          <p>AFPS-pelit ovat pahamaineisen tunnettuja siitä, että niissä on erittäin korkea taitokatto. Tämä tarkoittaa sitä, että usein uudet pelaajat jäävät helposti 20 vuotta Quakea pelanneiden jalkoihin eikä peli tunnu enää niin hauskalta.
-          Sen sijaan, että löisit heti hanskat tiskiin, kannattaa liittyä AFPS Finlandin Discord-kanavalle (<a href="https://discord.gg/jMehYtZ"><img class="game-icon" src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/discord-512.png"/><b>https://discord.gg/jMehYtZ</b></a>)
-          ja/tai katsastaa sivujen <a href="#oppaat">OPPAAT</a> -osio, jonne päivitellään uutta sisältöä säännöllisen epäsäännöllisesti. AFPS Finland järjestää myös pienimuotoisia Arena shooter-turnauksia sekä LANeja. 
-          Discordissa veteraanit kohtaavat uudemmat pelaajat ja omaan peliin voi löytyä myös tarvittavia vinkkejä. Kanavalle saa myös tulla idlaamaan tai höpöttelemään niitä näitä. 
-          Tervetuloa!</p> 
-        </div>
-      </div>        
-    </section> 
 
     <section class="section" id="turnaukset">
       <div class="header container">
@@ -393,6 +400,8 @@ hr {
   border-radius: 5px;
   background-color: rgba(205, 210, 214, 0.8);
   margin: 0 auto;
+  text-align: justify;
+  text-justify: inter-word;
 }
 .avatar {
   float: left;
@@ -423,12 +432,12 @@ hr {
 .link {
   color: #e67e22;
 }
-#oppaat {
+#afps-finland {
   position: relative; 
   padding-bottom: 8rem;
   padding-top: 2rem;
 }
-#oppaat::before {
+#afps-finland::before {
   content: "";
   background: url('https://www.pcgamesn.com/wp-content/uploads/2019/03/Quake-3-Arena-Live-header-1.jpg');
   background-position: center;
@@ -437,22 +446,28 @@ hr {
   position: absolute;
   top: 0px;
   right: 0px;
-  bottom: 0px;
+  bottom: -60px;
   left: 0px;
   opacity: 0.2;
 }
-#afps-finland {
-  background : url(http://nicotukiainen.com/legacy/images/diabo2.jpg) no-repeat center center;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-size: cover !important;
-  -webkit-background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+#oppaat {  
+  position: relative; 
   padding-bottom: 8rem;
-  padding-top: 2rem;
+  padding-top: 4rem;
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+}
+#oppaat::before {
+  content: "";
+  background: url(http://nicotukiainen.com/legacy/images/diabo2.jpg) no-repeat center center;
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
 }
 #turnaukset {
   position: relative;
@@ -468,7 +483,7 @@ hr {
   position: absolute;
   top: 0px;
   right: 0px;
-  bottom: -50px;
+  bottom: -60px;
   left: 0px;
   opacity: 0.2;
 }

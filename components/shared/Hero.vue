@@ -52,6 +52,7 @@ Vue.use(vueSmoothScroll)
   }
 </script>
 <style scoped lang="scss">
+  @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
   .hero {
     width: 100vw;
     height: 100vh;

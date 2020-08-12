@@ -27,19 +27,19 @@
             </a>
           </div>
         </a>
-        <a class="navbar-item" href="#oppaat" v-smooth-scroll="{ duration: 1000 }">
-          <div class="menu-item-container">
-            <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
-            <a>
-              Oppaat
-            </a>
-          </div>
-        </a>
         <a class="navbar-item" href="#afps-finland" v-smooth-scroll="{ duration: 1000 }">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fa fa-crosshairs fa-lg"/></span>
             <a>
               AFPS?
+            </a>
+          </div>
+        </a>
+        <a class="navbar-item" href="#oppaat" v-smooth-scroll="{ duration: 1000 }">
+          <div class="menu-item-container">
+            <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
+            <a>
+              Oppaat
             </a>
           </div>
         </a>
