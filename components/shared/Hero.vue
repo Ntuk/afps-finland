@@ -85,7 +85,7 @@ Vue.use(vueSmoothScroll)
       text-align: center;
       font-family: 'East Sea Dokdo', cursive;
       text-shadow: 0 0 8px black, 0 0 8px black, 0 0 8px black, 0 0 8px black;
-      line-height: 0.4;
+      line-height: 0.8;
     }
 
     img {

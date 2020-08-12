@@ -207,7 +207,7 @@ export default {
       }
     }
   }
-  @media screen and (min-width: 1088px){
+  @media screen and (min-width: 1024px){
     .navbar {
       position: fixed;
       width: 100%;
@@ -242,7 +242,7 @@ export default {
         justify-content: center;
       }
   }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .is-icon {
       position: relative;
       display: block;
@@ -250,6 +250,17 @@ export default {
       width: 25px;
       margin-bottom: .25em;
       transform: rotate(0);
+    }
+  }
+  @media screen and (max-width: 1023px) {
+    .navbar-menu {
+      background: rgba(102, 112, 114, 0.8);
+
+      .navbar-item {
+        &:hover {
+          background: transparent;
+        }
+      }
     }
   }
 </style>
