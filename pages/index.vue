@@ -448,7 +448,7 @@ hr {
 }
 #afps-finland {
   position: relative; 
-  padding-bottom: 8rem;
+  padding-bottom: 12rem;
   padding-top: 2rem;
 }
 #afps-finland::before {
@@ -466,9 +466,12 @@ hr {
 }
 #oppaat {  
   position: relative; 
-  padding-bottom: 8rem;
+  padding-bottom: 12rem;
   padding-top: 4rem;
-  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+  // clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+  clip-path: ellipse(150% 100% at 50% 0); 
+  -webkit-clip-path: ellipse(150% 100% at 50% 0); 
+  z-index: 25;
 }
 #oppaat::before {
   content: "";
@@ -485,7 +488,7 @@ hr {
 }
 #turnaukset {
   position: relative;
-  padding-bottom: 8rem;
+  padding-bottom: 12rem;
   padding-top: 2rem;
 }
 #turnaukset::before {
@@ -495,7 +498,7 @@ hr {
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  top: 0px;
+  top: -80px;
   right: 0px;
   bottom: -60px;
   left: 0px;
@@ -504,7 +507,7 @@ hr {
 #discord {
   position: relative;
   background: radial-gradient(circle, rgba(165,165,206,1) 0%, rgba(151,151,193,1) 100%);
-  padding-bottom: 7rem;
+  padding-bottom: 12rem;
   padding-top: 2rem;
   clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
 }
@@ -519,7 +522,7 @@ hr {
   right: 0px;
   bottom: 0px;
   left: 0px;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 #footer {
   background: radial-gradient(circle, rgba(89,89,117,1) 0%, rgba(72,72,97,1) 100%);
