@@ -96,7 +96,7 @@ module.exports = {
       // '^/api' : '/' 
       // },
       changeOrigin: true
-      }
+    }
   },
   serverMiddleware: [
     '~/server/routes/index'

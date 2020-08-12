@@ -1,5 +1,5 @@
 <template>
-    <section class="hero is-black is-medium hero">
+    <section class="hero is-medium hero">
       <div class="hero-body">
         <div class="hero-img">
         <video-background 
@@ -14,6 +14,8 @@
         ></video-background>
         </div>
         <div class="container">
+        <p class="hero-logo-text">AFPS Finland</p>
+        <!-- <img src="https://www.nicotukiainen.com/legacy/images/afps-logo.png"> -->
           <h1 class="hero-header">
             <a href="#oppaat" v-smooth-scroll="{ duration: 1000 }"><i class="fa fa-angle-down fa-10x" aria-hidden="true"></i></a>
           </h1>
@@ -71,7 +73,23 @@ Vue.use(vueSmoothScroll)
     }
   }
   .container {
-    top: 50%;
+    display:flex;
+    top: 30%;
+    justify-content: center;
+    flex-direction: column;
+
+    .hero-logo-text {
+      color: #87dbfc;
+      font-size: 120px;
+      text-align: center;
+      font-family: 'East Sea Dokdo', cursive;
+      text-shadow: 0 0 8px black, 0 0 8px black, 0 0 8px black, 0 0 8px black;
+      line-height: 0.4;
+    }
+
+    img {
+      width: -webkit-fill-available;
+    }
   }
   .hero-header {
     font-size: 30px;
