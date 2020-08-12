@@ -17,7 +17,7 @@
         <p class="hero-logo-text">AFPS Finland</p>
         <!-- <img src="https://www.nicotukiainen.com/legacy/images/afps-logo.png"> -->
           <h1 class="hero-header">
-            <a href="#oppaat" v-smooth-scroll="{ duration: 1000 }"><i class="fa fa-angle-down fa-10x" aria-hidden="true"></i></a>
+            <a href="#afps-finland" v-smooth-scroll="{ duration: 1000 }"><i class="fa fa-angle-down fa-10x" aria-hidden="true"></i></a>
           </h1>
         </div>
       </div>

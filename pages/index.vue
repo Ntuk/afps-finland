@@ -16,13 +16,13 @@
       <div class="rows container">
         <div class="row is-half">
           <p class="disco-subtitle">FPS?</p>
-          <p>Luultavasti tiedätkin jo FPS (First person shooter)-peleistä, mikäli olet sivuille eksynyt. Tästä huolimatta pieni katsaus FPS/AFPS -maailmaan lienee paikallaan. Jotta voisimme ymmärtää Arena shootereita, meidän on ensin aloitettava FPS-peleistä yleisesti. FPS-pelit ovat klassinen peligenre, jossa pelin kulku on kuvattu hahmon silmistä käsin eli ensimmäisestä persoonasta. Peleissä kontrolloidaan liikkumista näppäimistöllä ja ympäriinsä katsellaan hiirtä käyttäen. Genre alkoi id Softwaren vuonna 1992 julkaiseman <b>Wolfenstein 3D</b>:n siivittämänä. FPS genre on pysynyt suosittuna jo lähes 30 vuotta ja mukaan mahtuu muitakin klassikoita kuten <b>Doom</b>, <b>Half-Life</b> ja massiivisen suosittu <b>Call of Duty</b> -sarja.</p>
+          <p class="justified-text">Luultavasti tiedätkin jo FPS (First person shooter)-peleistä, mikäli olet sivuille eksynyt. Tästä huolimatta pieni katsaus FPS/AFPS -maailmaan lienee paikallaan. Jotta voisimme ymmärtää Arena shootereita, meidän on ensin aloitettava FPS-peleistä yleisesti. FPS-pelit ovat klassinen peligenre, jossa pelin kulku on kuvattu hahmon silmistä käsin eli ensimmäisestä persoonasta. Peleissä kontrolloidaan liikkumista näppäimistöllä ja ympäriinsä katsellaan hiirtä käyttäen. Genre alkoi id Softwaren vuonna 1992 julkaiseman <b>Wolfenstein 3D</b>:n siivittämänä. FPS genre on pysynyt suosittuna jo lähes 30 vuotta ja mukaan mahtuu muitakin klassikoita kuten <b>Doom</b>, <b>Half-Life</b> ja massiivisen suosittu <b>Call of Duty</b> -sarja.</p>
           <hr/>
           <div class="columns">
             <div class="column is-half">
               <p class="disco-subtitle">Arena FPS?</p>
-              <p>Arena FPS pelit ovat FPS-pelien yksi vanhimpia 'alalajeja'. Kuten nimestä voi päätellä, Arena shooterit laittavat pelaajat toisiaan vastaan erilaisille 'areenoille' deathmatchiin ja tyypillisesti kartalta löytyy aseita, ammuksia, armoreita ja poweruppeja ripoteltuna ennalta määritetyistä paikoista. Arena FPS:t keskittyvät pääsääntöisesti moninpeliin ja yksinpelimoodit koostuvat pääasiassa boteista, joita vastaan pelaaja voi harjoitella kuin hän pelaisi oikeita ihmisiä vastaan.</p>
-              <p>Pelien asearsenaalit sisältävät perinteisesti ainakin jossain muodossa Rocket launcherin, Railgunin sekä Lightning gunin jotka ovatkin luultavasti pelien käytetyimpiä aseita. Edellä mainittujen lisäksi joukosta löytyy usein Shotgun, Grenade Launcher ja Plasma gun.</p>
+              <p class="justified-text">Arena FPS pelit ovat FPS-pelien yksi vanhimpia 'alalajeja'. Kuten nimestä voi päätellä, Arena shooterit laittavat pelaajat toisiaan vastaan erilaisille 'areenoille' deathmatchiin ja tyypillisesti kartalta löytyy aseita, ammuksia, armoreita ja poweruppeja ripoteltuna ennalta määritetyistä paikoista. Arena FPS:t keskittyvät pääsääntöisesti moninpeliin ja yksinpelimoodit koostuvat pääasiassa boteista, joita vastaan pelaaja voi harjoitella kuin hän pelaisi oikeita ihmisiä vastaan.
+              Pelien asearsenaalit sisältävät perinteisesti ainakin jossain muodossa Rocket launcherin, Railgunin sekä Lightning gunin jotka ovatkin luultavasti pelien käytetyimpiä aseita. Edellä mainittujen lisäksi joukosta löytyy usein Shotgun, Grenade Launcher ja Plasma gun.</p>
               <br/>
               <p>Loppuun vielä esimerkkejä suosituista AFPS-peleistä:</p>
               <div class="game-list">
@@ -55,7 +55,7 @@
             <img src="https://www.nicotukiainen.com/legacy/images/afps-finland-icon.jpg">
           </figure>                
           <p class="disco-subtitle">AFPS Finland?</p>
-          <p>AFPS-pelit ovat pahamaineisen tunnettuja siitä, että niissä on erittäin korkea taitokatto. Tämä tarkoittaa sitä, että usein uudet pelaajat jäävät helposti 20 vuotta Quakea pelanneiden jalkoihin eikä peli tunnu enää niin hauskalta.
+          <p class="justified-text">AFPS-pelit ovat pahamaineisen tunnettuja siitä, että niissä on erittäin korkea taitokatto. Tämä tarkoittaa sitä, että usein uudet pelaajat jäävät helposti 20 vuotta Quakea pelanneiden jalkoihin eikä peli tunnu enää niin hauskalta.
           Mikäli näin kuitenkin käy, sen sijaan että löisit heti hanskat tiskiin, kannattaa liittyä AFPS Finlandin Discord-kanavalle (<a href="https://discord.gg/jMehYtZ"><img class="game-icon" src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/discord-512.png"/><b>https://discord.gg/jMehYtZ</b></a>)
           ja/tai katsastaa sivujen <a href="#oppaat" v-smooth-scroll="{ duration: 1000 }"><b>OPPAAT</b></a> -osio, jonne päivitellään uutta sisältöä säännöllisen epäsäännöllisesti. AFPS Finland järjestää myös pienimuotoisia Arena shooter-turnauksia sekä LANeja. 
           Discordissa veteraanit kohtaavat uudemmat pelaajat ja omaan peliin voi löytyä myös tarvittavia vinkkejä. Kanavalle saa myös tulla idlaamaan tai höpöttelemään niitä näitä. 
@@ -213,7 +213,7 @@
           </figure>
             <p class="disco-subtitle">Liity AFPS Finlandin Discord kanavalle!</p>
             <hr/>
-            <p>Discord on videopeliyhteisöille suunniteltu VoIP-sovellus. Se toimii Windowsilla, OS X:llä, Androidilla, iOS:llä, Linuxilla ja selaimessa. 
+            <p class="justified-text">Discord on videopeliyhteisöille suunniteltu VoIP-sovellus. Se toimii Windowsilla, OS X:llä, Androidilla, iOS:llä, Linuxilla ja selaimessa. 
               Toukokuussa 2019 sovelluksella oli yli 250 miljoonaa rekisteröityä käyttäjää. 
               AFPS Finlandin Discord-kanava perustettiin vuonna 2018 ja yhteisön tarkoituksena on ollut alusta saakka tuoda suomalaisia arenaräiskintöjen ystäviä yhteen. 
               Yhteisö järjestää erinäisiä turnajaisia, mittelöitä sekä LAN-tapahtumia sillä yhdessä pelaaminen on hauskempaa. 
@@ -400,8 +400,11 @@ hr {
   border-radius: 5px;
   background-color: rgba(205, 210, 214, 0.8);
   margin: 0 auto;
-  text-align: justify;
-  text-justify: inter-word;
+
+  .justified-text {
+    text-align: justify;
+    text-justify: inter-word;
+  }
 }
 .avatar {
   float: left;
