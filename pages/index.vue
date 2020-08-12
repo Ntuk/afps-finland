@@ -27,17 +27,23 @@
               <p>Loppuun vielä esimerkkejä suosituista AFPS-peleistä:</p>
               <div class="game-list">
                 <ul>
-                  <li><img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/quake-icon.png"><b>Quake</b>, <b>Quake 2</b>, <b>Quake 3: Arena</b>, <b>Quake 4</b>, <b>Quake Live</b>, <b>Quake Champions</b>
+                  <li>
+                    <img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/quake-icon.png"><b>Quake</b>, <b>Quake 2</b>, <b>Quake 3: Arena</b>, <b>Quake 4</b>, <b>Quake Live</b>, <b>Quake Champions</b>
                   </li>
-                  <li><img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/ut-icon.png"><b>Unreal Tournament (99)</b>, <b>Unreal Tournament 2004</b> ja <b>Unreal Tournament 3</b>
+                  <li>
+                    <img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/ut-icon.png"><b>Unreal Tournament (99)</b>, <b>Unreal Tournament 2004</b> ja <b>Unreal Tournament 3</b>
                   </li>
-                  <li><img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/doom-icon.png"><b>Doom</b>, <b>Doom 2</b>
+                  <li>
+                    <img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/doom-icon.png"><b>Doom</b>, <b>Doom 2</b>
+                  </li>
+                  <li>
+                    <img class="game-icon" src="https://pbs.twimg.com/profile_images/1231999603588947974/sZOe6DPF_400x400.png"><b>Diabotical</b>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="column is-half">
-              <p>Alta löytyy pätevä kuvaus AFPS-peleistä videomuodossa englanniksi:</p>
+              <p style="padding-top: 2.8rem;">Alta löytyy pätevä kuvaus AFPS-peleistä videomuodossa englanniksi:</p>
               <div class="video-container">
                 <iframe 
                   src="https://www.youtube.com/embed/owpHC4Pg550" 
