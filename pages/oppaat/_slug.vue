@@ -16,7 +16,7 @@
           <div class="menu-item-container-slug">
             <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
             <nav-link to="/#oppaat" @click="() => $router.push('/#oppaat')">
-              <span>Takaisin</span>
+              <span>Takaisin oppaisiin</span>
             </nav-link>
           </div>
         </a>
@@ -70,11 +70,9 @@ export default {
     text-align: center;
     color: #87dbfc;
     font-size: 24px;
-    // font-family: 'East Sea Dokdo', cursive;
     font-family: 'Roboto';
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     margin-top: 10px;
-    width:200px;
     background-color: #f2f3f5 !important;
 
     a {

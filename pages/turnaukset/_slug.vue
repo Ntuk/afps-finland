@@ -64,7 +64,7 @@
         <div class="menu-item-container-slug">
           <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
             <nav-link to="/#turnaukset" @click="() => $router.push('/#turnaukset')">
-            <span>Takaisin</span>
+            <span>Takaisin turnauksiin</span>
           </nav-link>
         </div>
       </a>
@@ -133,7 +133,6 @@ export default {
     font-family: 'Roboto';
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     margin-top: 10px;
-    width:200px;
     background-color: #f2f3f5 !important;
 
     a {

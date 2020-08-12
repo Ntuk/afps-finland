@@ -27,19 +27,19 @@
             </a>
           </div>
         </a>
-        <a class="navbar-item" @click="() => $router.push('/#oppaat')">
-          <div class="menu-item-container">
-            <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
-            <a>
-              Oppaat
-            </a>
-          </div>
-        </a>
         <a class="navbar-item" @click="() => $router.push('/#afps-finland')">
           <div class="menu-item-container">
             <span class="is-icon"><i class="fa fa-crosshairs fa-lg"/></span>
             <a>
               AFPS?
+            </a>
+          </div>
+        </a>
+        <a class="navbar-item" @click="() => $router.push('/#oppaat')">
+          <div class="menu-item-container">
+            <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
+            <a>
+              Oppaat
             </a>
           </div>
         </a>
@@ -146,16 +146,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
   
   .navbar {
     position: fixed;
     width: 100%;
     background-color: transparent;
+    min-height: 7rem;
 
     .burger {
       color: #87dbfc;
+      background: rgba(102, 112, 114, 0.3);
+      border-radius: 50% 0 0 50%;
       font-weight: 800;
+      height: 7rem;
+
+      span {
+        width: 20px;
+      }
     }
   }
   .navbar-menu .is-active {
@@ -169,7 +178,6 @@ export default {
   .change_color {
     background: url('http://nicotukiainen.com/legacy/images/visor3.png');
     width: 100%;
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom: 1px solid black;
@@ -264,5 +272,4 @@ export default {
     }
   }
 </style>
-
 

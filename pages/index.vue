@@ -78,8 +78,8 @@
               :key="opas._id"
               class="section"
             >
-              <div class="post">
-                <div @click="$router.push(`/oppaat/${opas.slug}`)" class="post-header clickable">
+              <div @click="$router.push(`/oppaat/${opas.slug}`)" class="post clickable">
+                <div class="post-header">
                   <h4 class="title is-4">{{opas.title}}</h4>
                   <h5 class="subtitle is-5">{{opas.subtitle}}</h5>
                 </div>
@@ -673,9 +673,8 @@ a.nav-item.is-tab:hover {
 }
 /* sidebar */
 .sidebar-header {
-    border-color: #77beda;
     padding-bottom: 1rem;
-    border-bottom: 4px solid #77beda;
+    border-bottom: 4px solid #4b8297;
 }
 .sidebar-header .title, .sidebar-header-single .title {
     font-weight: 700;
@@ -714,10 +713,13 @@ a.nav-item.is-tab:hover {
     color: #363636;
 }
 /* post */
+.post {
+  border-left: 4px solid #4b8297;
+  // background: rgba(206, 206, 186, 0.1);
+  width: 70%;
+}
 .post-header, .sidebar-header-single {
-    border-color: #77beda;
     padding-left: 1rem;
-    border-left: 4px solid #77beda;
 }
 .post-header .title {
     font-weight: 700;
@@ -734,6 +736,7 @@ a.nav-item.is-tab:hover {
 .post-content, .post-single-content {
     font-size: 1.1rem;
     font-weight: 300;
+    padding-left: 1rem;
 }
 /* override */
 .post-single-content form p:nth-child(even) {
