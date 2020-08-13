@@ -180,7 +180,7 @@ export default {
     }
   }
   .navbar-menu .is-active {
-    background: url('http://nicotukiainen.com/legacy/images/visor3.png');
+    background: url('https://nicotukiainen.com/legacy/images/visor3.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -188,7 +188,7 @@ export default {
     transition: 1s ease-in-out;
   }
   .change_color {
-    background: url('http://nicotukiainen.com/legacy/images/visor3.png');
+    background: url('https://nicotukiainen.com/legacy/images/visor3.png');
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -234,7 +234,7 @@ export default {
       background-color: transparent;
     }
     .change_color {
-      background: url('http://nicotukiainen.com/legacy/images/visor3.png');
+      background: url('https://nicotukiainen.com/legacy/images/visor3.png');
       width: 100%;
       background-position: center;
       background-repeat: no-repeat;

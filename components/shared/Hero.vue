@@ -3,11 +3,11 @@
       <div class="hero-body">
         <div class="hero-img">
           <video-background 
-            src="http://nicotukiainen.com/legacy/images/dibbe2.mp4"
-            poster="http://nicotukiainen.com/legacy/images/afps-first.jpg"
+            src="https://nicotukiainen.com/legacy/images/dibbe2.mp4"
+            poster="https://nicotukiainen.com/legacy/images/afps-first.jpg"
             :sources="[
-                {src: 'http://nicotukiainen.com/legacy/images/dibbe.mp4', res: 900, autoplay: true}, 
-                {src: 'http://nicotukiainen.com/legacy/images/dibbe.mp4', res: 638, autoplay: true, poster: 'http://nicotukiainen.com/legacy/images/afps-first.jpg'}
+                {src: 'https://nicotukiainen.com/legacy/images/dibbe.mp4', res: 900, autoplay: true}, 
+                {src: 'https://nicotukiainen.com/legacy/images/dibbe.mp4', res: 638, autoplay: true, poster: 'https://nicotukiainen.com/legacy/images/afps-first.jpg'}
             ]"
             style="max-height: 100vh; height: 100vh;"
           ></video-background>
@@ -41,7 +41,7 @@ Vue.use(vueSmoothScroll)
       },
       image: {
         type: String,
-        default: 'http://nicotukiainen.com/legacy/images/afps-first.jpg'
+        default: 'https://nicotukiainen.com/legacy/images/afps-first.jpg'
       },
       promoLink: {
         type: String,

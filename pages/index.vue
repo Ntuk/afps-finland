@@ -253,7 +253,7 @@
           <a href="#hero" v-smooth-scroll="{ duration: 1600 }">
             <img src="https://www.nicotukiainen.com/legacy/images/afps-logo.png">
           </a>
-          <p>Tarkasta myös <a target="_blank" href="http://quakeworld.fi/"><b>quakeworld.fi</b> <img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/quake-icon.png"></a></p>
+          <p>Tarkasta myös <a target="_blank" href="https://quakeworld.fi/"><b>quakeworld.fi</b> <img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/quake-icon.png"></a></p>
         </div>
         <div class="column is-one-quarter iconic">
           <a href="#hero" v-smooth-scroll="{ duration: 1600 }">
@@ -479,7 +479,7 @@ hr {
 }
 #oppaat::before {
   content: "";
-  background: url(http://nicotukiainen.com/legacy/images/diabo2.jpg) no-repeat center center;
+  background: url(https://nicotukiainen.com/legacy/images/diabo2.jpg) no-repeat center center;
   background-position: fixed;
   background-repeat: no-repeat;
   background-size: cover;

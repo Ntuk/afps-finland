@@ -2,7 +2,7 @@
   <div>
     <!-- <div
       class="hero-img"
-      :style="{ background : `url(http://nicotukiainen.com/legacy/images/afps-first.jpg) no-repeat center center`}">
+      :style="{ background : `url(https://nicotukiainen.com/legacy/images/afps-first.jpg) no-repeat center center`}">
     </div> -->
     <nuxt class="contents" />
   </div>

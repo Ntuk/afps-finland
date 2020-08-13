@@ -25,7 +25,7 @@ exports.getAdministratorProducts = function (req, res) {
     .sort({'updatedAt': -1})
     .exec((errors, products) => {
     if (errors) {
-      console.log('moi')
+      return res.status(422).send(errors);
     }
 
     return res.json(products);

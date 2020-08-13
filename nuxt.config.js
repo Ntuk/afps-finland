@@ -15,7 +15,7 @@ module.exports = {
       { hid: 'og:locale', name: 'og:locale', content: 'en_EU' },
       { hid: 'og:url', name: 'og:url', content: process.env.BASE_URL || 'http://localhost:3000' },
       { hid: 'og:type', name: 'og:type', content: 'website' },
-      { hid: 'og:image', name: 'og:image', content: 'http://nicotukiainen.com/legacy/images/afps-first.jpg' },
+      { hid: 'og:image', name: 'og:image', content: 'https://nicotukiainen.com/legacy/images/afps-first.jpg' },
       { hid: 'og:description', name: 'og:description', content: 'Kohtauspaikka suomalaisille AFPS-pelaajille.' },
     ],
     link: [
@@ -91,7 +91,7 @@ module.exports = {
   },
   proxy: {
     '/products/': {
-      target: 'http://afps.fi/api/v1/',
+      target: 'https://afps.fi/api/v1/',
       changeOrigin: true
     }
   },
