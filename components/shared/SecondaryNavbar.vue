@@ -274,7 +274,6 @@ export default {
     }
     .burger {
       max-height: 5rem;
-      margin-left: -2rem;
     }
     .navbar-menu {
       background: rgba(102, 112, 114, 0.8);
