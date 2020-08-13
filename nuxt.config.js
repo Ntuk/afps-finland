@@ -92,9 +92,6 @@ module.exports = {
   proxy: {
     '/products/': {
       target: 'http://afps.fi/api/v1/',
-      // pathRewrite: {
-      // '^/api' : '/' 
-      // },
       changeOrigin: true
     }
   },
