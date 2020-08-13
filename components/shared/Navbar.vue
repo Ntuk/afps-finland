@@ -272,11 +272,28 @@ export default {
       transform: rotate(0);
     }
   }
-  @media screen and (max-width: 1023px) {
+  @media screen and (min-width: 100px) and (max-width: 1023px){
+    .navbar {
+      min-height: 0;
+      max-height: 5rem;
+    }
+    .navbar-brand {
+      min-height: 2.5rem;
+      align-items: auto;
+    }
+    .navbar-item {
+      padding: 0;
+    }
+    .burger {
+      max-height: 5rem;
+      margin-left: -2rem;
+    }
     .navbar-menu {
       background: rgba(102, 112, 114, 0.8);
 
       .navbar-item {
+        padding: 0;
+        
         &:hover {
           background: transparent;
         }

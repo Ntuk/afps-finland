@@ -30,7 +30,7 @@ export const actions = {
   register(_, registerData) {
     return this.$axios.$post('/api/v1/users/register', registerData)
       .catch(error => {
-        let errorMessage = 'Uuups, something went wrong. Try to register again'
+        let errorMessage = 'Jotain meni vikaan. Koita rekisteröityä uudelleen.'
 
         if (error.response.data.errors) {
           errorMessage = error.response.data.errors.message

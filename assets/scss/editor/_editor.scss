@@ -259,3 +259,16 @@
     }
   }
 }
+@media screen and (min-width: 100px) and (max-width: 1024px){
+  .editor__content {
+    p {
+      font-size: 14px;
+    }
+    h1 {
+      font-size: 30px;
+    }
+    h2 {
+      font-size: 18px;
+    }
+  }
+}

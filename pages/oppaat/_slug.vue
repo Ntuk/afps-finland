@@ -124,4 +124,3 @@ export default {
       height: 100%;
   }
 </style>
-

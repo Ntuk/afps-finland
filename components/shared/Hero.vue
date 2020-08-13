@@ -131,4 +131,19 @@ Vue.use(vueSmoothScroll)
     font-size: 20px;
     font-weight: bold;
   }
+  @media screen and (min-width: 314px) and (max-width: 1023px){
+    .hero-header {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+
+      i {
+        color: #87dbfc;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
 </style>

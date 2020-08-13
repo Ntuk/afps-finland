@@ -400,11 +400,6 @@ hr {
   border: 1px solid black;
   border-radius: 6px;
 }
-@media screen and (max-width: 768px) {
-  #widgetti {
-    min-height: 500px;
-  }
-}
 .site-image {
   border: 1px solid black;
   border-radius: 6px;
@@ -784,40 +779,76 @@ a.nav-item.is-tab:hover {
     background-color: #d74436;
     border-color: #d74436;
 }
-  @media screen and (max-width: 314px) {
-    .header {
-      font-size: 30px;
+@media screen and (max-width: 768px) {
+  #widgetti {
+    min-height: 500px;
+  }
+}
+@media screen and (min-width: 100px) and (max-width: 1024px){
+  body {
+    line-height: 1.2 !important;
+  }
+  .header {
+    font-size: 34px;
+    padding-top: 2rem !important;
+    text-align: center;
+  }
+  #oppaat {
+    clip-path: none;
+    -webkit-clip-path: none;
+  }
+  #discord {
+    clip-path: none;
+    -webkit-clip-path: none;
+  }
+  .container {
+    margin: 0;
+    padding: 1rem;
+    border-radius: 0;
+    border: 0;
+    border-top: 1px solid black; 
+    border-bottom: 1px solid black; 
+
+    p {
+      text-align: none;
+      font-size: 14px;
     }
-    .container {
-      margin-left: 2rem;
-      margin-right: 2rem;
-    }
-    .featured-check {
-      display: none;
-    }
-    .column.is-4.is-narrow {
-      display: none;
-    }
-    .column.is-8 {
-      width: 100% !important;
+
+    .disco-subtitle {
+      font-size: 20px;
     }
   }
-  @media screen and (min-width: 314px) and (max-width: 1024px){
-    .header {
-      font-size: 34px;
+  section {
+    padding: 0 !important;
+  }
+  .featured-check {
+    display: none;
+  }
+  .column.is-4.is-narrow {
+    display: none;
+  }
+  .column.is-8 {
+    width: 100% !important;
+  }
+  #footer {
+    background: radial-gradient(circle, rgba(89,89,117,1) 0%, rgba(72,72,97,1) 100%);
+    font-size: 12px;
+    line-height: 0.8;
+    text-align: center;
+    color: white;
+    margin-top: 1rem;
+
+    img {
+      max-height: 1rem;
     }
-    .container {
-      margin-left: 2rem;
-      margin-right: 2rem;
+
+    a {
+      color: white; 
     }
-    .featured-check {
-      display: none;
-    }
-    .column.is-4.is-narrow {
-      display: none;
-    }
-    .column.is-8 {
-      width: 100% !important;
+
+    .centeroitu {
+      align-items: center;
     }
   }
+}
 </style>
