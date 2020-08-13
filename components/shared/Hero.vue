@@ -2,16 +2,16 @@
     <section class="hero is-medium hero">
       <div class="hero-body">
         <div class="hero-img">
-        <video-background 
-          src="http://nicotukiainen.com/legacy/images/dibbe.mp4"
-          poster="http://nicotukiainen.com/legacy/images/afps-first.jpg"
-          :sources="[
-              {src: 'http://nicotukiainen.com/legacy/images/dibbe.mp4', res: 900, autoplay: true}, 
-              {src: 'http://nicotukiainen.com/legacy/images/dibbe.mp4', res: 638, autoplay: true, poster: 'http://nicotukiainen.com/legacy/images/afps-first.jpg'}
-          ]"
-          style="max-height: 100vh; height: 100vh;"
-          overlay="linear-gradient(45deg,#2a4ae430,#fb949e6b)" 
-        ></video-background>
+          <video-background 
+            src="http://nicotukiainen.com/legacy/images/dibbe2.mp4"
+            poster="http://nicotukiainen.com/legacy/images/afps-first.jpg"
+            :sources="[
+                {src: 'http://nicotukiainen.com/legacy/images/dibbe.mp4', res: 900, autoplay: true}, 
+                {src: 'http://nicotukiainen.com/legacy/images/dibbe.mp4', res: 638, autoplay: true, poster: 'http://nicotukiainen.com/legacy/images/afps-first.jpg'}
+            ]"
+            style="max-height: 100vh; height: 100vh;"
+            overlay="linear-gradient(45deg,#2a4ae430,#fb949e6b)" 
+          ></video-background>
         </div>
         <div class="container">
         <p class="hero-logo-text">AFPS Finland</p>
@@ -59,6 +59,7 @@ Vue.use(vueSmoothScroll)
   }
   .hero-body {
     position: relative;
+    background-color: black;
   }
   .hero-header {
     color: #87dbfc;
@@ -105,7 +106,7 @@ Vue.use(vueSmoothScroll)
     }
   }
   .hero-img {
-    opacity: 1;
+    opacity: 0.7;
     position: absolute;
     height: 100%;
     width: 100%;
