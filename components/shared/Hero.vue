@@ -59,7 +59,7 @@ Vue.use(vueSmoothScroll)
   }
   .hero-body {
     position: relative;
-    background-color: black;
+    background-color: rgb(110, 110, 110);
   }
   .hero-header {
     color: #87dbfc;
@@ -106,7 +106,7 @@ Vue.use(vueSmoothScroll)
     }
   }
   .hero-img {
-    opacity: 0.7;
+    opacity: 0.5;
     position: absolute;
     height: 100%;
     width: 100%;
