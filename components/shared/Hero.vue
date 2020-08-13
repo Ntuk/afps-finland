@@ -10,7 +10,6 @@
                 {src: 'http://nicotukiainen.com/legacy/images/dibbe.mp4', res: 638, autoplay: true, poster: 'http://nicotukiainen.com/legacy/images/afps-first.jpg'}
             ]"
             style="max-height: 100vh; height: 100vh;"
-            overlay="linear-gradient(45deg,#2a4ae430,#fb949e6b)" 
           ></video-background>
         </div>
         <div class="container">
