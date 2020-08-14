@@ -417,6 +417,9 @@ hr {
   border: 1px solid black;
   border-radius: 6px;
 }
+.header.container {
+  box-shadow: none !important;
+}
 .container {
   padding: 2rem;
   border: 2px solid black; 

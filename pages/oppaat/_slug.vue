@@ -69,8 +69,8 @@ export default {
     display: block;
     text-align: center;
     color: #87dbfc;
-    font-size: 24px;
-    font-family: 'Roboto';
+    font-size: 28px;
+    font-family: 'Gochi Hand', cursive;
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     margin-top: 10px;
     background-color: #f2f3f5 !important;

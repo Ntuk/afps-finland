@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar is-transparent" :class="{change_color: scrollPosition > 980}" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-transparent" :class="{change_color: scrollPosition > 900, transition: scrollPosition > 900}" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
         <img src="https://www.nicotukiainen.com/legacy/images/afps-logo.png">
@@ -159,7 +159,8 @@ export default {
 
 <style lang="scss" scoped>
 // @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
   
   .navbar {
     position: fixed;
@@ -180,28 +181,36 @@ export default {
     }
   }
   .navbar-menu .is-active {
-    background: url('https://nicotukiainen.com/legacy/images/visor3.png');
+    // background: url('https://nicotukiainen.com/legacy/images/visor3.png');
+      background-color: red;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom: 1px solid black;
-    transition: 1s ease-in-out;
   }
-  .change_color {
-    background: url('https://nicotukiainen.com/legacy/images/visor3.png');
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-bottom: 1px solid black;
-    transition: 1s ease-in-out;
+  // .change_color {
+  //   // background: url('https://nicotukiainen.com/legacy/images/visor3.png');
+  //     background-color: red;
+  //   width: 100%;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   border-bottom: 1px solid black;
+  // }
+  .transition {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
   }
   .menu-item-container {
     display: block;
     text-align: center;
     color: #87dbfc;
-    font-size: 20px;
+    // font-size: 20px; //Robotolle
+    font-size: 24px;
     // font-family: 'East Sea Dokdo', cursive;
-    font-family: "Roboto";
+    // font-family: "Roboto";
+  font-family: 'Gochi Hand', cursive;
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     margin-top: 10px;
 
@@ -234,13 +243,15 @@ export default {
       background-color: transparent;
     }
     .change_color {
-      background: url('https://nicotukiainen.com/legacy/images/visor3.png');
+      // background: url('https://nicotukiainen.com/legacy/images/visor3.png');
       width: 100%;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      border-bottom: 1px solid black;
-      transition: 1s ease-in-out;
+      // border-bottom: 1px solid black;
+      background: linear-gradient(to top, #0000008c 5%, #1f1f1fd2 65%);      
+      // -webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+        // clip-path: polygon(100% 0, 100% 25%, 100% 90%, 50% 100%, 0 90%, 0 0%);
     }
     .navbar-center{
       display:flex;
