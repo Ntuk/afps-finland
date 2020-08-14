@@ -71,7 +71,7 @@
       <div class="header container">
         OPPAAT JA PELISUOSITUKSET
       </div>
-      <div class="container">
+      <div class="container" style="background-color:rgba(205, 210, 214, 0.9)">
         <div class="columns is-mobile">
           <!-- posts -->
           <div class="column is-8">
@@ -245,13 +245,19 @@
     <section class="section" id="footer">
       <div class="columns centeroitu">
         <div class="column is-one-quarter">
-          <span class="is-icon"><i class="fa fa-copyright"/></span> <a target="_blank" href="https://www.nicotukiainen.com">Nico "sc4ndroid" Tukiainen 2020</a>
-        </div>
-        <div class="column is-half">            
-          <a href="#hero" v-smooth-scroll="{ duration: 1600 }">
-            <img src="https://www.nicotukiainen.com/legacy/images/afps-logo.png">
-          </a>
           <p>Tarkasta myös <a target="_blank" href="https://quakeworld.fi/"><b>quakeworld.fi</b> <img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/quake-icon.png"></a></p>
+        </div>
+        <div class="column is-half">
+          <div class="rows">
+            <div class="row is-half">      
+              <a href="#hero" v-smooth-scroll="{ duration: 1600 }">
+                <img src="https://www.nicotukiainen.com/legacy/images/afps-logo.png">
+              </a>
+            </div>
+            <div class="row is-half"> 
+              <span class="is-icon"><i class="fa fa-copyright"/></span> <a target="_blank" href="https://www.nicotukiainen.com">Nico "sc4ndroid" Tukiainen 2020</a>
+               </div>
+          </div>
         </div>
         <div class="column is-one-quarter iconic">
           <a href="#hero" v-smooth-scroll="{ duration: 1600 }">
@@ -467,10 +473,12 @@ hr {
   position: relative; 
   padding-bottom: 12rem;
   padding-top: 2rem;
+  background-color: rgb(83, 83, 83);
 }
 #afps-finland::before {
   content: "";
-  background: url('https://www.pcgamesn.com/wp-content/uploads/2019/03/Quake-3-Arena-Live-header-1.jpg');
+  // background: url('https://www.pcgamesn.com/wp-content/uploads/2019/03/Quake-3-Arena-Live-header-1.jpg');
+  background: url('https://cdn.gamer-network.net/2018/metabomb/quakechampionsguidetipsweaponschampionsmapsmodes2.jpg');  
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -479,15 +487,14 @@ hr {
   right: 0px;
   bottom: -60px;
   left: 0px;
-  opacity: 0.2;
+  opacity: 0.4;
 }
 #oppaat {  
   position: relative; 
   padding-bottom: 12rem;
   padding-top: 4rem;
-  // clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
-  clip-path: ellipse(150% 100% at 50% 0); 
-  -webkit-clip-path: ellipse(150% 100% at 50% 0); 
+  clip-path: ellipse(200% 100% at 50% 0); 
+  -webkit-clip-path: ellipse(200% 100% at 50% 0); 
   z-index: 25;
 }
 #oppaat::before {
@@ -517,7 +524,7 @@ hr {
   position: absolute;
   top: -80px;
   right: 0px;
-  bottom: -60px;
+  bottom: -90px;
   left: 0px;
   opacity: 0.2;
 }
@@ -527,6 +534,7 @@ hr {
   padding-bottom: 12rem;
   padding-top: 2rem;
   clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+  bottom: -30px;
 }
 #discord::before {
   content: "";
@@ -537,7 +545,7 @@ hr {
   position: absolute;
   top: 0px;
   right: 0px;
-  bottom: 0px;
+  bottom: -50px;
   left: 0px;
   opacity: 0.8;
 }
@@ -548,6 +556,7 @@ hr {
   line-height: 1.3;
   text-align: center;
   color: white;
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
 
   a {
     color: white; 
@@ -557,6 +566,7 @@ hr {
     align-items: center;
   }
 }
+
 //DISCORD
 .disco-osio {
   min-height: 600px;
@@ -680,7 +690,7 @@ a.nav-item.is-tab:hover {
 
 /* section */
 .section {
-    padding: 0 0 2rem 0;
+    padding: 0 0 2.4rem 0;
 }
 .section-header {
     padding-bottom: 2rem;
@@ -704,9 +714,10 @@ a.nav-item.is-tab:hover {
     border-bottom-right-radius: 225px 10px;
   }
 .sidebar-header .title, .sidebar-header-single .title {
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 1.3rem;
+    // font-weight: 700;
+    // text-transform: uppercase;
+    // font-size: 1.3rem;
+    font-family: 'Gochi Hand', cursive;
 }
 .sidebar-list p, .sidebar-list-single p {
     font-size: 1.1rem;
@@ -717,7 +728,7 @@ a.nav-item.is-tab:hover {
     color: #4a4a4a;
 }
 .sidebar-list, .post-content, .sidebar-list-single {
-    padding-top: 1.4rem;
+    padding-top: 0.5rem;
 }
 .sidebar-list-nav {
     padding-top: 1rem;
@@ -753,7 +764,8 @@ a.nav-item.is-tab:hover {
     font-weight: 700;
     font-size: 1.8rem;
     color: rgba(0,0,0,.84)!important;
-    fill: rgba(0,0,0,.84)!important;
+    fill: rgba(0,0,0,.84)!important;    
+    // font-family: 'Gochi Hand', cursive;
 }
 .post-header .subtitle, .sidebar-header-single .subtitle {
     font-size: 1.1rem;
@@ -858,6 +870,7 @@ a.nav-item.is-tab:hover {
     text-align: center;
     color: white;
     margin-top: 1rem;
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
 
     img {
       max-height: 1rem;
