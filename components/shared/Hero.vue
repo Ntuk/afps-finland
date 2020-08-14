@@ -16,7 +16,7 @@
         <p class="hero-logo-text">AFPS Finland</p>
         <!-- <img src="https://www.nicotukiainen.com/legacy/images/afps-logo.png"> -->
           <h1 class="hero-header">
-            <a href="#afps-finland" v-smooth-scroll="{ duration: 1000 }"><i class="fa fa-angle-down fa-10x" aria-hidden="true"></i></a>
+            <a href="#afps-finland" v-smooth-scroll="{ duration: 1000 }"><i class="fa fa-angle-down fa-8x" aria-hidden="true"></i></a>
           </h1>
         </div>
       </div>
@@ -65,8 +65,8 @@ Vue.use(vueSmoothScroll)
       text-shadow: 0 0 300px #000;
 
     .fa-angle-down {
-      // text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-      text-shadow: 8px 0 0 #000, 0 -8px 0 #000, 0 8px 0 #000, -8px 0 0 #000;
+      text-shadow: 0 0 8px black, 0 0 8px black, 0 0 8px black, 0 0 8px black;
+      line-height: 0.8;
 
       &:hover {
         color: rgb(229, 244, 248);
