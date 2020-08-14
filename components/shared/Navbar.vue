@@ -182,20 +182,11 @@ export default {
   }
   .navbar-menu .is-active {
     // background: url('https://nicotukiainen.com/legacy/images/visor3.png');
-      background-color: red;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom: 1px solid black;
   }
-  // .change_color {
-  //   // background: url('https://nicotukiainen.com/legacy/images/visor3.png');
-  //     background-color: red;
-  //   width: 100%;
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   border-bottom: 1px solid black;
-  // }
   .transition {
     -webkit-transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
@@ -208,23 +199,22 @@ export default {
     color: #87dbfc;
     // font-size: 20px; //Robotolle
     font-size: 24px;
-    // font-family: 'East Sea Dokdo', cursive;
     // font-family: "Roboto";
-  font-family: 'Gochi Hand', cursive;
-    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+    font-family: 'Gochi Hand', cursive;
     margin-top: 10px;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
 
     a {
       color: #87dbfc;
-      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+      text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
     }
 
     &:hover {
-      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+      text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
       color: rgb(229, 244, 248);
 
       a {
-        text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+        text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
         color: rgb(229, 244, 248);
       }
 
@@ -248,10 +238,7 @@ export default {
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      // border-bottom: 1px solid black;
-      background: linear-gradient(to top, #0000008c 5%, #1f1f1fd2 65%);      
-      // -webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-        // clip-path: polygon(100% 0, 100% 25%, 100% 90%, 50% 100%, 0 90%, 0 0%);
+      background: linear-gradient(to top, #0000008c 5%, #1f1f1fd2 65%);
     }
     .navbar-center{
       display:flex;

@@ -68,7 +68,7 @@
     </section> 
 
     <section class="section" id="oppaat">
-      <div class="header container">        
+      <div class="header container">
         OPPAAT JA PELISUOSITUKSET
       </div>
       <div class="container">
