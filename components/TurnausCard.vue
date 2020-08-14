@@ -36,8 +36,9 @@ export default {
   .card {
     padding: 0.75rem;
     background: radial-gradient(circle, rgba(174,232,255,1) 0%, rgba(158,217,240,1) 100%);
-    border: 1px solid rgb(112, 112, 112);
-    border-radius: 3px;
+    border: 2px solid rgb(112, 112, 112);
+    box-shadow: 10px 19px 17px -13px hsla(0,0%,0%,.2);
+    border-radius: 2px 225px 1px 225px/225px 4px 225px 8px;
   }
   .card-image {
     border: 1px solid #6b6b6b;

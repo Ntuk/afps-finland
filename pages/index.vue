@@ -16,8 +16,8 @@
       <div class="rows container">
         <div class="row is-half">
           <p class="disco-subtitle">FPS?</p>
-          <p class="justified-text">Luultavasti tiedätkin jo FPS (First person shooter)-peleistä, mikäli olet sivuille eksynyt. Tästä huolimatta pieni katsaus FPS/AFPS -maailmaan lienee paikallaan. Jotta voisimme ymmärtää Arena shootereita, meidän on ensin aloitettava FPS-peleistä yleisesti. FPS-pelit ovat klassinen peligenre, jossa pelin kulku on kuvattu hahmon silmistä käsin eli ensimmäisestä persoonasta. Peleissä kontrolloidaan liikkumista näppäimistöllä ja ympäriinsä katsellaan hiirtä käyttäen. Genre alkoi id Softwaren vuonna 1992 julkaiseman <b>Wolfenstein 3D</b>:n siivittämänä. FPS genre on pysynyt suosittuna jo lähes 30 vuotta ja mukaan mahtuu muitakin klassikoita kuten <b>Doom</b>, <b>Half-Life</b> ja massiivisen suosittu <b>Call of Duty</b> -sarja.</p>
-          <hr/>
+          <p class="justified-text">Luultavasti tiedätkin jo FPS (First person shooter)-peleistä, mikäli olet sivuille päätynyt. Tästä huolimatta pieni katsaus FPS/AFPS -maailmaan lienee paikallaan. Jotta voisimme ymmärtää Arena shootereita, meidän on ensin aloitettava FPS-peleistä yleisesti. FPS-pelit ovat klassinen peligenre, jossa pelin kulku on kuvattu hahmon silmistä käsin eli ensimmäisestä persoonasta. Peleissä kontrolloidaan liikkumista näppäimistöllä ja ympäriinsä katsellaan hiirtä käyttäen. Genre alkoi id Softwaren vuonna 1992 julkaiseman <b>Wolfenstein 3D</b>:n siivittämänä. FPS genre on pysynyt suosittuna jo lähes 30 vuotta ja mukaan mahtuu muitakin klassikoita kuten <b>Doom</b>, <b>Half-Life</b> ja massiivisen suosittu <b>Call of Duty</b> -sarja.</p>
+          <hr />
           <div class="columns">
             <div class="column is-half">
               <p class="disco-subtitle">Arena FPS?</p>
@@ -55,11 +55,8 @@
             </div>
           </div>
         </div>
-        <hr/>
-        <div class="row is-half">  
-          <figure class="avatar not-news">
-            <img src="https://www.nicotukiainen.com/legacy/images/afps-finland-icon.jpg">
-          </figure>                
+        <hr class="hr2"/>
+        <div class="row is-half">              
           <p class="disco-subtitle">AFPS Finland?</p>
           <p class="justified-text">AFPS-pelit ovat pahamaineisen tunnettuja siitä, että niissä on erittäin korkea taitokatto. Tämä tarkoittaa sitä, että usein uudet pelaajat jäävät helposti 20 vuotta Quakea pelanneiden jalkoihin eikä peli tunnu enää niin hauskalta.
           Mikäli näin kuitenkin käy, sen sijaan että löisit heti hanskat tiskiin, kannattaa liittyä AFPS Finlandin Discord-kanavalle (<a href="https://discord.gg/jMehYtZ"><img class="game-icon" src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/discord-512.png"/><b>https://discord.gg/jMehYtZ</b></a>)
@@ -149,9 +146,9 @@
       </div>
       <div class="rows container">
         <div class="row is-half">
-          <figure class="avatar not-news">
-          <img src="https://media.gettyimages.com/vectors/golden-trophy-cup-hand-drawn-vector-id689974954">
-        </figure>
+          <!-- <figure class="avatar not-news">
+            <img src="https://media.gettyimages.com/vectors/golden-trophy-cup-hand-drawn-vector-id689974954">
+          </figure> -->
             <p class="disco-subtitle">Tulevat turnaukset</p>
             <div class="is-flexible">
           </div>
@@ -179,7 +176,7 @@
               </div>
             </div>
         </div>
-        <hr>
+        <hr class="hr2" />
         <div class="row is-half">
           <p class="disco-subtitle">Menneet turnaukset</p>
           <div class="is-flexible">
@@ -221,7 +218,7 @@
             <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/discord-512.png">
           </figure>
             <p class="disco-subtitle">Liity AFPS Finlandin Discord kanavalle!</p>
-            <hr/>
+            <hr class="hr2"/>
             <p class="justified-text">Discord on videopeliyhteisöille suunniteltu VoIP-sovellus. Se toimii Windowsilla, OS X:llä, Androidilla, iOS:llä, Linuxilla ja selaimessa. 
               Toukokuussa 2019 sovelluksella oli yli 250 miljoonaa rekisteröityä käyttäjää. 
               AFPS Finlandin Discord-kanava perustettiin vuonna 2018 ja yhteisön tarkoituksena on ollut alusta saakka tuoda suomalaisia arenaräiskintöjen ystäviä yhteen. 
@@ -239,6 +236,7 @@
             frameborder="0" 
             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
             id="widgetti"
+            style="border:2px solid black;border-radius: 5px 225px 1px 225px/225px 4px 225px 8px;"
           ></iframe>
         </div>
       </div> 
@@ -337,13 +335,26 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
 html, body {
   width: 100%;
   height: 100%;
   margin: 0;
 }
+.hr2 {
+  transform:rotate(-0.4deg);
+  position:relative;
+  border:none;
+  height:1px;
+  background:black;
+}
 hr {
   background-color: #65a1b9;
+  transform:rotate(0.7deg);
+  position:relative;
+  border:none;
+  height:1px;
+  background:black;
 }
 .iconic {
   a {
@@ -378,7 +389,8 @@ hr {
 .header {
   font-size: 50px;
   // font-family: 'East Sea Dokdo', cursive;
-  font-family: 'Roboto';
+  // font-family: 'Roboto';
+  font-family: 'Gochi Hand', cursive;
   color: #87dbfc;
   text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
   padding-top: 6rem !important;
@@ -388,10 +400,11 @@ hr {
 .disco-subtitle {
   font-size: 30px;
   // font-family: 'East Sea Dokdo', cursive;
-  font-family: 'Roboto';
-  color: #87dbfc;
+  // font-family: 'Roboto';
+  font-family: 'Gochi Hand', cursive;
+  // color: #87dbfc;
   margin: 0;
-  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  // text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
   border: 0 !important;
   background-color: transparent !important;
 }
@@ -410,6 +423,8 @@ hr {
   border-radius: 5px;
   background-color: rgba(205, 210, 214, 0.8);
   margin: 0 auto;
+  box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 
   .justified-text {
     text-align: justify;
@@ -683,7 +698,8 @@ a.nav-item.is-tab:hover {
 .sidebar-header {
     padding-bottom: 1rem;
     border-bottom: 4px solid #4b8297;
-}
+    border-bottom-right-radius: 225px 10px;
+  }
 .sidebar-header .title, .sidebar-header-single .title {
     font-weight: 700;
     text-transform: uppercase;
@@ -723,6 +739,8 @@ a.nav-item.is-tab:hover {
 /* post */
 .post {
   border-left: 4px solid #4b8297;
+  border-top-left-radius: 255px 0px;
+  border-bottom-left-radius:15px 255px;
   // background: rgba(206, 206, 186, 0.1);
 }
 .post-header, .sidebar-header-single {
