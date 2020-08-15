@@ -245,7 +245,12 @@
     <section class="section" id="footer">
       <div class="columns centeroitu">
         <div class="column is-one-quarter">
-          <p>Tarkasta myös <a target="_blank" href="https://quakeworld.fi/"><b>quakeworld.fi</b> <img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/quake-icon.png"></a></p>
+          <p class="disco-subtitle">Linkkejä</p>
+          <a target="_blank" href="https://quakeworld.fi/"><b>quakeworld.fi</b></a>
+          <br>
+          <a target="_blank" href="https://www.diabotical.com/"><b>diabotical.com</b></a>
+          <br>
+          <a target="_blank" href="https://quake.bethesda.net/"><b>quake.bethesda.net</b></a>
         </div>
         <div class="column is-half">
           <div class="rows">
@@ -550,7 +555,7 @@ hr {
   opacity: 0.8;
 }
 #footer {
-  background: radial-gradient(circle, rgba(89,89,117,1) 0%, rgba(72,72,97,1) 100%);
+  background: radial-gradient(circle, rgb(82, 82, 107) 0%, rgb(48, 48, 71) 100%);
   padding: 3rem 0;
   font-size: 12px;
   line-height: 1.3;
