@@ -20,9 +20,6 @@ export default class Iframe extends Node {
         width: {
           default: '560'
         },
-        // height: {
-        //   default: '315'
-        // },
         src: {
           default: 'https://youtube.com/embed/IHv0nVxnycw'
         }

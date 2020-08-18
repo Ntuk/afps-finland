@@ -3,7 +3,7 @@
     <Modal ref="ytmodal" @onConfirm="addCommand" />
     <editor-menu-bar
       :editor="editor"
-      v-slot="{ commands, isActive, getMarkAttrs }">
+      v-slot="{ commands, isActive }">
       
       <div class="menubar">
         <button
@@ -72,10 +72,18 @@ export default {
   },
   methods: {
     showImagePrompt(command) {
-      const src = prompt('Enter the url of your image here')
-      if (src !== null) {
-        command({ src })
-      }
+      window.cloudinary.openUploadWidget(
+        { cloud_name: 'dezjnxeig',
+          upload_preset: 'fbxxifgh',
+        },
+        (error, result) => {
+          if (!error && result && result.event === "success") {
+            console.log('Done uploading..: ', result.info.url);    
+            this.url = result.info.url;
+            const src = this.url;
+            command({ src });
+          }
+      }).open();
     },
     openModal(command) {
       this.$refs.ytmodal.showModal(command);

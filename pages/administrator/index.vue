@@ -18,12 +18,6 @@
             Turnaukset
           </div>
         </div>
-        <!-- Go to /administrator/fileupload -->
-        <div class="box" @click="$router.push('/administrator/fileupload')">
-          <div>
-            Uploadaa kuvia
-          </div>
-        </div>
         <!-- Go to /administrator/heroes -->
         <!-- <div class="box" @click="$router.push('/administrator/heroes')">
           <div>
