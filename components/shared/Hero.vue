@@ -14,7 +14,7 @@
         </div>
         <div class="container">
         <p class="hero-logo-text">AFPS Finland</p>
-        <!-- <img src="https://www.nicotukiainen.com/legacy/images/afps-logo.png"> -->
+        <!-- <img src="https://nicotukiainen.com/legacy/images/afps-logo.png"> -->
           <h1 class="hero-header">
             <a href="#afps-finland" v-smooth-scroll="{ duration: 1000 }"><i class="fa fa-angle-down fa-8x" aria-hidden="true"></i></a>
           </h1>

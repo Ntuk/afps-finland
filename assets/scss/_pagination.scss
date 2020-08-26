@@ -16,8 +16,8 @@
       line-height: 1.42857143;
       color: black;
       text-decoration: none;
-      background-color: #fff;
-      border: 1px solid #ddd;
+      // background-color: #fff;
+      // border: 1px solid #ddd;
     }
 
     &.active {
@@ -25,8 +25,8 @@
         z-index: 2;
         color: #fff;
         cursor: default;
-        background-color: #d74436;
-        border-color: #d74436;
+        background-color: #4b8297;
+        border-color: #4b8297;
       }
     }
 
@@ -34,8 +34,8 @@
       > a {
         color: #777;
         cursor: not-allowed;
-        background-color: #fff;
-        border-color: #ddd;
+        // background-color: #fff;
+        // border-color: #ddd;
       }
     }
   }

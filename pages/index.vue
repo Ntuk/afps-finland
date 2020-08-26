@@ -28,13 +28,13 @@
               <div class="game-list">
                 <ul>
                   <li>
-                    <img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/quake-icon.png"><b>Quake</b>, <b>Quake 2</b>, <b>Quake 3: Arena</b>, <b>Quake 4</b>, <b>Quake Live</b>, <b>Quake Champions</b>
+                    <img class="game-icon" src="https://nicotukiainen.com/legacy/images/icons/quake-icon.png"><b>Quake</b>, <b>Quake 2</b>, <b>Quake 3: Arena</b>, <b>Quake 4</b>, <b>Quake Live</b>, <b>Quake Champions</b>
                   </li>
                   <li>
-                    <img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/ut-icon.png"><b>Unreal Tournament (99)</b>, <b>Unreal Tournament 2004</b> ja <b>Unreal Tournament 3</b>
+                    <img class="game-icon" src="https://nicotukiainen.com/legacy/images/icons/ut-icon.png"><b>Unreal Tournament (99)</b>, <b>Unreal Tournament 2004</b> ja <b>Unreal Tournament 3</b>
                   </li>
                   <li>
-                    <img class="game-icon" src="https://www.nicotukiainen.com/legacy/images/icons/doom-icon.png"><b>Doom</b>, <b>Doom 2</b>
+                    <img class="game-icon" src="https://nicotukiainen.com/legacy/images/icons/doom-icon.png"><b>Doom</b>, <b>Doom 2</b>
                   </li>
                   <li>
                     <img class="game-icon" src="https://pbs.twimg.com/profile_images/1231999603588947974/sZOe6DPF_400x400.png"><b>Diabotical</b>
@@ -97,7 +97,7 @@
             <!-- end of opas -->
             <!-- pagination -->
             <div v-if="pagination.pageCount && pagination.pageCount > 1" class="section">
-              <no-ssr placeholder="Loading...">
+              <client-only placeholder="Lataa...">
                 <paginate
                   v-model="currentPage"
                   :page-count="pagination.pageCount"
@@ -106,7 +106,7 @@
                   :next-text="'Seuraava'"
                   :container-class="'paginationContainer'">
                 </paginate>
-              </no-ssr>
+              </client-only>
             </div>
             <!-- end of pagination -->
           </div>
@@ -256,7 +256,7 @@
           <div class="rows">
             <div class="row is-half">      
               <a href="#hero" v-smooth-scroll="{ duration: 1600 }">
-                <img src="https://www.nicotukiainen.com/legacy/images/afps-logo.png">
+                <img src="https://nicotukiainen.com/legacy/images/afps-logo.png">
               </a>
             </div>
             <div class="row is-half"> 
@@ -338,7 +338,6 @@ export default {
       const filter = {}
       filter.pageSize = this.pagination.pageSize
       filter.pageNum = this.pagination.pageNum
-      // Here store the query params!
       this.$store.dispatch('opas/fetchOppaat', filter)
         .then(_ => this.setQueryPaginationParams())
     },
@@ -508,7 +507,6 @@ hr {
   background-position: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -695,7 +693,7 @@ a.nav-item.is-tab:hover {
 
 /* section */
 .section {
-    padding: 0 0 2.4rem 0;
+  padding: 0 0 2.4rem 0;
 }
 .section-header {
     padding-bottom: 2rem;
@@ -876,15 +874,12 @@ a.nav-item.is-tab:hover {
     color: white;
     margin-top: 1rem;
     clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
-
     img {
       max-height: 1rem;
     }
-
     a {
       color: white; 
     }
-
     .centeroitu {
       align-items: center;
     }

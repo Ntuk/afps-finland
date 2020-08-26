@@ -27,7 +27,7 @@
             <!-- end of opas -->
             <!-- pagination -->
             <div v-if="pagination.pageCount && pagination.pageCount > 1" class="section">
-              <no-ssr placeholder="Loading...">
+              <client-only placeholder="Loading...">
                 <paginate
                   v-model="currentPage"
                   :page-count="pagination.pageCount"
@@ -36,7 +36,7 @@
                   :next-text="'Next'"
                   :container-class="'paginationContainer'">
                 </paginate>
-              </no-ssr>
+              </client-only>
             </div>
             <!-- end of pagination -->
           </div>

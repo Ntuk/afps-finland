@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header
-      title="Write your opas"
+      title="Kirjoita opas"
       exitLink="/administrator/oppaat">
       <template v-if="opas.status === 'active'" #actionMenu>
         <div class="full-page-takeover-header-button">

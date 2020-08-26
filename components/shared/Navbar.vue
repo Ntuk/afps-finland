@@ -2,7 +2,7 @@
   <nav class="navbar is-transparent" :class="{change_color: scrollPosition > 900, transition: scrollPosition > 900}" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
-        <img src="https://www.nicotukiainen.com/legacy/images/afps-logo.png">
+        <img src="https://nicotukiainen.com/legacy/images/afps-logo.png">
       </a>
       <a @click="isActive = !isActive"
           :class="{'is-active': isActive}"
