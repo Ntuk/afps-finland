@@ -65,7 +65,6 @@ module.exports = {
     {src: '~/plugins/tooltip'},
     {src: '~/plugins/toasted', ssr: false},
     {src: '~/plugins/paginate', ssr: false},
-    {src: '~/plugins/vue-video-background', ssr: false}
   ],
   /*
   ** Nuxt.js modules
