@@ -582,6 +582,7 @@ hr {
   border-radius: 50%;
   -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
   box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+  filter: grayscale(100%);
 }
 .is-icon {
   padding-left: 8px;
