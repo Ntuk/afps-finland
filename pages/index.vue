@@ -84,7 +84,7 @@
               <div @click="$router.push(`/oppaat/${opas.slug}`)" class="post clickable">
                 <div class="post-header">
                   <h4 class="title is-4">{{opas.title}}</h4>
-                  <h5 class="subtitle is-5">{{opas.subtitle}}</h5>
+                  <h5 class="subtitle is-5">{{opas.subtitle | shortenText(183)}}</h5>
                 </div>
                 <div class="post-content">                   
                   <figure class="avatar">
@@ -123,13 +123,13 @@
                   <h4 class="title"
                     v-for="fOpas in featuredOppaat"
                     :key="fOpas._id">
-                    <nuxt-link :to="`/oppaat/${fOpas.slug}`">
+                    <nuxt-link :to="`/oppaat/${fOpas.slug}`" style="font-size:22px">
                       {{fOpas.title}}
                     </nuxt-link>
                   </h4>
                   <h5 class="subtitle is-5"
                   v-for="fOpas in featuredOppaat"
-                  :key="fOpas._id">{{fOpas.subtitle}}</h5>
+                  :key="fOpas._id"  style="font-size:18px">{{fOpas.subtitle | shortenText(98)}}</h5>
                   <!-- Ajankohtaiset Oppaat -->
                 </div>
               </div>
