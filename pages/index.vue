@@ -125,12 +125,11 @@
                     :key="fOpas._id">
                     <nuxt-link :to="`/oppaat/${fOpas.slug}`" style="font-size:22px">
                       {{fOpas.title}}
+                      <h5 class="subtitle is-5"
+                        :key="fOpas._id"  style="font-size:18px">{{fOpas.subtitle | shortenText(98)}}
+                      </h5>
                     </nuxt-link>
                   </h4>
-                  <h5 class="subtitle is-5"
-                  v-for="fOpas in featuredOppaat"
-                  :key="fOpas._id"  style="font-size:18px">{{fOpas.subtitle | shortenText(98)}}</h5>
-                  <!-- Ajankohtaiset Oppaat -->
                 </div>
               </div>
             </div>
