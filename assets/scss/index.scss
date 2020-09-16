@@ -1,0 +1,587 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.hr2 {
+  transform:rotate(-0.4deg);
+  position:relative;
+  border:none;
+  height:1px;
+  background:black;
+}
+hr {
+  background-color: #65a1b9;
+  transform:rotate(0.7deg);
+  position:relative;
+  border:none;
+  height:1px;
+  background:black;
+}
+.iconic {
+  a {
+    i {
+      color: #eeeeee;
+      font-size: 32px;
+      text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
+    }
+  }
+  &:hover {
+    a {
+      i {
+        color: #eeeeee;
+        font-size: 32px;
+        text-shadow: 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black;
+      }
+    }
+  }
+}
+.back-to-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 250px;
+  border: 3px dashed pink;
+  position: sticky;
+}
+.navbar {
+  background-color: transparent;
+}
+.header {
+  font-size: 50px;
+  // font-family: 'East Sea Dokdo', cursive;
+  // font-family: 'Roboto';
+  font-family: 'Gochi Hand', cursive;
+  color: #87dbfc;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  padding-top: 6rem !important;
+  border: 0 !important;
+  background-color: transparent !important;
+}
+.disco-subtitle {
+  font-size: 30px;
+  // font-family: 'East Sea Dokdo', cursive;
+  // font-family: 'Roboto';
+  font-family: 'Gochi Hand', cursive;
+  // color: #87dbfc;
+  margin: 0;
+  // text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  border: 0 !important;
+  background-color: transparent !important;
+}
+#widgetti {
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+.site-image {
+  border: 1px solid black;
+  border-radius: 6px;
+}
+.header.container {
+  box-shadow: none !important;
+}
+.container {
+  padding: 2rem;
+  border: 2px solid black; 
+  border-radius: 5px;
+  background-color: rgba(205, 210, 214, 0.8);
+  margin: 0 auto;
+  box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+
+  .justified-text {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+}
+.avatar {
+  float: left;
+}
+.not-news {
+  margin-right: 2rem;
+}
+.is-flexible {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  width: 100%;
+
+  button {
+    color: #e67e22;
+    background-color: #ecf0f1;
+    border: 1px solid #dbdbdb;
+    margin-left: 16px;
+
+    &:hover {
+      background-color: #f4f5f5;
+      border: 1px solid #e67e22;
+    }
+  }
+}
+.links {
+  padding-top: 15px;
+}
+.link {
+  color: #e67e22;
+}
+#afps-finland {
+  position: relative; 
+  padding-bottom: 12rem;
+  padding-top: 2rem;
+  background-color: rgb(83, 83, 83);
+}
+#afps-finland::before {
+  content: "";
+  background: url('https://cdn.gamer-network.net/2018/metabomb/quakechampionsguidetipsweaponschampionsmapsmodes2.jpg');  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: -60px;
+  left: 0px;
+  opacity: 0.4;
+}
+#oppaat {  
+  position: relative; 
+  padding-bottom: 12rem;
+  padding-top: 4rem;
+  clip-path: ellipse(200% 100% at 50% 0); 
+  -webkit-clip-path: ellipse(200% 100% at 50% 0); 
+  z-index: 25;
+}
+#oppaat::before {
+  content: "";
+  background: url(https://nicotukiainen.com/legacy/images/diabo2.jpg) no-repeat center center;
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+#turnaukset {
+  position: relative;
+  padding-bottom: 12rem;
+  padding-top: 2rem;
+}
+#turnaukset::before {
+  content: "";
+  background: url('https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fdiabotical%2Fhome%2FEGS_Diabotical_TheGDStudio_G1A_04-1920x1080-b094db163c52cf44b7ff9325af2c55a8d2f0b0d7.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: -80px;
+  right: 0px;
+  bottom: -90px;
+  left: 0px;
+  opacity: 0.2;
+}
+#discord {
+  position: relative;
+  background: radial-gradient(circle, rgba(165,165,206,1) 0%, rgba(151,151,193,1) 100%);
+  padding-bottom: 12rem;
+  padding-top: 2rem;
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+  bottom: -30px;
+}
+#discord::before {
+  content: "";
+  background: url('https://i.kinja-img.com/gawker-media/image/upload/t_original/bjrvfoxykn9cedcsmxnu.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: -50px;
+  left: 0px;
+  opacity: 0.8;
+}
+#leaderboards {
+  position: relative;
+  background: radial-gradient(circle, rgba(165,165,206,1) 0%, rgba(151,151,193,1) 100%);
+  padding-bottom: 12rem;
+  padding-top: 2rem;
+  bottom: -30px;
+}
+#leaderboards::before {
+  content: "";
+  background: url('https://c.opencritic.com/images/games/9083/b8v1j8H5pNLit38KdubXUbPy1Pn9orKvJO2q1WmqmtNtXJni.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: -50px;
+  left: 0px;
+  opacity: 0.8;
+}
+#footer {
+  background: radial-gradient(circle, rgb(82, 82, 107) 0%, rgb(48, 48, 71) 100%);
+  padding: 3rem 0;
+  font-size: 12px;
+  line-height: 1.3;
+  text-align: center;
+  color: white;
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+
+  a {
+    color: white; 
+  }
+
+  .centeroitu {
+    align-items: center;
+  }
+}
+
+//DISCORD
+.disco-osio {
+  min-height: 600px;
+}
+
+//OPPAAT
+.avatar img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+  box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+  filter: grayscale(100%);
+}
+.is-icon {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.post-content {
+  display: flex;
+  justify-content: flex-start;
+  font-style: italic;
+  align-items: center;
+}
+.pagination-content {
+  display: flex;
+  justify-content: flex-end;
+}
+.clickable {
+  cursor: pointer;
+}
+#root {
+    flex: 1 0 auto;
+}
+*:focus {
+    outline: none;
+}
+a {
+    transition: all .35s;
+    color: #000;
+}
+.button:focus {
+    border-color: #d74436;
+    box-shadow: 0 0 0 0;
+}
+.input, .textarea, .input[type] {
+    font-size: 1.1rem;
+}
+.input:focus, .textarea:focus, .input[type]:focus {
+    border: 2px solid #d74436;
+}
+/* this is used when inline-styled content
+   overlaps text backgrounds in a really ugly way */
+.buffer {
+    padding-bottom: 1.1rem;
+}
+/* navigation */
+.nav {
+    background-color: #0d0c0d;
+}
+.nav-left {
+    padding-left: 2rem;
+}
+.nav-right, .nav-center {
+    padding-right: 2rem;
+}
+a.nav-item.is-tab {
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 0.4rem;
+}
+a.nav-item:hover {
+    color: #d74436;
+}
+a.nav-item.is-tab:hover {
+    border-bottom: 4px solid #d74436;
+}
+/* main content */
+.main-content {
+    padding: 80px 0 2rem 0;
+    min-height: 800px
+}
+.main-content .container {
+  padding: 2rem;
+  border: 1px dashed #f1c40f;
+  border-radius: 5px;
+  background-color: rgba(189, 195, 199, 0.3);
+}
+
+/* AFPS-Finland */
+.game-icon {
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+.video-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+    border: 1px solid black;
+    border-radius: 3px;
+  }
+  .video-container::after {
+      padding-top: 56.25%;
+      display: block;
+      content: '';
+  }
+  .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+
+/* section */
+.section {
+  padding: 0 0 2.4rem 0;
+}
+.section-header {
+    padding-bottom: 2rem;
+}
+.section-header .title {
+    text-transform: uppercase;
+    color: #4a4a4a;
+    font-size: 1.3rem;
+}
+.section-header a {
+    color: #d74436;
+    font-weight: 700;
+}
+.section-header a:hover {
+    color: #e50076;
+}
+/* sidebar */
+.sidebar-header {
+    padding-bottom: 1rem;
+    border-bottom: 4px solid #4b8297;
+    border-bottom-right-radius: 225px 10px;
+  }
+.sidebar-header .title, .sidebar-header-single .title {
+    // font-weight: 700;
+    // text-transform: uppercase;
+    // font-size: 1.3rem;
+    font-family: 'Gochi Hand', cursive;
+}
+.sidebar-list p, .sidebar-list-single p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    padding-bottom: 0.8rem;
+}
+.sidebar-list a {
+    color: #4a4a4a;
+}
+.sidebar-list, .post-content, .sidebar-list-single {
+    padding-top: 0.5rem;
+}
+.sidebar-list-nav {
+    padding-top: 1rem;
+}
+.sidebar-list-nav .is-tab {
+    padding-right: 1rem;
+}
+.sidebar-footer-single {
+    padding-top: 2rem;
+}
+.sidebar-footer-single a {
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    border-right: 4px solid #d74436;
+    padding-right: 1rem;
+}
+.sidebar-footer-single a:hover {
+    color: #363636;
+}
+/* post */
+.post {
+  border-left: 4px solid #4b8297;
+  border-top-left-radius: 255px 0px;
+  border-bottom-left-radius:15px 255px;
+  // background: rgba(206, 206, 186, 0.1);
+}
+.post-header, .sidebar-header-single {
+    padding-left: 1rem;
+}
+.post-header .title {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: rgba(0,0,0,.84)!important;
+    fill: rgba(0,0,0,.84)!important;    
+    // font-family: 'Gochi Hand', cursive;
+}
+.post-header .subtitle, .sidebar-header-single .subtitle {
+    font-size: 1.1rem;
+}
+.post-content p, .post-single-content p {
+    margin-bottom: 0.8rem;
+}
+.post-content, .post-single-content {
+    font-size: 1.1rem;
+    font-weight: 300;
+    padding-left: 1rem;
+}
+/* override */
+.post-single-content form p:nth-child(even) {
+    border-right: 0;
+}
+.post-single-content form label {
+    text-transform: uppercase;
+    color: #4a4a4a;
+    padding-bottom: 0.2rem;
+}
+.post-single-content form .input[type] {
+    padding-top: 0.2rem;
+}
+.post-single-content p:nth-child(even) {
+    border-right: 4px solid #d74436;
+    padding-right: 1rem;
+}
+.post-content a {
+    color: #d74436;
+}
+.card-content-form form {
+    padding-top: 1.5rem;
+}
+.post-footer {
+    padding: 1.5rem 0 0 0;
+}
+/* pagination */
+.pagination-content {
+    border-right: 4px solid #d74436;
+    padding-right: 1rem;
+}
+.pagination-link.is-current {
+    background-color: #d74436;
+    border-color: #d74436;
+}
+@media screen and (max-width: 768px) {
+  #widgetti {
+    min-height: 500px;
+  }
+}
+@media screen and (min-width: 100px) and (max-width: 1024px){
+  body {
+    line-height: 1.2 !important;
+  }
+  .header {
+    font-size: 34px;
+    padding-top: 2rem !important;
+    text-align: center;
+  }
+  #oppaat {
+    clip-path: none;
+    -webkit-clip-path: none;
+  }
+  #discord {
+    clip-path: none;
+    -webkit-clip-path: none;
+  }
+  .container {
+    margin: 0;
+    padding: 1rem;
+    border-radius: 0;
+    border: 0;
+    border-top: 1px solid black; 
+    border-bottom: 1px solid black; 
+
+    p {
+      text-align: none;
+      font-size: 14px;
+    }
+
+    .disco-subtitle {
+      font-size: 20px;
+    }
+  }
+  section {
+    padding: 0 !important;
+  }
+  .featured-check {
+    display: none;
+  }
+  .column.is-4.is-narrow {
+    display: none;
+  }
+  .column.is-8 {
+    width: 100% !important;
+  }
+  #footer {
+    background: radial-gradient(circle, rgba(89,89,117,1) 0%, rgba(72,72,97,1) 100%);
+    font-size: 12px;
+    line-height: 0.8;
+    text-align: center;
+    color: white;
+    margin-top: 1rem;
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+    img {
+      max-height: 1rem;
+    }
+    a {
+      color: white; 
+    }
+    .centeroitu {
+      align-items: center;
+    }
+  }
+}
+
+.tulos {
+  text-align: center;
+}
+
+.leaderboards-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  a {
+    p {
+      font-size: 20px;
+      font-family: 'Gochi Hand', cursive;
+
+      &:hover {
+        color: #87dbfc;
+        text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
+      }
+    }
+
+    .is-active {
+      font-size: 24px;
+      color: #87dbfc;
+      text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
+    }
+  }
+}
