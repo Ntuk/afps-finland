@@ -1,18 +1,22 @@
 <template>
   <div class="gamemode-container">
-    <p class="disco-subtitle">2v2 Aim Arena</p>
+    <p class="lb-name-subtitle">2v2 Aim Arena</p>
     <hr class="hr2"/>
     <div class="columns tulos">
-      <div class="column is-one-fifth"><p class="disco-subtitle">Nimi</p></div>
-      <div class="column is-one-fifth"><p class="disco-subtitle">Rank</p></div>
-      <div class="column is-one-fifth"><p class="disco-subtitle">Rating</p></div>
-      <div class="column is-one-fifth"><p class="disco-subtitle">Voitetut matsit</p></div>
-      <div class="column is-one-fifth"><p class="disco-subtitle">Pelatut matsit</p></div>
+      <div class="column is-one-fifth"><p class="lb-subtitle">Nimi</p></div>
+      <div class="column is-one-fifth"><p class="lb-subtitle">Rank</p></div>
+      <div class="column is-one-fifth"><p class="lb-subtitle">Rating</p></div>
+      <div class="column is-one-fifth"><p class="lb-subtitle">Voitetut</p></div>
+      <div class="column is-one-fifth"><p class="lb-subtitle">Pelatut</p></div>
+    </div>
+    <div v-if="loading" style="display:flex;justify-content:center;">
+      <p class="disco-subtitle">Ladataan...</p>
+      <img class="game-icon rolling" src="https://pbs.twimg.com/profile_images/1231999603588947974/sZOe6DPF_400x400.png">
     </div>
     <div :key="result.user_id" v-for="result in results">
       <div class="columns" v-if="result.country === 'fi'">
         <div class="column is-one-fifth tulos">
-          <p>{{ result.name }}</p>
+          <p style="color:darkslategray;font-weight:bold;">{{ result.name }}</p>
         </div>
         <div class="column is-one-fifth tulos">
           <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/06_silver_01.png" v-if="result.rank_tier === 26">
@@ -49,6 +53,7 @@ export default {
   data() {
     return {
       results: [],
+      loading: true
     };
   },
   mounted() {
@@ -56,12 +61,12 @@ export default {
 
     const getData = async function(offset = 0) {
       let actualUrl = ApiUrl+`&offset=${offset}`;
-      let ApiResults = await fetch(actualUrl)
+      let Apiresults = await fetch(actualUrl)
       .then(Response => {
         return Response.json()
       });
 
-      return ApiResults;
+      return Apiresults;
     }
 
     const getEntireData = async function(offset = 0) {
@@ -76,6 +81,7 @@ export default {
     (async ()=> {
       const entireList = await getEntireData();
       this.results = entireList;
+      this.loading = false;
     })();
     // return this.$axios.$get(ApiUrl)
     // .then(response => {this.results = response.leaderboard})
@@ -87,8 +93,21 @@ console.log
 <style scoped lang="scss">
   @import '~/assets/scss/index.scss';
 
-  .gamemode-container {
-    margin-bottom: 4rem;
+  .lb-name-subtitle {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Gochi Hand', cursive;
+    color: #87dbfc;
+    margin: 0;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+  }
+
+  .lb-subtitle {
+    font-size: 24px;
+    font-family: 'Gochi Hand', cursive;
+    color: #87dbfc;
+    margin: 0;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
   }
 
   .rank-icon {
@@ -100,4 +119,15 @@ console.log
   .tulos {
     text-align: center;
   }
+
+  .rolling {
+    height: 36px;
+    width: 36px;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+  }
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 </style>

@@ -1,44 +1,48 @@
 <template>
   <div class="gamemode-container">
-    <p class="disco-subtitle">4v4 MacGuffin</p>
+    <p class="lb-name-subtitle">MacGuffin</p>
     <hr class="hr2"/>
     <div class="columns tulos">
-      <div class="column is-one-fifth"><p class="disco-subtitle">Nimi</p></div>
-      <div class="column is-one-fifth"><p class="disco-subtitle">Rank</p></div>
-      <div class="column is-one-fifth"><p class="disco-subtitle">Rating</p></div>
-      <div class="column is-one-fifth"><p class="disco-subtitle">Voitetut matsit</p></div>
-      <div class="column is-one-fifth"><p class="disco-subtitle">Pelatut matsit</p></div>
+      <div class="column is-one-fifth"><p class="lb-subtitle">Nimi</p></div>
+      <div class="column is-one-fifth"><p class="lb-subtitle">Rank</p></div>
+      <div class="column is-one-fifth"><p class="lb-subtitle">Rating</p></div>
+      <div class="column is-one-fifth"><p class="lb-subtitle">Voitetut</p></div>
+      <div class="column is-one-fifth"><p class="lb-subtitle">Pelatut</p></div>
     </div>
-    <div :key="macGuffinResult.user_id" v-for="macGuffinResult in macGuffinResults">
-      <div class="columns" v-if="macGuffinResult.country === 'fi'">
+    <div v-if="loading" style="display:flex;justify-content:center;">
+      <p class="disco-subtitle">Ladataan...</p>
+      <img class="game-icon rolling" src="https://pbs.twimg.com/profile_images/1231999603588947974/sZOe6DPF_400x400.png">
+    </div>
+    <div :key="result.user_id" v-for="result in results">
+      <div class="columns" v-if="result.country === 'fi'">
         <div class="column is-one-fifth tulos">
-          <p>{{ macGuffinResult.name }}</p>
+          <p style="color:darkslategray;font-weight:bold;">{{ result.name }}</p>
         </div>
         <div class="column is-one-fifth tulos">
-          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/06_silver_01.png" v-if="macGuffinResult.rank_tier === 26">
-          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/06_silver_02.png" v-if="macGuffinResult.rank_tier === 27">
-          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/06_silver_03.png" v-if="macGuffinResult.rank_tier === 28">
-          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/06_silver_04.png" v-if="macGuffinResult.rank_tier === 29">
-          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/06_silver_05.png" v-if="macGuffinResult.rank_tier === 30">
-          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/07_gold_01.png" v-if="macGuffinResult.rank_tier === 31">
-          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/07_gold_02.png" v-if="macGuffinResult.rank_tier === 32">
-          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/07_gold_03.png" v-if="macGuffinResult.rank_tier === 33">
-          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/07_gold_04.png" v-if="macGuffinResult.rank_tier === 34">
-          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/07_gold_05.png" v-if="macGuffinResult.rank_tier === 35">
-          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/08_crystal_01.png" v-if="macGuffinResult.rank_tier === 36">
-          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/08_crystal_02.png" v-if="macGuffinResult.rank_tier === 37">
-          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/08_crystal_03.png" v-if="macGuffinResult.rank_tier === 38">
-          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/08_crystal_04.png" v-if="macGuffinResult.rank_tier === 39">
-          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/08_crystal_05.png" v-if="macGuffinResult.rank_tier === 40">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/06_silver_01.png" v-if="result.rank_tier === 26">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/06_silver_02.png" v-if="result.rank_tier === 27">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/06_silver_03.png" v-if="result.rank_tier === 28">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/06_silver_04.png" v-if="result.rank_tier === 29">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/06_silver_05.png" v-if="result.rank_tier === 30">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/07_gold_01.png" v-if="result.rank_tier === 31">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/07_gold_02.png" v-if="result.rank_tier === 32">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/07_gold_03.png" v-if="result.rank_tier === 33">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/07_gold_04.png" v-if="result.rank_tier === 34">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/07_gold_05.png" v-if="result.rank_tier === 35">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/08_crystal_01.png" v-if="result.rank_tier === 36">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/08_crystal_02.png" v-if="result.rank_tier === 37">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/08_crystal_03.png" v-if="result.rank_tier === 38">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/08_crystal_04.png" v-if="result.rank_tier === 39">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/08_crystal_05.png" v-if="result.rank_tier === 40">
         </div>
         <div class="column is-one-fifth tulos">
-          <p>{{ macGuffinResult.rating }}</p>
+          <p>{{ result.rating }}</p>
         </div>
         <div class="column is-one-fifth tulos">
-          <p>{{ macGuffinResult.match_wins }}</p>
+          <p>{{ result.match_wins }}</p>
         </div>
         <div class="column is-one-fifth tulos">
-          <p style="color:darkslategray;font-weight:bold;">{{ macGuffinResult.match_count }}</p>
+          <p style="color:darkslategray;font-weight:bold;">{{ result.match_count }}</p>
         </div>
       </div>
     </div>  
@@ -48,37 +52,39 @@
 export default {
   data() {
     return {
-      macGuffinResults: [],
+      results: [],
+      loading: true
     };
   },
   mounted() {
-    const macGuffinApiUrl="https://www.diabotical.com/api/v0/stats/leaderboard?mode=r_macguffin";
+    const ApiUrl="https://www.diabotical.com/api/v0/stats/leaderboard?mode=r_macguffin";
 
-    const getMacGuffinData = async function(offset = 0) {
-      let actualUrl = macGuffinApiUrl+`&offset=${offset}`;
-      let macGuffinApiResults = await fetch(actualUrl)
-      .then(macGuffinResponse => {
-        return macGuffinResponse.json()
+    const getData = async function(offset = 0) {
+      let actualUrl = ApiUrl+`&offset=${offset}`;
+      let Apiresults = await fetch(actualUrl)
+      .then(Response => {
+        return Response.json()
       });
 
-      return macGuffinApiResults;
+      return Apiresults;
     }
 
-    const getEntireMacGuffinData = async function(offset = 0) {
-      const macGuffinResults = await getMacGuffinData(offset);
-      if (macGuffinResults.leaderboard.length > 0 && offset < 490) {
-        return macGuffinResults.leaderboard.concat(await getEntireMacGuffinData(offset+20));
+    const getEntireData = async function(offset = 0) {
+      const results = await getData(offset);
+      if (results.leaderboard.length > 0 && offset < 490) {
+        return results.leaderboard.concat(await getEntireData(offset+20));
       } else {
-        return macGuffinResults;
+        return results;
       }
     };
 
     (async ()=> {
-      const entireMacGuffinList = await getEntireMacGuffinData();
-      this.macGuffinResults = entireMacGuffinList;
+      const entireList = await getEntireData();
+      this.results = entireList;
+      this.loading = false;
     })();
-    // return this.$axios.$get(macGuffinApiUrl)
-    // .then(response => {this.macGuffinResults = response.leaderboard})
+    // return this.$axios.$get(ApiUrl)
+    // .then(response => {this.results = response.leaderboard})
   }
 }
 console.log
@@ -87,8 +93,21 @@ console.log
 <style scoped lang="scss">
   @import '~/assets/scss/index.scss';
 
-  .gamemode-container {
-    margin-bottom: 4rem;
+  .lb-name-subtitle {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Gochi Hand', cursive;
+    color: #87dbfc;
+    margin: 0;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+  }
+
+  .lb-subtitle {
+    font-size: 24px;
+    font-family: 'Gochi Hand', cursive;
+    color: #87dbfc;
+    margin: 0;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
   }
 
   .rank-icon {
@@ -100,4 +119,15 @@ console.log
   .tulos {
     text-align: center;
   }
+
+  .rolling {
+    height: 36px;
+    width: 36px;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+  }
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 </style>

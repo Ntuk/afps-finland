@@ -245,17 +245,45 @@
 
     <section class="section" id="leaderboards">
       <div class="header container">
-        Suomalaiset pelaajat Diaboticalin TOP500 listoilla
+        Leaderboards
       </div>
-      <div class="rows container">
-        <Duel/>
-        <ThreeVsThree/>
-        <MacGuffin/>
-        <Wipeout/>
-        <TwoAim/>
-        <RocketArena/>
-        <SoloAim/>
-        <ShaftArena/>
+      <div class="rows">
+        <div class="columns container">
+          <div class="column is-half">
+            <div style="width:100%;">
+              <p class="disco-subtitle">Suomalaiset Diaboticalin TOP500 listoilla</p>
+            </div>
+            <div class="rows container modes">
+              <Duel/>
+            </div>
+            <div class="container modes">
+              <ThreeVsThree/>          
+            </div>
+            <div class="container modes">
+              <Wipeout/>
+            </div>
+            <div class="container modes">
+              <ShaftArena/>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div style="width:100%;">
+            &nbsp;
+            </div>
+            <div class="container modes">
+              <MacGuffin/>
+            </div>
+            <div class="rows container modes">
+              <TwoAim/>
+            </div>
+            <div class="container modes">
+              <RocketArena/>
+            </div>
+            <div class="container modes">
+              <SoloAim/>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
