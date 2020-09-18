@@ -19,6 +19,11 @@
           <p style="color:darkslategray;font-weight:bold;">{{ result.name }}</p>
         </div>
         <div class="column is-one-fifth tulos">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/05_copper_01.png" v-if="result.rank_tier === 21">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/05_copper_02.png" v-if="result.rank_tier === 22">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/05_copper_03.png" v-if="result.rank_tier === 23">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/05_copper_04.png" v-if="result.rank_tier === 24">
+          <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/05_copper_05.png" v-if="result.rank_tier === 25">
           <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/06_silver_01.png" v-if="result.rank_tier === 26">
           <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/06_silver_02.png" v-if="result.rank_tier === 27">
           <img class="rank-icon" src="https://www.diabotical.com/images/ranks/200x200/06_silver_03.png" v-if="result.rank_tier === 28">

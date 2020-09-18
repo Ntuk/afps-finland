@@ -268,7 +268,6 @@
           </div>
           <div class="column is-half">
             <div style="width:100%;">
-            &nbsp;
             </div>
             <div class="container modes">
               <MacGuffin/>
