@@ -59,6 +59,14 @@
             </a>
           </div>
         </a>
+        <a class="navbar-item" href="#leaderboards" v-smooth-scroll="{ duration: 1000 }">
+          <div class="menu-item-container">
+            <span class="is-icon"><i class="fa fa-medal fa-lg"/></span>
+            <a>
+              Leaderboards
+            </a>
+          </div>
+        </a>
 
         <template v-if="isAuth">
           <a class="navbar-item">
@@ -80,7 +88,7 @@
             </div>
           </a>
         </template>
-        <template v-else>
+        <!-- <template v-else>
           <a class="navbar-item" href="/register">
             <div class="menu-item-container">
               <span class="is-icon"><i class="fa fa-user-plus fa-lg"/></span>
@@ -97,7 +105,7 @@
               </nav-link>
             </div>
           </a>
-        </template>
+        </template> -->
         
       </div>
     </div>

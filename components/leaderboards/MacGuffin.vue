@@ -1,6 +1,6 @@
 <template>
   <div class="gamemode-container">
-    <p class="lb-name-subtitle">MacGuffin</p>
+    <p class="lb-name-subtitle">4v4 MacGuffin</p>
     <hr class="hr2"/>
     <div class="columns tulos">
       <div class="column is-one-fifth"><p class="lb-subtitle">Nimi</p></div>

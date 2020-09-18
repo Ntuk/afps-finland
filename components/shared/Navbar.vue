@@ -88,7 +88,7 @@
             </div>
           </a>
         </template>
-        <template v-else>
+        <!-- <template v-else>
           <a class="navbar-item" href="/register">
             <div class="menu-item-container">
               <span class="is-icon"><i class="fa fa-user-plus fa-lg"/></span>
@@ -105,7 +105,7 @@
               </nav-link>
             </div>
           </a>
-        </template>
+        </template> -->
         
       </div>
     </div>

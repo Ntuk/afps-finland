@@ -215,7 +215,7 @@
       </div>
       <div class="columns container disco-osio">
         <div class="column is-half">
-          <figure class="avatar not-news">
+          <figure class="avatar-two not-news">
             <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/discord-512.png">
           </figure>
             <p class="disco-subtitle">Liity AFPS Finlandin Discord kanavalle!</p>
@@ -247,38 +247,128 @@
       <div class="header container">
         Leaderboards
       </div>
-      <div class="rows">
-        <div class="columns container">
-          <div class="column is-half">
-            <div style="width:100%;">
-              <p class="disco-subtitle">Suomalaiset Diaboticalin TOP500 listoilla</p>
+      <div class="rows container">
+        <div class="row is-full container modes">
+          <figure class="avatar-two not-news">
+            <img src="https://img.icons8.com/bubbles/2x/leaderboard.png">
+          </figure>
+          <p class="disco-subtitle">Suomalaiset pelaajat Diaboticalin TOP500 listoilla</p>
+          <hr/>
+          <p>Kokonaisen listan löydät täältä: <a href="https://www.diabotical.com/leaderboards" target="_blank">https://www.diabotical.com/leaderboards</a>. 
+          Alla oleville listoille on rajattu näkymään ainoastaan ne pelaajat, joilla on pelissä asetettu suomen lippu profiiliin.
+          Valitse alta näytettävät pelimoodit. Vakioasetuksena kaikki on näkyvissä mutta voit halutessasi piilottaa moodeja klikkaamalla.</p>
+          <br/>
+          <div class="checkbox-container columns">
+            <div class="column is-one-fourth">
+              <label>
+                <p>
+                  <i class="fa fa-check-square-o" style="color:lightgreen;" v-if="gameModes.includes('duel')"/>
+                  <i class="fa fa-square-o" style="color:red;" v-if="!gameModes.includes('duel')"/>
+                  Duel
+                </p>
+                <input type="checkbox" value="duel" v-model="gameModes"/>
+              </label>
             </div>
-            <div class="rows container modes">
+            <div class="column is-one-fourth">
+              <label>
+                <p>
+                  <i class="fa fa-check-square-o" style="color:lightgreen;" v-if="gameModes.includes('team')"/>
+                  <i class="fa fa-square-o" style="color:red;" v-if="!gameModes.includes('team')"/>
+                  3v3 Pickup
+                </p>
+                <input type="checkbox" value="team" v-model="gameModes"/>
+              </label>
+            </div>
+            <div class="column is-one-fourth">
+              <label>
+                <p>
+                  <i class="fa fa-check-square-o" style="color:lightgreen;" v-if="gameModes.includes('macguffin')"/>
+                  <i class="fa fa-square-o" style="color:red;" v-if="!gameModes.includes('macguffin')"/>
+                  4v4 MacGuffin
+                </p>
+                <input type="checkbox" value="macguffin" v-model="gameModes"/>
+              </label>
+            </div>
+            <div class="column is-one-fourth">
+              <label>
+                <p>
+                  <i class="fa fa-check-square-o" style="color:lightgreen;" v-if="gameModes.includes('wo')"/>
+                  <i class="fa fa-square-o" style="color:red;" v-if="!gameModes.includes('wo')"/>
+                  4v4 Wipeout
+                </p>
+                <input type="checkbox" value="wo" v-model="gameModes"/>
+              </label>
+            </div>
+          </div>
+          <div class="checkbox-container columns">
+            <div class="column is-one-fourth">
+              <label>
+                <p>
+                  <i class="fa fa-check-square-o" style="color:lightgreen;" v-if="gameModes.includes('aa_1')"/>
+                  <i class="fa fa-square-o" style="color:red;" v-if="!gameModes.includes('aa_1')"/>
+                  1v1 Aim Arena
+                </p>
+                <input type="checkbox" value="aa_1" v-model="gameModes"/>
+              </label>
+            </div>
+            <div class="column is-one-fourth">
+              <label>
+                <p>
+                  <i class="fa fa-check-square-o" style="color:lightgreen;" v-if="gameModes.includes('aa_2')"/>
+                  <i class="fa fa-square-o" style="color:red;" v-if="!gameModes.includes('aa_2')"/>
+                  2v2 Aim Arena
+                </p>
+                <input type="checkbox" value="aa_2" v-model="gameModes"/>
+              </label>
+            </div>
+            <div class="column is-one-fourth">
+              <label>
+                <p>
+                  <i class="fa fa-check-square-o" style="color:lightgreen;" v-if="gameModes.includes('ra_2')"/>
+                  <i class="fa fa-square-o" style="color:red;" v-if="!gameModes.includes('ra_2')"/>
+                  2v2 Rocket Arena
+                </p>
+                <input type="checkbox" value="ra_2" v-model="gameModes"/>
+              </label>
+            </div>
+            <div class="column is-one-fourth">
+              <label>
+                <p>
+                  <i class="fa fa-check-square-o" style="color:lightgreen;" v-if="gameModes.includes('sa_1')"/>
+                  <i class="fa fa-square-o" style="color:red;" v-if="!gameModes.includes('sa_1')"/>
+                  1v1 Shaft Arena
+                </p>
+                <input type="checkbox" value="sa_1" v-model="gameModes"/>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-half">
+            <div class="rows container modes" v-if="gameModes.includes('duel')">
               <Duel/>
             </div>
-            <div class="container modes">
+            <div class="container modes" v-if="gameModes.includes('team')">
               <ThreeVsThree/>          
             </div>
-            <div class="container modes">
+            <div class="container modes" v-if="gameModes.includes('wo')">
               <Wipeout/>
             </div>
-            <div class="container modes">
+            <div class="container modes" v-if="gameModes.includes('sa_1')">
               <ShaftArena/>
             </div>
           </div>
           <div class="column is-half">
-            <div style="width:100%;">
-            </div>
-            <div class="container modes">
+            <div class="container modes" v-if="gameModes.includes('macguffin')">
               <MacGuffin/>
             </div>
-            <div class="rows container modes">
+            <div class="container modes" v-if="gameModes.includes('aa_2')">
               <TwoAim/>
             </div>
-            <div class="container modes">
+            <div class="container modes" v-if="gameModes.includes('ra_2')">
               <RocketArena/>
             </div>
-            <div class="container modes">
+            <div class="container modes" v-if="gameModes.includes('aa_1')">
               <SoloAim/>
             </div>
           </div>
@@ -344,6 +434,7 @@ export default {
     return {
       dateStatus: null,
       isActive: false,
+      gameModes: ['duel', 'team', 'macguffin', 'wo', 'aa_1', 'aa_2', 'ra_2', 'sa_1']
     }
   },
   components: {
